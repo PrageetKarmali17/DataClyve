@@ -1,0 +1,6917 @@
+/* ============================================================
+   ALPHA IT — global.css  v7.1
+   ============================================================
+   HOW TO USE THIS FILE
+   ─────────────────────────────────────────────────────────────
+   Search by section name to jump to what you need. Each section
+   is labelled with a clear heading and plain-english description
+   of what it controls.
+
+   COLOUR SYSTEM (defined in :root below)
+   ─────────────────────────────────────────────────────────────
+   Orange brand scale:
+     --o1  #F8BA6A  lightest amber (gradients, highlights)
+     --o2  #F19C49  primary brand orange (accents, links, CTA)
+     --o3  #E07828  darker orange (gradient end, icons)
+     --o4  #C05818  darkest orange (deep gradient end)
+
+   Dark backgrounds:
+     --ink   #080808  main dark bg (body, nav, footer, dark sections)
+     --ink2  #0E0E0E  slightly lighter dark (page hero, dark cards)
+
+   Light backgrounds:
+     --page  #FAF8F4  off-white warm page background
+     --warm  #F3EDE4  warm cream (hover states, light card bg)
+     --white #ffffff  pure white
+
+   Light-background text:
+     --tx   #141414  primary body text (near-black)
+     --tx2  #525250  secondary text (paragraphs, descriptions)
+     --tx3  #96968C  muted text (captions, labels, placeholders)
+
+   Dark-background text (white with opacity):
+     --tx-dk        rgba(255,255,255,.88)  primary text on dark bg
+     --tx-dk2       rgba(255,255,255,.55)  secondary text on dark bg
+     --tx-dk3       rgba(255,255,255,.38)  muted text on dark bg
+     --tx-dk-muted  rgba(255,255,255,.28)  very muted text on dark bg
+
+   NOTE ON HARDCODED COLOURS
+   ─────────────────────────────────────────────────────────────
+   Many elements use hardcoded rgba(255,255,255,X) values instead
+   of the --tx-dk variables above. Changing the variables alone
+   won't update those elements. Each hardcoded value is marked
+   with a "HARDCODED" comment so you can find and change them.
+
+   To change a specific element's text colour, search for its
+   class name (e.g. ".f-tp" for footer tagline) and edit the
+   color value directly.
+
+   ROADMAP: Ideal future state is every color on dark backgrounds
+   uses a --tx-dk variable, making opacity adjustable from :root.
+
+   ============================================================ */
+
+/* ============================================================
+   FONTS
+   Gotham loaded at six weights. Font files live in /fonts/.
+   font-display:swap prevents invisible text during load.
+   ============================================================ */
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/GothamHTF-Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/GothamHTF-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/GothamHTF-Book.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/GothamHTF-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/GothamHTF-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/GothamHTF-Ultra.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap
+}
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   Change values here to affect everything that uses them.
+   Elements with HARDCODED values will not be affected.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+:root {
+    /* Orange brand scale */
+    --o1: #846af8;
+    --o2: #4954f1;
+    --o3: #6828e0;
+    --o4: #18c07a;
+    /* Dark backgrounds */
+    --ink: #080808;
+    --ink2: #0E0E0E;
+    /* Light backgrounds */
+    --page: #FAF8F4;
+    --warm: #F3EDE4;
+    --white: #ffffff;
+    /* Light-bg text */
+    --tx: #141414;
+    --tx2: #525250;
+    --tx3: #686864;
+    /* Dark-bg text — all full white.
+     Previously used opacity scale which caused grey text on dark backgrounds. */
+    --tx-dk: #fff;
+    --tx-dk2: #fff;
+    --tx-dk3: #fff;
+    --tx-dk-muted: rgba(255, 255, 255, .82);
+    /* Typography */
+    --f: 'Gotham', -apple-system, system-ui, sans-serif;
+    /* Animation easing */
+    --ease: cubic-bezier(.16, 1, .3, 1);
+    /* Layout */
+    --maxw: 1240px;
+    /* max content width */
+    --pad: 72px;
+    /* horizontal section padding (desktop) */
+    --pad-sm: 22px;
+    /* horizontal section padding (mobile) */
+    /* Border radius scale */
+    --r1: 20px;
+    --r2: 16px;
+    --r3: 12px;
+}
+
+/* ============================================================
+   BASE / RESET
+   Global element defaults. Affects everything on every page.
+   ============================================================ */
+
+html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility
+}
+
+body {
+    font-family: var(--f);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.67;
+    color: var(--tx);
+    background: var(--ink);
+    overflow-x: hidden
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+ul {
+    list-style: none
+}
+
+button {
+    cursor: pointer;
+    font-family: var(--f);
+    font-synthesis: none;
+    border: none;
+    background: none
+}
+
+/* ============================================================
+   NAVIGATION — DESKTOP
+   Fixed floating pill nav. Switches between dark glass (default)
+   and light glass (.nav.lt) via JS based on the section colour
+   currently under the nav bar.
+
+   CLASS REFERENCE:
+     .nav        outer container (fixed, floating pill)
+     .nav.lt     light mode — triggered over light-bg sections
+     .nav-i      inner flex row (logo + links + right side)
+     .nav-logo   logo link wrapper
+     .nav-links  desktop nav links container (hidden on mobile)
+     .nav-ni     nav item wrapper (relative for dropdown positioning)
+     .nav-nl     nav link label text
+     .nav-cv     chevron SVG next to items with dropdowns
+     .nav-drop   dropdown panel (shown on hover)
+     .nav-dl     individual dropdown link row
+     .ndlt       dropdown link title
+     .ndls       dropdown link subtitle/description
+     .nav-r      right side (phone number + CTA button)
+     .nav-ph     phone number text link
+     .nav-cta    "Get Started" orange pill button
+     .nav-cta-ic arrow icon circle inside .nav-cta
+   ============================================================ */
+
+.nav {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: var(--maxw);
+    z-index: 1000;
+    border-radius: 16px;
+    background: rgba(8, 8, 8, .55);
+    /* HARDCODED dark glass — more transparent */
+    backdrop-filter: blur(48px) saturate(200%) brightness(0.9);
+    -webkit-backdrop-filter: blur(48px) saturate(200%) brightness(0.9);
+    border: 1px solid rgba(255, 255, 255, .13);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3), 0 8px 32px rgba(0, 0, 0, .45), 0 24px 64px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .12), inset 0 -1px 0 rgba(0, 0, 0, .2);
+    transition: background .3s, border-color .3s, box-shadow .3s, backdrop-filter .3s;
+}
+
+/* Light mode — used when nav is over a light-background section */
+
+.nav.lt {
+    background: rgba(250, 248, 244, .72);
+    /* HARDCODED light glass — more transparent */
+    border-color: rgba(255, 255, 255, .9);
+    backdrop-filter: blur(48px) saturate(180%) brightness(1.04);
+    -webkit-backdrop-filter: blur(48px) saturate(180%) brightness(1.04);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .04), 0 8px 24px rgba(0, 0, 0, .07), inset 0 1px 0 rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(0, 0, 0, .04);
+}
+
+.nav-i {
+    display: flex;
+    align-items: center;
+    height: 68px;
+    padding: 0 22px;
+    gap: 6px
+}
+
+.nav-logo {
+    flex-shrink: 0
+}
+
+.nav-logo img {
+    height: 38px;
+    width: auto
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.nav-ni {
+    position: relative
+}
+
+/* Invisible bridge between nav link and dropdown to prevent hover loss */
+
+.nav-ni::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: transparent
+}
+
+/* Invisible hover bridge — fills the gap between link and dropdown
+   so the dropdown does not close when moving the mouse downward */
+
+.nav-ni::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+    right: 0;
+    height: 14px;
+    background: transparent
+}
+
+/* Desktop nav link text — HARDCODED, roadmap: use --tx-dk3 */
+
+.nav-nl {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 15px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: -.01em;
+    color: rgba(255, 255, 255, .82);
+    /* HARDCODED */
+    white-space: nowrap;
+    transition: color .15s, background .15s;
+}
+
+.nav.lt .nav-nl {
+    color: var(--tx2)
+}
+
+.nav-nl:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, .08)
+}
+
+.nav.lt .nav-nl:hover {
+    color: var(--tx);
+    background: rgba(0, 0, 0, .05)
+}
+
+.nav-nl.active {
+    color: var(--o2);
+    font-weight: 500
+}
+
+.nav-cv {
+    width: 10px;
+    height: 10px;
+    opacity: .35;
+    transition: transform .2s var(--ease), opacity .2s;
+    flex-shrink: 0
+}
+
+.nav-ni:hover .nav-cv,
+.nav-ni:focus-within .nav-cv {
+    transform: rotate(180deg);
+    opacity: .65
+}
+
+/* Dropdown panel */
+
+.nav-drop {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 14px;
+    padding: 6px;
+    min-width: 264px;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .1), 0 2px 8px rgba(0, 0, 0, .04);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .18s var(--ease), transform .18s var(--ease), visibility .18s;
+    z-index: 200;
+}
+
+.nav-ni:hover .nav-drop,
+.nav-ni:focus-within .nav-drop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0)
+}
+
+.nav-dl {
+    display: block;
+    padding: 9px 14px;
+    border-radius: 9px;
+    transition: background .12s
+}
+
+.nav-dl:hover {
+    background: var(--page)
+}
+
+.nav-dl.cur .ndlt {
+    color: var(--o2);
+    font-weight: 500
+}
+
+/* highlights the current page in dropdown */
+
+.ndlt {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--tx);
+    line-height: 1.3;
+    letter-spacing: -.01em
+}
+
+.ndls {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--tx3);
+    margin-top: 2px;
+    letter-spacing: .01em
+}
+
+/* Wide two-column dropdown — used on Services */
+
+.nav-drop-wide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-width: 520px;
+    gap: 2px
+}
+
+.nav-drop-wide .ndlt {
+    font-size: 14px
+}
+
+.nav-drop-wide .ndls {
+    font-size: 11.5px
+}
+
+/* Two-column Resources dropdown — explicit columns with headers */
+
+.nav-drop-res {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-width: 500px;
+    gap: 0;
+    padding: 6px 0;
+    left: auto;
+    right: -40px;
+    transform: translateX(0) translateY(-6px)
+}
+
+.nav-ni:hover .nav-drop-res,
+.nav-ni:focus-within .nav-drop-res {
+    transform: translateX(0) translateY(0)
+}
+
+.nav-drop-col {
+    padding: 6px
+}
+
+.nav-drop-col:first-child {
+    border-right: 1px solid rgba(0, 0, 0, .06)
+}
+
+.nav-drop-col-hd {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--tx3);
+    padding: 6px 12px 8px;
+    margin: 0
+}
+
+.nav-drop-res .ndlt {
+    font-size: 13.5px
+}
+
+.nav-drop-res .ndls {
+    font-size: 11.5px
+}
+
+/* Mobile nav group header — used for Learn / Explore labels */
+
+.mob-grp {
+    display: block;
+    padding: 14px 6px 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .3);
+    border-bottom: none !important
+}
+
+.nav.lt .mob-grp {
+    color: var(--tx3)
+}
+
+/* Right side of nav */
+
+.nav-r {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0
+}
+
+/* Phone number — HARDCODED, roadmap: use --tx-dk-muted */
+
+.nav-ph {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .82);
+    white-space: nowrap;
+    transition: color .15s
+}
+
+.nav.lt .nav-ph {
+    color: var(--tx2)
+}
+
+.nav-ph:hover {
+    color: #fff
+}
+
+.nav.lt .nav-ph:hover {
+    color: var(--tx)
+}
+
+/* "Get Started" button */
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px 9px 18px;
+    background: linear-gradient(120deg, var(--o1), var(--o2) 55%, var(--o3));
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    transition: opacity .15s, transform .14s;
+    white-space: nowrap;
+}
+
+.nav-cta:hover {
+    opacity: .88;
+    transform: translateY(-1px)
+}
+
+.nav-cta-ic {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform .2s var(--ease)
+}
+
+.nav-cta:hover .nav-cta-ic {
+    transform: translateX(2px)
+}
+
+/* ============================================================
+   NAVIGATION — MOBILE HAMBURGER BUTTON
+   Visible below 960px. Three bars animate to an X when open.
+
+   CLASS REFERENCE:
+     .nav-mtog   the toggle button
+     .nav-mbar   each of the three bar spans
+   ============================================================ */
+
+.nav-mtog {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5.5px;
+    width: 38px;
+    height: 38px;
+    padding: 9px;
+    border-radius: 8px
+}
+
+.nav-mbar {
+    width: 20px;
+    height: 1.5px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform .22s, opacity .22s
+}
+
+.nav.lt .nav-mbar {
+    background: var(--tx)
+}
+
+.nav-mtog[aria-expanded=true] .nav-mbar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg)
+}
+
+.nav-mtog[aria-expanded=true] .nav-mbar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0)
+}
+
+.nav-mtog[aria-expanded=true] .nav-mbar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg)
+}
+
+/* ============================================================
+   NAVIGATION — MOBILE MENU PANEL
+   Drops open below the nav bar on mobile. Scrollable.
+
+   CLASS REFERENCE:
+     .nav-mob        the panel (hidden by default)
+     .nav-mob.open   visible state (toggled by JS)
+     .nav-mob a      every link in the menu
+     .mob-sub        indented sub-page links under a parent
+     .mob-cta        "Get Started" link at bottom (orange, bold)
+
+   TO CHANGE MOBILE MENU LINK COLOUR:
+     Edit "color:#dcdcdc" in ".nav-mob a" below.
+     The .nav.lt override handles the light-bg page variant.
+   ============================================================ */
+
+.nav-mob {
+    display: none;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    padding: 12px 18px 20px;
+    border-radius: 0 0 14px 14px;
+    max-height: calc(100svh - 110px);
+    /* prevents overflow on short viewports */
+    overflow-y: auto;
+    /* scrollable when menu content is tall */
+}
+
+.nav.lt .nav-mob {
+    border-top-color: rgba(0, 0, 0, .08)
+}
+
+.nav-mob.open {
+    display: block
+}
+
+/* Mobile link colour — change #dcdcdc to adjust all menu link text */
+
+.nav-mob a {
+    display: block;
+    padding: 12px 6px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #dcdcdc;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+    transition: color .15s
+}
+
+.nav.lt .nav-mob a {
+    color: var(--tx2);
+    border-color: rgba(0, 0, 0, .06)
+}
+
+.nav-mob a:hover {
+    color: var(--o2)
+}
+
+/* "Get Started" bottom link */
+
+.mob-cta {
+    border: none !important;
+    color: var(--o2) !important;
+    font-weight: 700 !important;
+    padding-top: 16px !important
+}
+
+/* Sub-page links — indented, slightly smaller and dimmer */
+
+.nav-mob a.mob-sub {
+    padding: 8px 6px 8px 20px;
+    font-size: 13.5px;
+    opacity: .6;
+    border-bottom: 1px solid rgba(255, 255, 255, .04)
+}
+
+.nav.lt .nav-mob a.mob-sub {
+    border-color: rgba(0, 0, 0, .04)
+}
+
+/* ============================================================
+   BREADCRUMB
+   White bar below the nav on inner pages showing the page path.
+   e.g. Home > Services > Managed IT
+
+   CLASS REFERENCE:
+     .bcn      outer bar
+     .bcn-in   inner max-width container
+     .bcn-sep  separator character (e.g. /)
+   ============================================================ */
+
+.bcn {
+    padding: 12px var(--pad);
+    background: transparent;
+    border-bottom: none;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--tx3);
+    opacity: .7
+}
+
+.bcn-in {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap
+}
+
+.bcn a {
+    transition: color .15s;
+    color: var(--tx3)
+}
+
+.bcn a:hover {
+    color: var(--o2);
+    opacity: 1
+}
+
+.bcn-sep {
+    opacity: .3
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+
+   CLASS REFERENCE:
+     .s      standard section padding (top and bottom)
+     .s-sm   smaller section padding
+     .w      max-width content wrapper (centres content)
+   ============================================================ */
+
+.s {
+    padding: 116px var(--pad)
+}
+
+.s-sm {
+    padding: 72px var(--pad)
+}
+
+.w {
+    max-width: var(--maxw);
+    margin: 0 auto
+}
+
+/* ============================================================
+   EYEBROW LABEL
+   Small all-caps label with an orange dot, used above headings.
+   Example: "• VANCOUVER ISLAND COVERAGE"
+
+   CLASS REFERENCE:
+     .ey   the eyebrow element
+   ============================================================ */
+
+.ey {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-bottom: 20px
+}
+
+.ey::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--o2);
+    flex-shrink: 0
+}
+
+/* ============================================================
+   TYPOGRAPHY — HEADINGS
+   Font sizes use clamp() so they scale between breakpoints.
+   Add .wh to most classes for white/dark-bg variant.
+
+   CLASS REFERENCE:
+     .h-hero    largest hero h1 (weight 800, once per page)
+     .hgl       gradient text span inside .h-hero
+     .h-page    large dark-bg section heading (weight 700)
+     .hl        gradient text span inside .h-page
+     .h2        standard section heading (light or dark bg)
+     .h3        sub-heading
+     .h-cta     CTA section heading
+     .h-card    card/feature title (17px)
+     .h4        card title, sidebar heading (20px)
+     .h-sub     form/panel heading (22px)
+     .h-mid     step title, list heading (18px)
+   ============================================================ */
+
+.h-hero {
+    font-size: clamp(52px, 6.4vw, 88px);
+    font-weight: 800;
+    color: var(--tx);
+    line-height: .96;
+    letter-spacing: -.048em;
+    max-width: 660px;
+    margin-bottom: 26px
+}
+
+.hgl {
+    display: inline;
+    background: linear-gradient(100deg, var(--o1) 0%, var(--o2) 38%, var(--o3) 72%, var(--o4) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text
+}
+
+.h-page {
+    font-size: clamp(38px, 4.8vw, 68px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.036em;
+    line-height: .98;
+    margin-bottom: 20px
+}
+
+.h-page .hl,
+.hl {
+    background: linear-gradient(110deg, var(--o1) 0%, var(--o2) 40%, var(--o3) 75%, var(--o4) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text
+}
+
+.h2 {
+    font-size: clamp(28px, 3.6vw, 50px);
+    font-weight: 700;
+    letter-spacing: -.03em;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    color: var(--tx)
+}
+
+.h2.wh {
+    color: #fff
+}
+
+.h3 {
+    font-size: clamp(20px, 2.2vw, 30px);
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    color: var(--tx)
+}
+
+.h3.wh {
+    color: #fff
+}
+
+.h-cta {
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 700;
+    letter-spacing: -.034em;
+    line-height: 1.0;
+    color: var(--tx)
+}
+
+.h-cta.wh {
+    color: #fff
+}
+
+.h-card {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -.012em;
+    color: var(--tx)
+}
+
+.h-card.wh {
+    color: #fff
+}
+
+.h4 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.016em;
+    color: var(--tx)
+}
+
+.h4.wh {
+    color: #fff
+}
+
+.h-sub {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -.018em;
+    line-height: 1.2;
+    color: var(--tx)
+}
+
+.h-sub.wh {
+    color: #fff
+}
+
+.h-mid {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -.014em;
+    color: var(--tx)
+}
+
+.h-mid.wh {
+    color: #fff
+}
+
+/* ============================================================
+   TYPOGRAPHY — BODY TEXT
+   Add .wh to use on dark backgrounds (uses --tx-dk2 variable).
+
+   CLASS REFERENCE:
+     .body-lg     18px light weight
+     .body-md     17px regular weight
+     .body-sm     15px regular weight
+     .body-xs     14px (feature descriptions, sidebar)
+     .body-xs-lt  14px light weight for dark bg — HARDCODED
+     .body-16     16px regular weight
+     .wh          utility: add to any element for dark-bg text
+   ============================================================ */
+
+.body-lg {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--tx2);
+    line-height: 1.75
+}
+
+.body-md {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.75
+}
+
+.body-sm {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.70
+}
+
+/* .wh variants use --tx-dk2 — change that variable in :root to affect these */
+
+.body-lg.wh {
+    color: var(--tx-dk2)
+}
+
+.body-md.wh {
+    color: var(--tx-dk2)
+}
+
+.body-sm.wh {
+    color: var(--tx-dk2)
+}
+
+.wh {
+    color: var(--tx-dk2) !important
+}
+
+.body-xs {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.65
+}
+
+.body-xs.wh {
+    color: #fff
+}
+
+/* HARDCODED — roadmap: use --tx-dk3 */
+
+.body-xs-lt {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.70
+}
+
+/* HARDCODED */
+
+.body-16 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.72
+}
+
+.body-16.wh {
+    color: var(--tx-dk2)
+}
+
+/* ============================================================
+   TYPOGRAPHY — LABELS, CAPTIONS, TAGS
+
+   CLASS REFERENCE:
+     .label-sm       small all-caps label (light bg) — uses --tx3
+     .label-sm.wh    small all-caps label (dark bg) — uses --tx-dk3
+     .caption        13px muted caption
+     .tag            10px orange all-caps tag
+     .stat-label     stat label on dark bg — uses --tx-dk3
+     .stat-label-lt  stat label on light bg — uses --tx3
+   ============================================================ */
+
+.label-sm {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--tx3)
+}
+
+.label-sm.wh {
+    color: var(--tx-dk3)
+}
+
+.caption {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--tx3)
+}
+
+.tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--o2)
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--tx-dk3)
+}
+
+.stat-label-lt {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--tx3)
+}
+
+/* ============================================================
+   TYPOGRAPHY — STAT NUMBERS
+
+   CLASS REFERENCE:
+     .stat-n     large stat number 42px (e.g. "1300%")
+     .stat-n-md  medium stat number 30px
+     .stat-n-sm  small stat number 28px
+   ============================================================ */
+
+.stat-n {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--o2);
+    letter-spacing: -.025em;
+    line-height: 1;
+    margin-bottom: 6px
+}
+
+.stat-n-md {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--o2);
+    letter-spacing: -.025em
+}
+
+.stat-n-sm {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--o2);
+    letter-spacing: -.02em
+}
+
+/* ============================================================
+   TYPOGRAPHY — QUOTES AND TESTIMONIAL TEXT
+
+   CLASS REFERENCE:
+     .quote-text     blockquote body (light bg, italic)
+     .quote-text.wh  blockquote body (dark bg) — HARDCODED
+     .quote-mark     decorative open-quote character (36px)
+     .quote-mark-lg  larger decorative quote (52px)
+     .quote-cite     attribution line
+     .quote-cite.wh  attribution on dark bg — HARDCODED
+
+   TO CHANGE QUOTE TEXT COLOUR ON DARK BG:
+     Edit rgba value in ".quote-text.wh" below.
+     Current: rgba(255,255,255,.78)
+   ============================================================ */
+
+.quote-text {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--tx);
+    line-height: 1.68;
+    font-style: italic
+}
+
+.quote-text.wh {
+    color: rgba(255, 255, 255, .88)
+}
+
+/* HARDCODED — roadmap: use --tx-dk */
+
+.quote-mark {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--o2);
+    line-height: .5
+}
+
+.quote-mark-lg {
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--o2);
+    line-height: .5
+}
+
+.quote-cite {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--tx2)
+}
+
+.quote-cite.wh {
+    color: #fff
+}
+
+/* HARDCODED — roadmap: use --tx-dk3 */
+
+/* ============================================================
+   GLOW EFFECTS
+   Decorative radial gradient overlays for section backgrounds.
+   Must be inside a position:relative parent.
+
+   CLASS REFERENCE:
+     .glow-dk   warm amber glow for dark sections
+     .glow-lt   softer amber glow for light sections
+   ============================================================ */
+
+.glow-dk {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 90% 100% at -14% 110%, rgba(241, 156, 73, .48) 0%, rgba(220, 118, 38, .22) 28%, transparent 54%), radial-gradient(ellipse 55% 65% at 108% 8%, rgba(208, 88, 12, .2) 0%, transparent 50%)
+}
+
+.glow-lt {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 70% 90% at -5% 85%, rgba(241, 156, 73, .18) 0%, rgba(228, 136, 52, .08) 38%, transparent 60%), radial-gradient(ellipse 50% 65% at 105% 10%, rgba(228, 136, 52, .12) 0%, transparent 50%)
+}
+
+/* ============================================================
+   BUTTONS
+   Three styles. All use inline-flex and can contain a .bic icon.
+
+   CLASS REFERENCE:
+     .btn-p     primary orange gradient button
+     .btn-dk    dark/black button
+     .btn-gh    ghost button (outlined, no fill)
+     .btn-gh.wh ghost button on dark backgrounds — HARDCODED
+     .bic       arrow icon circle inside btn-p or btn-dk
+   ============================================================ */
+
+.btn-p {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 15px 18px 15px 26px;
+    background: linear-gradient(118deg, var(--o1) 0%, var(--o2) 52%, var(--o3) 100%);
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    box-shadow: 0 4px 24px rgba(241, 156, 73, .24);
+    transition: opacity .16s, transform .14s, box-shadow .16s
+}
+
+.btn-p:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 36px rgba(241, 156, 73, .38)
+}
+
+.bic {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform .22s var(--ease)
+}
+
+.btn-p:hover .bic,
+.btn-dk:hover .bic {
+    transform: translateX(3px)
+}
+
+.btn-gh {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .04em;
+    color: var(--tx);
+    border: 1.5px solid rgba(0, 0, 0, .16);
+    border-radius: 100px;
+    transition: border-color .15s, background .15s
+}
+
+.btn-gh:hover {
+    border-color: rgba(0, 0, 0, .36);
+    background: rgba(0, 0, 0, .02)
+}
+
+.btn-gh.wh {
+    color: rgba(255, 255, 255, .7) !important;
+    border-color: rgba(255, 255, 255, .22) !important
+}
+
+/* HARDCODED */
+
+.btn-gh.wh:hover {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, .5) !important;
+    background: rgba(255, 255, 255, .06) !important
+}
+
+.btn-dk {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 15px 18px 15px 26px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    transition: background .15s, transform .14s
+}
+
+.btn-dk:hover {
+    background: #1a1a1a;
+    transform: translateY(-2px)
+}
+
+.btn-dk .bic {
+    background: rgba(255, 255, 255, .1)
+}
+
+/* ============================================================
+   PAGE HERO (inner pages)
+   Dark header used on all non-home inner pages.
+   Two-column by default; use .ph-in.full for single centred column.
+
+   CLASS REFERENCE:
+     .ph          outer section
+     .ph-in       inner grid
+     .ph-in.full  single centred column variant
+   ============================================================ */
+
+.ph {
+    background: var(--ink2);
+    padding: 124px var(--pad) 96px;
+    position: relative;
+    overflow: hidden
+}
+
+.ph::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 72% 84% at 112% 100%, rgba(208, 108, 12, .32) 0%, rgba(178, 72, 8, .14) 38%, transparent 64%), radial-gradient(ellipse 42% 52% at 95% 42%, rgba(222, 138, 42, .07) 0%, transparent 52%)
+}
+
+.ph-in {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center
+}
+
+.ph-in.full {
+    grid-template-columns: 1fr;
+    max-width: 860px;
+    gap: 20px
+}
+
+/* Compact hero variant for hub pages (centred text, no image) — consistent with service hero spacing */
+
+.ph.ph-compact {
+    padding: 155px var(--pad) 80px
+}
+
+.ph.ph-compact .ey {
+    margin-bottom: 12px
+}
+
+.ph.ph-compact .h-page {
+    margin-bottom: 16px
+}
+
+.ph.ph-compact .body-lg {
+    margin-bottom: 12px
+}
+
+.ph.ph-compact .body-sm {
+    margin-bottom: 24px
+}
+
+.ph.ph-compact .body-xs {
+    margin-top: 8px
+}
+
+.ph.ph-compact .cta-sec-btns {
+    margin-top: 24px
+}
+
+.ph:has(.ph-in.full) {
+    padding-bottom: 72px
+}
+
+/* single-col hero — less bottom padding */
+
+/* ============================================================
+   BLOG POST HERO HELPERS
+   The blog post hero reuses the standard .ph / .ph-in.full classes.
+   These two additions support the meta row and back-link inside it.
+
+   CLASS REFERENCE:
+     .bph-meta   flex row: category pill + date string
+     .bph-date   publish date — white/muted, small caps
+     .bph-back   ← All articles link below the h1
+   ============================================================ */
+
+.bph-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    flex-wrap: wrap
+}
+
+.ph .cat-pill {
+    background: rgba(255, 255, 255, .12);
+    color: #fff
+}
+
+.bph-date {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: #fff;
+    text-transform: uppercase
+}
+
+.bph-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    transition: color .15s
+}
+
+.bph-back:hover {
+    color: var(--o2)
+}
+
+/* ============================================================
+   CARDS — PROPOSITION CARDS (.prop)
+   Three-up white card row for "why choose us" sections.
+   Flush 3px gap; rounded corners on first and last card only.
+
+   CLASS REFERENCE:
+     .prop-g   grid container
+     .prop     individual card
+     .prop-ico icon circle
+   ============================================================ */
+
+.prop-g {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px
+}
+
+.prop {
+    background: #fff;
+    padding: 44px 36px;
+    transition: background .18s
+}
+
+.prop:first-child {
+    border-radius: var(--r1) 0 0 var(--r1)
+}
+
+.prop:last-child {
+    border-radius: 0 var(--r1) var(--r1) 0
+}
+
+.prop:hover {
+    background: var(--page)
+}
+
+.prop-ico {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(241, 156, 73, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px
+}
+
+.prop-ico svg {
+    color: var(--o2);
+    width: 20px;
+    height: 20px
+}
+
+.prop h3 {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -.012em;
+    color: var(--tx);
+    margin-bottom: 10px
+}
+
+.prop p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.72
+}
+
+/* ============================================================
+   CARDS — FEATURE CARDS (.feat)
+   Dark semi-transparent cards on dark sections. Three columns.
+
+   CLASS REFERENCE:
+     .feat-g   grid container
+     .feat     individual card
+   ============================================================ */
+
+.feat-g {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px
+}
+
+.feat {
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 14px;
+    padding: 26px 28px;
+    transition: border-color .18s, background .18s
+}
+
+.feat:hover {
+    border-color: rgba(241, 156, 73, .22);
+    background: rgba(255, 255, 255, .06)
+}
+
+.feat h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -.01em;
+    line-height: 1.3
+}
+
+/* Body text — HARDCODED, roadmap: use --tx-dk3 */
+
+.feat p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.70
+}
+
+/* ============================================================
+   CARDS — NUMBERED INFO ROWS (.ni-row)
+   Two-column rows with a number on the left and content on right.
+
+   CLASS REFERENCE:
+     .ni-row     row (has border-bottom divider)
+     .ni-row.dk  dark bg variant (lighter divider)
+     .ni-n       the number on the left
+   ============================================================ */
+
+.ni-row {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .07)
+}
+
+.ni-row:last-child {
+    border-bottom: none
+}
+
+.ni-row.dk {
+    border-color: rgba(255, 255, 255, .07)
+}
+
+.ni-n {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--o2);
+    opacity: .55;
+    letter-spacing: .04em;
+    padding-top: 3px
+}
+
+.ni-row h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--tx);
+    margin-bottom: 7px;
+    letter-spacing: -.01em
+}
+
+.ni-row h4.wh {
+    color: #fff !important
+}
+
+.ni-row p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.70
+}
+
+/* Dark bg paragraph — HARDCODED, roadmap: use --tx-dk3 */
+
+.ni-row p.wh {
+    color: var(--tx-dk2) !important
+}
+
+/* ============================================================
+   CARDS — STEP NUMBER CIRCLES
+
+   CLASS REFERENCE:
+     .step-num     small circle 36px (process steps)
+     .step-num-md  medium circle 44px (services index)
+     .num-badge    small badge 28px
+   ============================================================ */
+
+.step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(241, 156, 73, .1);
+    border: 1.5px solid rgba(241, 156, 73, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--o3);
+    flex-shrink: 0
+}
+
+.step-num-md {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(241, 156, 73, .1);
+    border: 1.5px solid rgba(241, 156, 73, .28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--o3);
+    flex-shrink: 0
+}
+
+.num-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(241, 156, 73, .1);
+    border: 1px solid rgba(241, 156, 73, .2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--o3)
+}
+
+/* ============================================================
+   CARDS — SERVICE LINK ROWS (.svc-link)
+   Arrow-style rows used on industry pages.
+
+   CLASS REFERENCE:
+     .svc-link         the row/link
+     .svc-link-title   service name
+     .svc-link-desc    short description
+     .svc-link-arrow   right arrow
+   ============================================================ */
+
+.svc-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+    text-decoration: none;
+    transition: color .15s
+}
+
+.svc-link:hover .svc-link-title {
+    color: var(--o2)
+}
+
+.svc-link:hover .svc-link-arrow {
+    color: var(--o2)
+}
+
+.svc-link-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--tx);
+    transition: color .15s;
+    letter-spacing: -.01em
+}
+
+.svc-link-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--tx3);
+    margin-top: 2px
+}
+
+.svc-link-arrow {
+    color: var(--tx3);
+    font-weight: 700;
+    transition: color .15s;
+    font-size: 16px;
+    flex-shrink: 0
+}
+
+/* ============================================================
+   CARDS — SERVICE CARDS ON DARK BG (.svc-card-dk)
+
+   CLASS REFERENCE:
+     .svc-card-dk      compact card
+     .svc-card-dk-lg   larger card (services index page)
+   ============================================================ */
+
+.svc-card-dk {
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: block;
+    transition: border-color .18s, background .18s;
+    text-decoration: none
+}
+
+.svc-card-dk:hover {
+    border-color: rgba(241, 156, 73, .35);
+    background: rgba(255, 255, 255, .07)
+}
+
+.svc-card-dk h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: -.01em
+}
+
+/* Body text — HARDCODED, roadmap: use --tx-dk3 */
+
+.svc-card-dk p {
+    font-size: 13px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.6
+}
+
+.svc-card-dk-lg {
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 14px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color .2s, background .2s, transform .22s var(--ease);
+    text-decoration: none
+}
+
+.svc-card-dk-lg:hover {
+    border-color: rgba(241, 156, 73, .38);
+    background: rgba(255, 255, 255, .07);
+    transform: translateY(-3px)
+}
+
+.svc-card-dk-lg h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.015em;
+    line-height: 1.15
+}
+
+/* Body text — HARDCODED, roadmap: use --tx-dk3 */
+
+.svc-card-dk-lg p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.70;
+    flex: 1
+}
+
+/* ============================================================
+   CARDS — INDUSTRY CARDS ON LIGHT BG (.ind-card)
+   White cards with icon, heading, description, and arrow link.
+
+   CLASS REFERENCE:
+     .ind-card      the card
+     .ind-card-ico  icon container
+     .arr           "Learn more" arrow link
+   ============================================================ */
+
+.ind-card {
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: var(--r2);
+    padding: 28px 26px;
+    transition: border-color .2s, box-shadow .2s, transform .22s var(--ease);
+    display: block;
+    position: relative;
+    overflow: hidden
+}
+
+.ind-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(241, 156, 73, .06) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity .2s
+}
+
+.ind-card:hover {
+    border-color: var(--o2);
+    box-shadow: 0 8px 32px rgba(241, 156, 73, .14);
+    transform: translateY(-3px)
+}
+
+.ind-card:hover::before {
+    opacity: 1
+}
+
+.ind-card-ico {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(241, 156, 73, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px
+}
+
+.ind-card-ico svg {
+    width: 20px;
+    height: 20px;
+    color: var(--o3)
+}
+
+.ind-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--tx);
+    margin-bottom: 8px;
+    letter-spacing: -.012em
+}
+
+.ind-card p {
+    font-size: 14.5px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.68
+}
+
+.ind-card .arr {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-top: 14px;
+    transition: gap .15s
+}
+
+.ind-card:hover .arr {
+    gap: 9px
+}
+
+/* Guide cards on industry pages */
+
+.guide-card {
+    text-decoration: none;
+    transition: border-color .2s, transform .15s
+}
+
+.guide-card:hover {
+    border-color: rgba(241, 156, 73, .25);
+    transform: translateY(-2px)
+}
+
+/* ============================================================
+   CARDS — INDUSTRY CARDS WITH IMAGE (.ind-img-card)
+   White cards with a 16:8 image header. Used on industries index.
+
+   CLASS REFERENCE:
+     .ind-img-card        the card link
+     .ind-img-card-img    image container
+     .ind-img-card-body   text area below image
+   ============================================================ */
+
+.ind-img-card {
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: var(--r2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .26s var(--ease), box-shadow .26s, border-color .22s;
+    text-decoration: none
+}
+
+.ind-img-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, .1);
+    border-color: var(--o2)
+}
+
+.ind-img-card-img {
+    aspect-ratio: 16/8;
+    overflow: hidden;
+    background: var(--warm)
+}
+
+.ind-img-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .36s var(--ease)
+}
+
+.ind-img-card:hover .ind-img-card-img img {
+    transform: scale(1.05)
+}
+
+.ind-img-card-body {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+/* ============================================================
+   CARDS — GENERIC LIGHT BG CARDS (.card-link-lt, .card-white)
+
+   CLASS REFERENCE:
+     .card-link-lt   clickable white card with hover lift
+     .card-white     non-clickable white card container
+   ============================================================ */
+
+.card-link-lt {
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: var(--r2);
+    padding: 28px;
+    display: block;
+    transition: border-color .18s, box-shadow .18s, transform .2s;
+    text-decoration: none
+}
+
+.card-link-lt:hover {
+    border-color: var(--o2);
+    box-shadow: 0 6px 24px rgba(241, 156, 73, .12);
+    transform: translateY(-2px)
+}
+
+.card-white {
+    background: #fff;
+    border-radius: 18px;
+    padding: 36px;
+    border: 1px solid rgba(0, 0, 0, .08)
+}
+
+/* ============================================================
+   ACCORDION
+   Expandable FAQ sections. One panel open at a time (via JS).
+
+   CLASS REFERENCE:
+     .acc         outer container (top border)
+     .acc-r       individual row (bottom border)
+     .acc-b       clickable trigger button
+     .acc-b.on    open state
+     .acc-ic      +/x icon circle on right
+     .acc-bd      collapsible body panel
+     .acc-bd.open visible state
+     .acc-bdi     overflow:hidden inner wrapper (needed for animation)
+     .acc-cnt     content area
+   ============================================================ */
+
+.acc {
+    border-top: 1px solid rgba(0, 0, 0, .07)
+}
+
+.acc-r {
+    border-bottom: 1px solid rgba(0, 0, 0, .07)
+}
+
+.acc-b {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -.016em;
+    color: var(--tx);
+    text-align: left;
+    transition: color .15s
+}
+
+.acc-b:hover,
+.acc-b.on {
+    color: var(--o2)
+}
+
+.acc-b.on {
+    font-weight: 700
+}
+
+.acc-ic {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, .12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--tx3);
+    transition: all .28s var(--ease)
+}
+
+.acc-b:hover .acc-ic {
+    border-color: var(--o2);
+    color: var(--o2)
+}
+
+.acc-b.on .acc-ic {
+    background: var(--o2);
+    border-color: var(--o2);
+    color: #fff;
+    transform: rotate(45deg)
+}
+
+.acc-bd {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .32s var(--ease)
+}
+
+.acc-bd.open {
+    grid-template-rows: 1fr
+}
+
+.acc-bdi {
+    overflow: hidden
+}
+
+.acc-cnt p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.75;
+    padding-bottom: 32px
+}
+
+/* ============================================================
+   TESTIMONIAL CARDS (.tc)
+   Dark semi-transparent quote cards.
+
+   CLASS REFERENCE:
+     .tc       the card
+     .tc-st    star rating row
+     .tc-q     quote text — HARDCODED colour, see note
+     .tc-cite  citation row (avatar + name + role)
+     .tc-av    initials avatar circle
+     .tc-n     person name
+     .tc-o     person title/org — HARDCODED
+
+   TO CHANGE TESTIMONIAL TEXT COLOUR:
+     ".tc-q" — current: rgba(255,255,255,.56)
+     ".tc-o" — current: rgba(255,255,255,.3)
+   ============================================================ */
+
+.tc {
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: var(--r2);
+    padding: 28px;
+    transition: border-color .18s, background .18s
+}
+
+.tc:hover {
+    border-color: rgba(241, 156, 73, .22);
+    background: rgba(255, 255, 255, .05)
+}
+
+.tc-st {
+    color: var(--o2);
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 14px
+}
+
+/* Quote text — HARDCODED, roadmap: use --tx-dk2 */
+
+.tc-q {
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.78;
+    margin-bottom: 20px;
+    font-style: italic
+}
+
+.tc-cite {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.tc-av {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(241, 156, 73, .12);
+    border: 1px solid rgba(241, 156, 73, .2);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--o2)
+}
+
+.tc-n {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.01em
+}
+
+/* Role/org — HARDCODED, roadmap: use --tx-dk3 */
+
+.tc-o {
+    font-size: 11px;
+    font-weight: 300;
+    color: #fff;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: .07em
+}
+
+/* ============================================================
+   BLOG CARDS — DARK BG VARIANT (.bc)
+   Older-style dark cards for blog previews on dark sections.
+
+   CLASS REFERENCE:
+     .bc     the card
+     .bt     image thumbnail
+     .bb     body text area
+     .b-cat  category label
+     .b-tit  post title
+     .b-rm   "Read more" button — HARDCODED colour
+   ============================================================ */
+
+.bc {
+    border-radius: var(--r2);
+    overflow: hidden;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: transform .28s var(--ease), border-color .18s;
+    display: flex;
+    flex-direction: column
+}
+
+.bc:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, .16)
+}
+
+.bt {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--ink2)
+}
+
+.bt img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .38s var(--ease)
+}
+
+.bc:hover .bt img {
+    transform: scale(1.06)
+}
+
+.bb {
+    padding: 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column
+}
+
+.b-cat {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-bottom: 9px
+}
+
+.b-tit {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: -.01em;
+    flex: 1
+}
+
+/* "Read more" — HARDCODED, roadmap: use --tx-dk3 */
+
+.b-rm {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .52);
+    transition: color .15s, border-color .15s;
+    align-self: flex-start
+}
+
+.bc:hover .b-rm {
+    color: #fff;
+    border-color: rgba(255, 255, 255, .3)
+}
+
+/* ============================================================
+   BLOG CARDS — LIGHT BG VARIANT (.blog-card)
+   Used on the blog index page.
+
+   CLASS REFERENCE:
+     .blog-card          the card
+     .blog-card-img      image thumbnail
+     .blog-card-body     text content area
+     .blog-card-meta     date + category row
+     .blog-card-title    post title
+     .blog-card-excerpt  excerpt text
+     .blog-card-link     "Read more" text link
+     .blog-date          date text
+   ============================================================ */
+
+.blog-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: var(--r2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .26s var(--ease), box-shadow .26s;
+    text-decoration: none
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .09)
+}
+
+.blog-card-img {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--warm)
+}
+
+.blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .36s var(--ease)
+}
+
+.blog-card:hover .blog-card-img img {
+    transform: scale(1.06)
+}
+
+.blog-card-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.blog-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px
+}
+
+.blog-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--tx);
+    letter-spacing: -.012em;
+    line-height: 1.3;
+    flex: 1
+}
+
+.blog-card-excerpt {
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.65
+}
+
+.blog-card-link {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--o2)
+}
+
+.blog-date {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--tx3)
+}
+
+/* ============================================================
+   CATEGORY PILLS
+   Coloured tag pills on blog cards and filter rows.
+
+   CLASS REFERENCE:
+     .cat-pill             base (no colour, add modifier below)
+     .cat-pill--strategy   blue
+     .cat-pill--cyber      red
+     .cat-pill--news       green
+     .cat-pill--ai         orange (brand)
+   ============================================================ */
+
+.cat-pill {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px
+}
+
+.cat-pill--strategy {
+    color: #378ADD;
+    background: rgba(55, 138, 221, .08)
+}
+
+.cat-pill--cyber {
+    color: #E24B4A;
+    background: rgba(226, 75, 74, .08)
+}
+
+.cat-pill--news {
+    color: #1D9E75;
+    background: rgba(29, 158, 117, .08)
+}
+
+.cat-pill--managed-it {
+    color: #378ADD;
+    background: rgba(55, 138, 221, .08)
+}
+
+.cat-pill--workplace {
+    color: #7C3AED;
+    background: rgba(124, 58, 237, .08)
+}
+
+.cat-pill--ai {
+    color: var(--o2);
+    background: rgba(241, 156, 73, .08)
+}
+
+/* ============================================================
+   FILTER BUTTONS
+   Toggle buttons for filtering blog posts by category.
+
+   CLASS REFERENCE:
+     .filter-btn        inactive state
+     .filter-btn.active selected state (solid dark)
+   ============================================================ */
+
+.filter-btn {
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: var(--f);
+    border: 1.5px solid rgba(0, 0, 0, .12);
+    background: transparent;
+    color: var(--tx2)
+}
+
+.filter-btn.active {
+    border-color: var(--tx);
+    background: var(--tx);
+    color: #fff
+}
+
+/* ============================================================
+   GUIDE CARDS (.guide-card)
+   Dark semi-transparent cards on the Resources/Guides page.
+
+   CLASS REFERENCE:
+     .guide-card       the card link
+     .guide-card-cat   category label
+     .guide-card-title guide title
+     .guide-card-desc  description — HARDCODED
+   ============================================================ */
+
+.guide-card {
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 14px;
+    padding: 26px;
+    display: block;
+    transition: border-color .18s, transform .2s;
+    text-decoration: none
+}
+
+.guide-card:hover {
+    border-color: rgba(241, 156, 73, .38);
+    transform: translateY(-2px)
+}
+
+.guide-card-cat {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-bottom: 10px
+}
+
+.guide-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -.014em
+}
+
+/* Description — HARDCODED, roadmap: use --tx-dk3 */
+
+.guide-card-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.65;
+    margin-bottom: 14px
+}
+
+/* ============================================================
+   PILL LINKS (.pill-link)
+   Small rounded tag links used as location/industry tags on
+   light backgrounds.
+   ============================================================ */
+
+.pill-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--tx2);
+    background: rgba(0, 0, 0, .04);
+    border: 1px solid rgba(0, 0, 0, .09);
+    border-radius: 100px;
+    padding: 7px 16px;
+    transition: color .16s, border-color .16s;
+    text-decoration: none
+}
+
+.pill-link:hover {
+    color: var(--o2);
+    border-color: var(--o2)
+}
+
+/* ============================================================
+   FORM INPUTS
+   Used on the contact page and any forms across the site.
+
+   CLASS REFERENCE:
+     .form-input      light-bg text input / textarea / select
+     .form-input-dk   dark-bg rounded pill input
+     .form-label      label above an input
+     .form-req        asterisk marker for required fields
+   ============================================================ */
+
+.form-input {
+    width: 100%;
+    font-family: var(--f);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx);
+    background: var(--page);
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    padding: 12px 16px;
+    transition: border-color .15s, box-shadow .15s;
+    outline: none
+}
+
+.form-input:focus {
+    border-color: var(--o2);
+    box-shadow: 0 0 0 3px rgba(241, 156, 73, .12)
+}
+
+.form-input::placeholder {
+    color: var(--tx3);
+    font-weight: 300
+}
+
+.form-input-dk {
+    width: 100%;
+    font-family: var(--f);
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 100px;
+    padding: 12px 20px;
+    outline: none;
+    transition: border-color .15s
+}
+
+.form-input-dk:focus {
+    border-color: var(--o2)
+}
+
+.form-input-dk::placeholder {
+    color: rgba(255, 255, 255, .45)
+}
+
+textarea.form-input {
+    resize: vertical;
+    line-height: 1.65;
+    border-radius: 14px
+}
+
+select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%2396968C' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px
+}
+
+.form-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: var(--tx);
+    display: block;
+    margin-bottom: 6px
+}
+
+.form-req {
+    color: var(--o3);
+    margin-left: 2px
+}
+
+/* ============================================================
+   LINK ARROWS
+   Small all-caps "Learn more" style text links.
+
+   CLASS REFERENCE:
+     .arr-link     11px version
+     .arr-link-12  12px version
+   ============================================================ */
+
+.arr-link {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--o2);
+    transition: gap .15s
+}
+
+.arr-link-12 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--o2)
+}
+
+/* ============================================================
+   MISC UI COMPONENTS
+
+   CLASS REFERENCE:
+     .price-badge   small pill label on pricing/service cards
+     .msg-success   green success message box
+     .msg-error     red error message box
+     .prompt-btn    small rounded button in chat/AI interfaces
+     .info-box      orange-tinted callout box
+   ============================================================ */
+
+.price-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--o2);
+    background: rgba(241, 156, 73, .1);
+    padding: 2px 8px;
+    border-radius: 100px
+}
+
+.msg-success {
+    background: rgba(46, 160, 67, .08);
+    border: 1px solid rgba(46, 160, 67, .3);
+    border-radius: 14px;
+    padding: 36px;
+    text-align: center
+}
+
+.msg-error {
+    background: rgba(207, 34, 46, .06);
+    border: 1px solid rgba(207, 34, 46, .25);
+    border-radius: 10px;
+    padding: 14px 18px
+}
+
+.msg-error p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #cf222e;
+    line-height: 1.6;
+    margin: 0
+}
+
+.prompt-btn {
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--tx2);
+    cursor: pointer;
+    font-family: var(--f);
+    transition: all .15s
+}
+
+.prompt-btn:hover {
+    border-color: var(--o2);
+    color: var(--o2)
+}
+
+.info-box {
+    background: rgba(241, 156, 73, .08);
+    border: 1px solid rgba(241, 156, 73, .2);
+    border-radius: 14px;
+    padding: 22px
+}
+
+/* ============================================================
+   CTA WATERMARK
+   Large faint background text in CTA sections.
+   Transparent with a faint orange stroke outline.
+
+   CLASS REFERENCE:
+     .cta-wm    absolute-fill container (pointer-events:none)
+     .cta-wm-t  the large text element
+   ============================================================ */
+
+.cta-wm {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0
+}
+
+.cta-wm-t {
+    font-size: clamp(130px, 26vw, 320px);
+    font-weight: 900;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(241, 156, 73, .07);
+    white-space: nowrap;
+    user-select: none;
+    line-height: 1
+}
+
+/* ============================================================
+   FOOTER
+   Dark footer. Four-column grid: wide logo column + three link
+   columns. Collapses at tablet and mobile breakpoints.
+
+   CLASS REFERENCE:
+     .foot      outer footer (dark bg)
+     .fg        four-column grid
+     .f-logo    logo wrapper
+     .f-tp      tagline below logo — HARDCODED
+     .f-ct      contact links block (address, phone, email)
+     .f-ct a    individual contact link — HARDCODED
+     .f-soc     social icon row
+     .f-si      individual social icon circle
+     .f-col     a link column (Services, Locations, etc.)
+     .f-col h4  column heading — HARDCODED
+     .f-col a   column link — HARDCODED
+     .f-btm     bottom bar (copyright + privacy link)
+     .f-copy    copyright text — HARDCODED
+     .f-pp      privacy policy link — HARDCODED
+
+   TO CHANGE FOOTER TEXT COLOURS, search for these classes:
+     .f-tp     tagline:           rgba(255,255,255,.55)
+     .f-ct a   contact links:     rgba(255,255,255,.62)
+     .f-col h4 column headings:   rgba(255,255,255,.72)
+     .f-col a  nav column links:  rgba(255,255,255,.62)
+     .f-copy   copyright:         rgba(255,255,255,.48)
+     .f-pp     privacy link:      rgba(255,255,255,.48)
+   ============================================================ */
+
+.foot {
+    background: var(--ink);
+    padding: 80px var(--pad) 0
+}
+
+.fg {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.65fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-top: 48px;
+    padding-bottom: 52px;
+    border-bottom: 1px solid rgba(255, 255, 255, .07)
+}
+
+.f-logo img {
+    height: 36px;
+    width: auto;
+    margin-bottom: 18px
+}
+
+/* Tagline — HARDCODED, roadmap: use --tx-dk2 */
+
+.f-tp {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, .92);
+    line-height: 1.75;
+    max-width: 240px;
+    margin-bottom: 20px
+}
+
+/* Contact links — HARDCODED, roadmap: use --tx-dk2 */
+
+.f-ct a {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, .92);
+    margin-bottom: 9px;
+    transition: color .15s;
+    line-height: 1.5
+}
+
+.f-ct a:hover {
+    color: var(--o2)
+}
+
+.f-ct svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    opacity: .55
+}
+
+.f-soc {
+    display: flex;
+    gap: 9px;
+    margin-top: 18px
+}
+
+.f-si {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color .15s, background .15s
+}
+
+.f-si:hover {
+    border-color: var(--o2);
+    background: rgba(241, 156, 73, .1)
+}
+
+.f-si svg {
+    width: 14px;
+    height: 14px
+}
+
+/* Column headings — HARDCODED, roadmap: use --tx-dk */
+
+.f-col h4 {
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    color: #fff;
+    margin-bottom: 18px
+}
+
+.f-col li {
+    margin-bottom: 10px
+}
+
+/* Column links — HARDCODED, roadmap: use --tx-dk2 */
+
+.f-col a {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, .92);
+    transition: color .15s
+}
+
+.f-col a:hover {
+    color: var(--o2)
+}
+
+.f-btm {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 20px 0 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px
+}
+
+/* Copyright text — HARDCODED, roadmap: use --tx-dk3 */
+
+.f-copy {
+    font-size: 12px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.65;
+    max-width: 600px
+}
+
+/* Privacy policy link — HARDCODED, roadmap: use --tx-dk3 */
+
+.f-pp {
+    font-size: 12px;
+    font-weight: 300;
+    color: #fff;
+    transition: color .15s
+}
+
+.f-pp:hover {
+    color: rgba(255, 255, 255, .52)
+}
+
+/* ============================================================
+   NEWSLETTER SUBSCRIBE (.nl-*)
+   Mailchimp-powered email subscribe form. Used in footer (top)
+   and inline on blog posts, guides, and resource pages.
+
+   CLASS REFERENCE:
+     .nl-box       outer container (adapts to context)
+     .nl-inner     flex layout with icon, text, and form
+     .nl-icon      mail icon container
+     .nl-heading   heading text
+     .nl-desc      description paragraph
+     .nl-form      the Mailchimp form element
+     .nl-field-row flex row: input + button
+     .nl-input     email input field
+     .nl-btn       submit button (orange primary style)
+
+   CONTEXT VARIANTS:
+     Footer (.foot .nl-box): dark bg, full-width strip at top of footer
+     Inline (.nl-inline):    styled card for blog posts and guides
+   ============================================================ */
+
+/* Shared base styles */
+
+.nl-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap
+}
+
+.nl-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0
+}
+
+.nl-text {
+    flex: 1;
+    min-width: 200px
+}
+
+.nl-heading {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -.014em;
+    margin-bottom: 4px
+}
+
+.nl-desc {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.55;
+    max-width: 380px
+}
+
+.nl-form {
+    flex-shrink: 0;
+    margin-left: auto
+}
+
+.nl-field-row {
+    display: flex;
+    gap: 8px
+}
+
+.nl-input {
+    padding: 13px 18px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    width: 260px;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s
+}
+
+.nl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    background: linear-gradient(118deg, var(--o1) 0%, var(--o2) 52%, var(--o3) 100%);
+    color: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 4px 18px rgba(241, 156, 73, .2);
+    transition: opacity .16s, transform .14s, box-shadow .16s
+}
+
+.nl-btn:hover {
+    opacity: .9;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(241, 156, 73, .3)
+}
+
+.nl-btn .bic {
+    width: 22px;
+    height: 22px;
+    font-size: 11px
+}
+
+/* ── Footer context: dark, full-width strip at top of footer ── */
+
+.foot .nl-box {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 24px 0 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, .07)
+}
+
+.foot .nl-icon {
+    background: rgba(241, 156, 73, .12);
+    border: 1px solid rgba(241, 156, 73, .22)
+}
+
+.foot .nl-icon svg {
+    stroke: var(--o2)
+}
+
+.foot .nl-heading {
+    color: #fff
+}
+
+.foot .nl-desc {
+    color: #fff
+}
+
+.foot .nl-input {
+    background: rgba(255, 255, 255, .06);
+    border: 1.5px solid rgba(255, 255, 255, .1);
+    color: #fff
+}
+
+.foot .nl-input::placeholder {
+    color: rgba(255, 255, 255, .45)
+}
+
+.foot .nl-input:focus {
+    border-color: var(--o2);
+    box-shadow: 0 0 0 3px rgba(241, 156, 73, .12)
+}
+
+/* ── Inline context: blog posts, guides, resources ── */
+
+.nl-inline {
+    background: var(--ink2);
+    padding: 56px var(--pad);
+    margin: 0
+}
+
+.nl-inline .nl-box {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 20px;
+    padding: 40px 44px;
+    position: relative;
+    overflow: hidden
+}
+
+.nl-inline .nl-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 60% 80% at 100% 50%, rgba(241, 156, 73, .12) 0%, transparent 70%)
+}
+
+.nl-inline .nl-inner {
+    position: relative;
+    z-index: 1
+}
+
+.nl-inline .nl-icon {
+    background: rgba(241, 156, 73, .15);
+    border: 1px solid rgba(241, 156, 73, .28)
+}
+
+.nl-inline .nl-icon svg {
+    stroke: var(--o2)
+}
+
+.nl-inline .nl-heading {
+    color: #fff;
+    font-size: 18px
+}
+
+.nl-inline .nl-desc {
+    color: #fff
+}
+
+.nl-inline .nl-input {
+    background: rgba(255, 255, 255, .06);
+    border: 1.5px solid rgba(255, 255, 255, .1);
+    color: #fff
+}
+
+.nl-inline .nl-input::placeholder {
+    color: rgba(255, 255, 255, .45)
+}
+
+.nl-inline .nl-input:focus {
+    border-color: var(--o2);
+    box-shadow: 0 0 0 3px rgba(241, 156, 73, .12)
+}
+
+/* ── Mobile: stack vertically ── */
+
+@media(max-width:720px) {
+    .nl-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px
+    }
+    .nl-icon {
+        align-self: flex-start
+    }
+    .nl-form {
+        margin-left: 0;
+        width: 100%
+    }
+    .nl-field-row {
+        flex-direction: column
+    }
+    .nl-input {
+        width: 100%
+    }
+    .nl-btn {
+        width: 100%;
+        justify-content: center
+    }
+    .nl-inline {
+        padding: 40px var(--pad)
+    }
+    .nl-inline .nl-box {
+        padding: 28px 24px
+    }
+    .foot .nl-box {
+        padding: 20px 0 32px
+    }
+}
+
+/* ============================================================
+   UTILITY CLASSES
+
+   CLASS REFERENCE:
+     .img-cover  fills container (object-fit:cover)
+     .rounded    applies --r2 radius with overflow:hidden
+     .fu         scroll-reveal: starts invisible, fades in on scroll
+     .fu.vis     visible state (added by IntersectionObserver in JS)
+   ============================================================ */
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.rounded {
+    border-radius: var(--r2);
+    overflow: hidden
+}
+
+.fu {
+    opacity: 1;
+    transform: none;
+    transition: opacity .56s var(--ease), transform .56s var(--ease)
+}
+
+/* JS adds .fu-ready to <html> — only then do we hide .fu elements for reveal */
+
+.fu-ready .fu {
+    opacity: 0;
+    transform: translateY(18px)
+}
+
+.fu-ready .fu.vis {
+    opacity: 1;
+    transform: none
+}
+
+/* On GSAP-enhanced pages, GSAP handles all reveals — disable .fu initial hide */
+
+.gsap-page .fu {
+    opacity: 1;
+    transform: none;
+    transition: none
+}
+
+.fu.vis {
+    opacity: 1;
+    transform: none
+}
+
+/* ============================================================
+   COOKIE CONSENT BANNER (#ck-banner)
+   Fixed bar at the bottom of the screen on first visit.
+   Dismissed state stored in localStorage (see global.js).
+
+   CLASS REFERENCE:
+     #ck-banner  the banner
+     .ck-btn     base button style
+     .ck-acc     "Accept" button (orange filled)
+     .ck-dec     "Decline" button (ghost)
+   ============================================================ */
+
+#ck-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 760px;
+    z-index: 9000;
+    background: var(--ink2);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: var(--r2);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, .6)
+}
+
+/* Banner text — HARDCODED, roadmap: use --tx-dk3 */
+
+#ck-banner p {
+    font-size: 13px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.6;
+    flex: 1;
+    min-width: 220px
+}
+
+#ck-banner p a {
+    color: var(--o2);
+    text-decoration: underline
+}
+
+.ck-btn {
+    padding: 9px 20px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity .15s;
+    font-family: var(--f)
+}
+
+.ck-acc {
+    background: var(--o2);
+    color: #fff;
+    border: none
+}
+
+.ck-dec {
+    background: transparent;
+    color: rgba(255, 255, 255, .6);
+    border: 1px solid rgba(255, 255, 255, .18)
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (max-width: 1180px)
+   Reduces padding and adjusts some grids to fewer columns.
+   ============================================================ */
+
+@media(max-width:1180px) {
+    :root {
+        --pad: 48px
+    }
+    .ph-in {
+        grid-template-columns: 1fr;
+        gap: 52px
+    }
+    .feat-g {
+        grid-template-columns: 1fr 1fr
+    }
+    .fg {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px
+    }
+    .blog-grid {
+        grid-template-columns: 1fr 1fr
+    }
+    .blog-featured {
+        grid-template-columns: 1fr
+    }
+    .ind-img-grid {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE LARGE (max-width: 960px)
+   Hides desktop nav links; shows hamburger button.
+   Collapses proposition card grid to single column.
+   ============================================================ */
+
+@media(max-width:960px) {
+    .nav-links,
+    .nav-r .nav-ph {
+        display: none
+    }
+    .nav-mtog {
+        display: flex;
+        order: 3;
+        flex-shrink: 0
+    }
+    /* Mobile nav: logo left, CTA centred, hamburger right */
+    .nav-i {
+        justify-content: space-between;
+        gap: 8px
+    }
+    .nav-logo {
+        order: 1;
+        flex-shrink: 0
+    }
+    .nav-r {
+        order: 2;
+        flex: 1;
+        justify-content: center
+    }
+    .nav-cta {
+        font-size: 10px;
+        padding: 7px 12px 7px 14px;
+        white-space: nowrap
+    }
+    .nav-cta {
+        font-size: 10.5px;
+        padding: 8px 14px 8px 16px
+    }
+    .nav-cta-ic {
+        width: 20px;
+        height: 20px;
+        font-size: 12px
+    }
+    .prop-g {
+        grid-template-columns: 1fr
+    }
+    .prop:first-child {
+        border-radius: var(--r1) var(--r1) 0 0
+    }
+    .prop:last-child {
+        border-radius: 0 0 var(--r1) var(--r1)
+    }
+    .svc-card-grid {
+        grid-template-columns: 1fr
+    }
+    /* Collapse 4-column stat bar to 2×2 at tablet */
+    .stat-bar-in[style*="repeat(4"] {
+        grid-template-columns: repeat(2, 1fr) !important
+    }
+    .stat-bar-item.bd {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid rgba(255, 255, 255, .07)
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (max-width: 720px)
+   Switches to mobile padding. Collapses all major grids.
+   Attribute selectors catch inline grid styles on PHP elements.
+   ============================================================ */
+
+@media(max-width:768px) {
+    :root {
+        --pad: var(--pad-sm)
+    }
+    .nav {
+        width: calc(100% - 28px);
+        top: 12px
+    }
+    .nav-i {
+        padding: 0 14px;
+        height: 56px
+    }
+    .nav-cta {
+        font-size: 10px;
+        padding: 7px 12px
+    }
+    .nav-cta-ic {
+        display: none
+    }
+    .nav-mtog {
+        width: 34px;
+        height: 34px;
+        padding: 8px
+    }
+    .s {
+        padding: 80px var(--pad)
+    }
+    .s-sm {
+        padding: 56px var(--pad)
+    }
+    .ph {
+        padding: 100px var(--pad) 68px
+    }
+    .ph.ph-compact {
+        padding: 88px var(--pad) 60px
+    }
+    .ph-in {
+        grid-template-columns: 1fr;
+        gap: 36px
+    }
+    .bcn {
+        padding: 12px var(--pad)
+    }
+    .feat-g {
+        grid-template-columns: 1fr
+    }
+    .fg {
+        grid-template-columns: 1fr
+    }
+    .blog-grid {
+        grid-template-columns: 1fr
+    }
+    .guide-grid {
+        grid-template-columns: 1fr
+    }
+    .ind-img-grid {
+        grid-template-columns: 1fr
+    }
+    .ind-card-grid {
+        grid-template-columns: 1fr
+    }
+    .foot {
+        padding: 56px var(--pad) 0
+    }
+    .f-btm {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start
+    }
+    /* Force all inline multi-column grid styles to single column.
+     Catches grid-template-columns set via style="" in PHP files. */
+    [style*="grid-template-columns:1fr 1fr"],
+    [style*="grid-template-columns: 1fr 1fr"],
+    [style*="grid-template-columns:1fr 2fr"],
+    [style*="grid-template-columns: 1fr 2fr"],
+    [style*="grid-template-columns:2fr 1fr"],
+    [style*="grid-template-columns: 2fr 1fr"],
+    [style*="grid-template-columns:5fr 4fr"],
+    [style*="grid-template-columns: 5fr 4fr"],
+    [style*="grid-template-columns:1fr 1.5fr"],
+    [style*="grid-template-columns: 1fr 1.5fr"],
+    [style*="grid-template-columns:repeat(2"],
+    [style*="grid-template-columns: repeat(2"],
+    [style*="grid-template-columns:repeat(3"],
+    [style*="grid-template-columns: repeat(3"],
+    [style*="grid-template-columns:repeat(4"],
+    [style*="grid-template-columns: repeat(4"],
+    [style*="grid-template-columns:repeat(5"],
+    [style*="grid-template-columns: repeat(5"] {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important
+    }
+    /* Location card grid: 3→2 columns on tablet (6 cards = 2×3) */
+    [style*="grid-template-columns:repeat(3,1fr);gap:12px"] {
+        grid-template-columns: repeat(2, 1fr) !important
+    }
+    /* Testimonial cards: 3→1 on tablet */
+    [style*="grid-template-columns:repeat(3,1fr);gap:14px"] {
+        grid-template-columns: 1fr !important
+    }
+    /* Sticky sidebars: unstick on mobile */
+    [style*="position:sticky"] {
+        position: static !important
+    }
+    /* Stat bar: 2×2 grid on mobile instead of 3+1 orphan */
+    .stat-bar-in {
+        grid-template-columns: repeat(2, 1fr) !important
+    }
+    .stat-bar-item.bd {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid rgba(255, 255, 255, .07)
+    }
+    /* Contact page: form first on mobile */
+    .contact-wrap {
+        display: flex !important;
+        flex-direction: column-reverse !important
+    }
+    /* Careers: benefit grid single column */
+    .benefit-grid {
+        grid-template-columns: 1fr !important
+    }
+    /* Careers: job rows stack vertically */
+    .job-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 16px !important
+    }
+    /* Scale down large stat numbers */
+    .stat-n {
+        font-size: 32px
+    }
+    .stat-n-md {
+        font-size: 24px
+    }
+    .stat-n-sm {
+        font-size: 22px
+    }
+    /* Reduce CTA watermark text */
+    .cta-wm-t {
+        font-size: clamp(80px, 22vw, 130px)
+    }
+    /* Gap reduction on stacked grids */
+    [style*="gap:80px"] {
+        gap: 40px !important
+    }
+    [style*="gap:64px"] {
+        gap: 36px !important
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE SMALL (max-width: 480px)
+   Final adjustments for small screens.
+   Buttons go full-width. Cookie banner snaps to bottom edge.
+   ============================================================ */
+
+@media(max-width:480px) {
+    .nav {
+        width: calc(100% - 20px)
+    }
+    .nav-i {
+        padding: 0 10px;
+        gap: 4px;
+        height: 50px
+    }
+    .nav-logo img {
+        height: 30px
+    }
+    .nav-cta {
+        font-size: 9px;
+        padding: 6px 10px
+    }
+    .nav-mtog {
+        width: 30px;
+        height: 30px;
+        padding: 7px
+    }
+    #ck-banner {
+        bottom: 0;
+        border-radius: var(--r1) var(--r1) 0 0;
+        width: 100%
+    }
+    .btn-p,
+    .btn-dk,
+    .btn-gh {
+        width: 100%;
+        justify-content: center
+    }
+}
+
+/* ============================================================
+   HOME HERO SECTION (.hero-sec)
+   Full-viewport dark hero used on the home page only.
+   Two-column grid: text left, image right.
+
+   CLASS REFERENCE:
+     .hero-sec        outer section (dark bg, min 94vh)
+     .hero-sec-in     inner grid (2 columns, centres content)
+     .hero-badge      orange pill badge above the h1
+     .hero-badge-dot  the small orange dot inside the badge
+     .hero-badge-txt  the badge label text
+     .hero-body       left column text content area
+     .hero-img        right column image wrapper
+     .hero-stats      stat row below the CTA buttons
+     .hero-stat-n     stat number (large, orange)
+     .hero-stat-l     stat label text (small, muted)
+     .hero-btn-row    button row (flex, wrapping)
+   ============================================================ */
+
+.hero-sec {
+    background: var(--ink);
+    min-height: 94vh;
+    display: flex;
+    align-items: center;
+    padding: 140px var(--pad) 96px;
+    position: relative;
+    overflow: hidden
+}
+
+.hero-sec-in {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: start
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(241, 156, 73, .12);
+    border: 1px solid rgba(241, 156, 73, .28);
+    border-radius: 100px;
+    padding: 7px 16px;
+    margin-bottom: 26px
+}
+
+.hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--o2);
+    border-radius: 50%;
+    flex-shrink: 0
+}
+
+.hero-badge-txt {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--o2)
+}
+
+.hero-body h1 {
+    font-size: clamp(50px, 6.4vw, 88px);
+    font-weight: 800;
+    color: #fff;
+    line-height: .95;
+    letter-spacing: -.028em;
+    margin-bottom: 26px
+}
+
+.hero-body .hero-desc {
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.74;
+    max-width: 480px;
+    margin-bottom: 40px
+}
+
+/* HARDCODED — roadmap: use --tx-dk2 */
+
+.hero-btn-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 36px
+}
+
+.hero-stats {
+    display: flex;
+    gap: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, .1)
+}
+
+.hero-stat-n {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--o2);
+    letter-spacing: -.025em
+}
+
+.hero-stat-l {
+    font-size: 13px;
+    color: #fff
+}
+
+/* HARDCODED — roadmap: use --tx-dk3 */
+
+.hero-img {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, .55), 0 0 0 1px rgba(255, 255, 255, .06);
+    margin-top: 58px
+}
+
+@media(max-width:960px) {
+    .hero-sec {
+        min-height: auto;
+        padding: 120px var(--pad) 72px
+    }
+    .hero-sec-in {
+        grid-template-columns: 1fr;
+        gap: 44px
+    }
+}
+
+@media(max-width:480px) {
+    .hero-sec {
+        padding: 100px var(--pad) 60px
+    }
+    .hero-body h1 {
+        font-size: clamp(42px, 10vw, 64px)
+    }
+}
+
+/* ============================================================
+   LOGO / TRUST BAR (.logo-bar)
+   Dark strip showing client logos. Sits between hero and
+   first content section.
+
+   CLASS REFERENCE:
+     .logo-bar        outer strip
+     .logo-bar-in     inner flex row (label + logos)
+     .logo-bar-logos  logos flex container
+     .logo-bar-item   individual logo wrapper (hover fades in)
+     .logo-bar-img    the logo image inside each item
+   ============================================================ */
+
+.logo-bar {
+    background: #fff;
+    padding: 28px 0;
+    border-top: 1px solid rgba(0, 0, 0, .06);
+    border-bottom: 1px solid rgba(0, 0, 0, .06)
+}
+
+.logo-bar-in {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+    display: flex;
+    align-items: center;
+    gap: 0
+}
+
+.logo-bar-in .label-sm {
+    flex-shrink: 0;
+    margin-right: 32px
+}
+
+.logo-bar-logos {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+    gap: 0;
+    flex-wrap: nowrap
+}
+
+.logo-bar-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    opacity: .55;
+    transition: opacity .22s
+}
+
+.logo-bar-item:hover {
+    opacity: .85
+}
+
+.logo-bar-img {
+    height: 44px;
+    width: auto;
+    max-width: 130px;
+    object-fit: contain
+}
+
+@media(max-width:1024px) {
+    .logo-bar-in {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center
+    }
+    .logo-bar-in .label-sm {
+        margin-right: 0
+    }
+    .logo-bar-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 0
+    }
+    .logo-bar-item {
+        padding: 0 14px;
+        flex: 0 0 auto
+    }
+    .logo-bar-img {
+        max-width: 100px;
+        height: 38px
+    }
+}
+
+@media(max-width:768px) {
+    .logo-bar-in {
+        flex-direction: column;
+        gap: 20px
+    }
+    .logo-bar-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 0
+    }
+    .logo-bar-item {
+        padding: 8px 16px
+    }
+    .logo-bar-img {
+        height: 32px;
+        max-width: 90px
+    }
+}
+
+/* ============================================================
+   SECTION HEADER ROWS (.sec-hd)
+   Reusable flex row used above grids to hold a heading on the
+   left and a "View all" link on the right.
+
+   CLASS REFERENCE:
+     .sec-hd          flex row (space-between, wraps on mobile)
+     .sec-hd-left     left column (eyebrow + heading)
+     .sec-hd-right    right side (link or button, flex-shrink:0)
+   ============================================================ */
+
+.sec-hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 16px
+}
+
+.sec-hd-left {}
+
+.sec-hd-right {
+    flex-shrink: 0
+}
+
+/* ============================================================
+   SECTION LAYOUT HELPERS
+   Common section background + positioning patterns extracted
+   from PHP inline styles during the CSS refactor.
+
+   CLASS REFERENCE:
+     .s-white    white background section
+     .s-ink      --ink dark background section
+     .s-ink2     --ink2 slightly lighter dark section
+     .s-page     --page off-white section
+     .s-warm     --warm cream section
+     .s-rel      position:relative + overflow:hidden (for glows)
+     .s-center   text-align:center on the section
+     .s-zi       position:relative;z-index:1 inner wrapper
+
+   GLOBAL TEXT INHERITANCE:
+     Dark sections (.s-ink, .s-ink2) cascade white text to all
+     children automatically. Light sections (.s-white, .s-page,
+     .s-warm) cascade dark text. Coloured text (var(--o2), .hl,
+     .ey, stat numbers) is unaffected — those rules are more
+     specific or use !important. The .wh class still works as an
+     explicit override where needed.
+   ============================================================ */
+
+/* Light sections — dark text */
+
+.s-white {
+    background: #fff
+}
+
+.s-page {
+    background: var(--page)
+}
+
+.s-warm {
+    background: var(--warm)
+}
+
+.s-white,
+.s-page,
+.s-warm {
+    color: var(--tx)
+}
+
+.s-white .h2,
+.s-page .h2,
+.s-warm .h2,
+.s-white .h3,
+.s-page .h3,
+.s-warm .h3,
+.s-white .h4,
+.s-page .h4,
+.s-warm .h4,
+.s-white .h-cta,
+.s-page .h-cta,
+.s-warm .h-cta,
+.s-white .h-card,
+.s-page .h-card,
+.s-warm .h-card,
+.s-white .h-mid,
+.s-page .h-mid,
+.s-warm .h-mid,
+.s-white .h-sub,
+.s-page .h-sub,
+.s-warm .h-sub {
+    color: var(--tx)
+}
+
+.s-white .body-lg,
+.s-page .body-lg,
+.s-warm .body-lg,
+.s-white .body-md,
+.s-page .body-md,
+.s-warm .body-md,
+.s-white .body-sm,
+.s-page .body-sm,
+.s-warm .body-sm,
+.s-white .body-xs,
+.s-page .body-xs,
+.s-warm .body-xs,
+.s-white .body-16,
+.s-page .body-16,
+.s-warm .body-16 {
+    color: var(--tx2)
+}
+
+/* Dark sections — white text
+   !important required to beat the base heading colour definitions
+   (.h2, .h3 etc) which have equal specificity and are defined
+   earlier in this file. Coloured text (.ey, .hl, .stat-n, .hgl)
+   uses -webkit-text-fill-color or var(--o2) and is unaffected. */
+
+.s-ink {
+    background: var(--ink)
+}
+
+.s-ink2 {
+    background: var(--ink2)
+}
+
+.s-ink,
+.s-ink2 {
+    color: var(--tx-dk)
+}
+
+.s-ink .h2,
+.s-ink2 .h2,
+.s-ink .h3,
+.s-ink2 .h3,
+.s-ink .h4,
+.s-ink2 .h4,
+.s-ink .h-cta,
+.s-ink2 .h-cta,
+.s-ink .h-card,
+.s-ink2 .h-card,
+.s-ink .h-mid,
+.s-ink2 .h-mid,
+.s-ink .h-sub,
+.s-ink2 .h-sub {
+    color: #fff !important
+}
+
+.s-ink .body-lg,
+.s-ink2 .body-lg,
+.s-ink .body-md,
+.s-ink2 .body-md,
+.s-ink .body-sm,
+.s-ink2 .body-sm,
+.s-ink .body-xs,
+.s-ink2 .body-xs,
+.s-ink .body-16,
+.s-ink2 .body-16 {
+    color: var(--tx-dk2) !important
+}
+
+.s-ink .label-sm,
+.s-ink2 .label-sm {
+    color: var(--tx-dk3) !important
+}
+
+.s-ink .quote-text,
+.s-ink2 .quote-text {
+    color: var(--tx-dk) !important
+}
+
+.s-ink .quote-cite,
+.s-ink2 .quote-cite {
+    color: var(--tx-dk3) !important
+}
+
+.s-ink .btn-gh,
+.s-ink2 .btn-gh {
+    color: rgba(255, 255, 255, .7) !important;
+    border-color: rgba(255, 255, 255, .22) !important
+}
+
+.s-ink .btn-gh:hover,
+.s-ink2 .btn-gh:hover {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, .5) !important;
+    background: rgba(255, 255, 255, .06) !important
+}
+
+.s-rel {
+    position: relative;
+    overflow: hidden
+}
+
+.s-center {
+    text-align: center
+}
+
+.s-zi {
+    position: relative;
+    z-index: 1
+}
+
+/* ============================================================
+   SECTION TEXT CENTRING HELPER
+   Wraps centred heading + body text above a grid.
+
+   CLASS REFERENCE:
+     .sec-intro       centred text block above a section grid
+     .sec-intro-body  constrained-width body text paragraph
+   ============================================================ */
+
+.sec-intro {
+    text-align: center;
+    margin-bottom: 52px
+}
+
+.sec-intro-body {
+    max-width: 520px;
+    margin: 0 auto
+}
+
+/* ============================================================
+   FEATURED QUOTE BLOCK (.fq)
+   Large highlighted quote with decorative open-quote mark.
+   Used above the testimonial card row.
+
+   CLASS REFERENCE:
+     .fq        the block (orange-tinted border box)
+     .fq-mark   large decorative quote character
+     .fq-text   the quote body text — HARDCODED colour
+     .fq-attr   attribution line (name + title)
+   ============================================================ */
+
+.fq {
+    background: rgba(241, 156, 73, .08);
+    border: 1px solid rgba(241, 156, 73, .2);
+    border-radius: 20px;
+    padding: 48px;
+    margin-bottom: 20px
+}
+
+.fq-mark {
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--o2);
+    line-height: .5;
+    margin-bottom: 20px
+}
+
+.fq-text {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.66;
+    margin-bottom: 24px;
+    font-style: italic
+}
+
+/* HARDCODED */
+
+.fq-attr {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--o2)
+}
+
+/* ============================================================
+   CASE STUDY STAT GRID (.cs-grid)
+   2x2 dark stat tile grid used in case study sections.
+   Each tile has a large stat number and a small label.
+
+   CLASS REFERENCE:
+     .cs-grid       2x2 grid container
+     .cs-tile       individual stat tile (dark bg)
+     .cs-tile-tl    top-left tile (rounded top-left corner)
+     .cs-tile-tr    top-right tile (rounded top-right corner)
+     .cs-tile-bl    bottom-left tile (rounded bottom-left corner)
+     .cs-tile-br    bottom-right tile (rounded bottom-right corner)
+     .cs-tile-lbl   stat label text (small, muted) — HARDCODED
+   ============================================================ */
+
+.cs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px
+}
+
+.cs-tile {
+    background: var(--ink2);
+    padding: 32px;
+    text-align: center
+}
+
+.cs-tile-tl {
+    border-radius: 20px 0 0 0
+}
+
+.cs-tile-tr {
+    border-radius: 0 20px 0 0;
+    border-left: 1px solid rgba(255, 255, 255, .06)
+}
+
+.cs-tile-bl {
+    border-radius: 0 0 0 20px;
+    border-top: 1px solid rgba(255, 255, 255, .06)
+}
+
+.cs-tile-br {
+    border-radius: 0 0 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    border-left: 1px solid rgba(255, 255, 255, .06)
+}
+
+.cs-tile-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #fff;
+    margin-top: 6px
+}
+
+/* HARDCODED — roadmap: use --tx-dk3 */
+
+/* ============================================================
+   LOCATION LINK CARDS (.loc-card)
+   White pill-style cards listing service locations.
+   Hover animates border to orange and lifts card.
+   HQ card uses an orange-tinted border by default.
+
+   CLASS REFERENCE:
+     .loc-card       standard location card (white border)
+     .loc-card.hq    head office card (orange-tinted border)
+     .loc-card-name  city name row (with optional HQ badge)
+     .loc-card-sub   subtitle text (e.g. "Central Vancouver Island")
+     .loc-hq-badge   "HQ" orange pill badge
+     .loc-arrow      right arrow SVG (flex-shrink:0)
+   ============================================================ */
+
+.loc-card {
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: 14px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color .18s, transform .18s, box-shadow .18s;
+    text-decoration: none
+}
+
+.loc-card:hover {
+    border-color: var(--o2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(241, 156, 73, .12)
+}
+
+.loc-card.hq {
+    border-color: rgba(241, 156, 73, .35)
+}
+
+.loc-card-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--tx);
+    letter-spacing: -.01em;
+    display: flex;
+    align-items: center;
+    gap: 6px
+}
+
+.loc-card-sub {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--tx3);
+    margin-top: 2px
+}
+
+.loc-hq-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--o2);
+    background: rgba(241, 156, 73, .1);
+    border: 1px solid rgba(241, 156, 73, .24);
+    padding: 2px 8px;
+    border-radius: 100px
+}
+
+.loc-arrow {
+    flex-shrink: 0
+}
+
+/* ============================================================
+   CTA SECTION (.cta-sec)
+   Centred call-to-action section with watermark and glow.
+   Used at the bottom of most pages.
+
+   CLASS REFERENCE:
+     .cta-sec         outer section
+     .cta-sec-in      inner constrained content wrapper
+     .cta-sec-btns    button row (centred, flex, wrapping)
+   ============================================================ */
+
+.cta-sec {
+    position: relative;
+    overflow: hidden;
+    text-align: center
+}
+
+.cta-sec-in {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0 auto
+}
+
+.cta-sec-btns {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap
+}
+
+/* CTA section overrides:
+   Primary CTA button is always orange (btn-p style) even when
+   markup uses btn-dk. Ghost button gets a slightly darker border
+   so it reads against the warm page background. */
+
+.cta-sec .btn-dk {
+    background: linear-gradient(118deg, var(--o1) 0%, var(--o2) 52%, var(--o3) 100%);
+    box-shadow: 0 4px 24px rgba(241, 156, 73, .28);
+    color: #fff !important
+}
+
+.cta-sec .btn-dk:hover {
+    opacity: .9;
+    background: linear-gradient(118deg, var(--o1) 0%, var(--o2) 52%, var(--o3) 100%)
+}
+
+.cta-sec .btn-dk .bic {
+    background: rgba(255, 255, 255, .22)
+}
+
+.cta-sec .btn-gh {
+    border-color: rgba(0, 0, 0, .22)
+}
+
+.cta-sec .btn-gh:hover {
+    border-color: rgba(0, 0, 0, .4)
+}
+
+/* ============================================================
+   BLOG ARTICLE LAYOUT (.art-wrap, .art-sidebar)
+   Two-column layout for blog post pages.
+   Article content left, sticky sidebar right.
+
+   CLASS REFERENCE:
+     .art-wrap          outer grid wrapper
+     .art-sidebar       right sticky sidebar
+     .art-cta           in-article CTA box (orange tinted)
+     .art-cta-ey        eyebrow label in the CTA box
+     .art-cta-ttl       heading in the CTA box
+     .art-cta-body      body text in the CTA box
+     .sb-box            sidebar widget box (light bg)
+     .sb-box-dk         dark variant sidebar box
+     .sb-box-lbl        sidebar box section label — HARDCODED on .sb-box-dk
+     .sb-rel-link       related article link row
+     .sb-rel-img        related article thumbnail
+     .sb-rel-title      related article title
+     .sb-svc-link       service link inside dark sidebar — HARDCODED
+     .sb-all-link       "All articles &#8594;" footer link
+   ============================================================ */
+
+.art-wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+    align-items: start
+}
+
+.art-sidebar {
+    position: sticky;
+    top: 96px
+}
+
+.art-cta {
+    margin-top: 52px;
+    padding: 36px;
+    background: linear-gradient(135deg, rgba(241, 156, 73, .08) 0%, rgba(228, 136, 52, .04) 100%);
+    border: 1.5px solid rgba(241, 156, 73, .2);
+    border-radius: var(--r2)
+}
+
+.art-cta-ey {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-bottom: 10px
+}
+
+.art-cta-ttl {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--tx);
+    margin-bottom: 8px
+}
+
+.art-cta-body {
+    font-size: 15px;
+    color: var(--tx2);
+    margin-bottom: 22px;
+    line-height: 1.7
+}
+
+.sb-box {
+    background: var(--page);
+    border-radius: var(--r2);
+    padding: 26px;
+    margin-bottom: 20px
+}
+
+.sb-box-dk {
+    background: var(--ink2);
+    border-radius: var(--r2);
+    padding: 26px
+}
+
+.sb-box-lbl {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--tx3);
+    margin-bottom: 16px
+}
+
+.sb-box-dk .sb-box-lbl {
+    color: #fff
+}
+
+/* HARDCODED */
+
+.sb-rel-link {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+    text-decoration: none
+}
+
+.sb-rel-link:hover .sb-rel-title {
+    color: var(--o2)
+}
+
+.sb-rel-img {
+    width: 64px;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--warm)
+}
+
+.sb-rel-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.sb-rel-title {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--tx);
+    line-height: 1.4;
+    transition: color .15s
+}
+
+.sb-svc-link {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .48);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+    transition: color .15s
+}
+
+/* HARDCODED */
+
+.sb-svc-link:hover {
+    color: var(--o2)
+}
+
+.sb-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-top: 16px;
+    transition: gap .15s
+}
+
+.sb-all-link:hover {
+    gap: 10px
+}
+
+/* Article typography — scoped to article element */
+
+article h2 {
+    font-size: clamp(20px, 2.4vw, 28px);
+    font-weight: 700;
+    color: var(--tx);
+    letter-spacing: -.02em;
+    margin: 36px 0 14px;
+    line-height: 1.12
+}
+
+article h3 {
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 700;
+    color: var(--tx);
+    letter-spacing: -.015em;
+    margin: 28px 0 10px
+}
+
+article p {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.78;
+    margin-bottom: 18px
+}
+
+article a {
+    color: var(--o2);
+    font-weight: 700;
+    text-decoration: none
+}
+
+article a:hover {
+    text-decoration: underline
+}
+
+article ul,
+article ol {
+    font-size: 17px;
+    color: var(--tx2);
+    line-height: 1.78;
+    margin: 0 0 18px 22px
+}
+
+article ul {
+    list-style: disc
+}
+
+article ol {
+    list-style: decimal
+}
+
+article li {
+    padding-left: 4px
+}
+
+article li {
+    margin-bottom: 8px
+}
+
+article strong {
+    font-weight: 700;
+    color: var(--tx)
+}
+
+/* Blog "more articles" strip at bottom of post pages */
+
+.blog-more {
+    background: var(--warm);
+    padding: 56px var(--pad)
+}
+
+.blog-more-in {
+    max-width: var(--maxw);
+    margin: 0 auto
+}
+
+.blog-more-hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 12px
+}
+
+.blog-more-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--tx3)
+}
+
+.blog-more-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px
+}
+
+.blog-mini-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 14px;
+    overflow: hidden;
+    display: block;
+    transition: transform .24s var(--ease), box-shadow .24s;
+    text-decoration: none
+}
+
+.blog-mini-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, .08)
+}
+
+.blog-mini-img {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--warm)
+}
+
+.blog-mini-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .34s var(--ease)
+}
+
+.blog-mini-card:hover .blog-mini-img img {
+    transform: scale(1.05)
+}
+
+.blog-mini-body {
+    padding: 22px
+}
+
+.blog-mini-cat {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #378ADD;
+    display: block;
+    margin-bottom: 8px
+}
+
+.blog-mini-cat.cyber {
+    color: #E24B4A
+}
+
+.blog-mini-cat.news {
+    color: #1D9E75
+}
+
+.blog-mini-cat.ai {
+    color: var(--o2)
+}
+
+.blog-mini-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--tx);
+    line-height: 1.3;
+    letter-spacing: -.01em
+}
+
+@media(max-width:720px) {
+    .art-wrap {
+        grid-template-columns: 1fr
+    }
+    .art-sidebar {
+        position: static
+    }
+    .blog-more-grid {
+        grid-template-columns: 1fr
+    }
+    .blog-more {
+        padding: 56px var(--pad-sm)
+    }
+}
+
+/* ============================================================
+   CAREERS PAGE COMPONENTS
+   Cards and job listing rows used on the careers page.
+
+   CLASS REFERENCE:
+     .benefit-grid    3-column grid of benefit cards
+     .benefit-card    individual benefit card (white, light bg)
+     .benefit-ico     icon container inside benefit card
+     .job-list        flex column of job listing rows
+     .job-row         individual job listing (white card, hover lift)
+     .job-meta        small category + location label above title
+     .job-title       job title heading
+     .job-desc        short job description
+     .job-btn         "View role" orange pill button
+     .jobs-open-note  "Don't see a role?" note box (dark bg) — HARDCODED
+   ============================================================ */
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px
+}
+
+.benefit-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 14px;
+    padding: 24px
+}
+
+.benefit-ico {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(241, 156, 73, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px
+}
+
+.benefit-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--tx);
+    margin-bottom: 6px
+}
+
+.benefit-card p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.65
+}
+
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px
+}
+
+.job-row {
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    transition: border-color .2s, box-shadow .2s, transform .2s var(--ease);
+    text-decoration: none
+}
+
+.job-row:hover {
+    border-color: var(--o2);
+    box-shadow: 0 8px 28px rgba(241, 156, 73, .12);
+    transform: translateY(-2px)
+}
+
+.job-meta {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-bottom: 8px
+}
+
+.job-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--tx);
+    letter-spacing: -.016em;
+    margin-bottom: 8px
+}
+
+.job-desc {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.65;
+    max-width: 560px
+}
+
+.job-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--o2);
+    color: #fff;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0
+}
+
+.jobs-open-note {
+    margin-top: 36px;
+    padding: 24px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 14px
+}
+
+.jobs-open-note p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.65
+}
+
+/* HARDCODED */
+
+.jobs-open-note a {
+    color: var(--o2);
+    font-weight: 700
+}
+
+/* ============================================================
+   CONTACT PAGE COMPONENTS
+   Info icon rows and the contact form card.
+
+   CLASS REFERENCE:
+     .contact-wrap     two-column layout (info left, form right)
+     .contact-info     left info column
+     .contact-info-row contact detail row (icon + label + value)
+     .contact-ico      orange circle icon container
+     .contact-lbl      small all-caps label above a value
+     .contact-more     "More ways to reach us" section
+     .contact-more-note  small note text above the links
+     .contact-form-box white rounded card containing the form
+     .cf-row           form field row (flex, two fields side by side)
+     .cf-field         individual field wrapper
+     .cf-req           asterisk on required field labels
+     .cf-submit        the submit button
+   ============================================================ */
+
+.contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: start
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 22px
+}
+
+.contact-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px
+}
+
+.contact-ico {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(241, 156, 73, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0
+}
+
+.contact-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--tx3);
+    margin-bottom: 4px
+}
+
+.contact-more {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(0, 0, 0, .08)
+}
+
+.contact-more-note {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--tx3);
+    margin-bottom: 14px
+}
+
+.contact-form-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 44px;
+    border: 1px solid rgba(0, 0, 0, .08)
+}
+
+.contact-form-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--tx);
+    margin-bottom: 24px
+}
+
+.cf-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px
+}
+
+.cf-field {
+    flex: 1;
+    min-width: 0
+}
+
+.cf-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: var(--tx);
+    margin-bottom: 6px
+}
+
+.cf-req {
+    color: var(--o3);
+    margin-left: 2px
+}
+
+.cf-field input,
+.cf-field select,
+.cf-field textarea {
+    width: 100%;
+    font-family: var(--f);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx);
+    background: var(--page);
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    padding: 12px 16px;
+    transition: border-color .15s, box-shadow .15s;
+    outline: none
+}
+
+.cf-field textarea {
+    resize: vertical;
+    line-height: 1.65
+}
+
+.cf-field input:focus,
+.cf-field select:focus,
+.cf-field textarea:focus {
+    border-color: var(--o2);
+    box-shadow: 0 0 0 3px rgba(241, 156, 73, .12)
+}
+
+.cf-field input::placeholder,
+.cf-field textarea::placeholder {
+    color: var(--tx3);
+    font-weight: 300
+}
+
+.cf-field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%2396968C' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px
+}
+
+.cf-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 15px 18px 15px 26px;
+    background: linear-gradient(118deg, var(--o1) 0%, var(--o2) 52%, var(--o3) 100%);
+    color: #fff;
+    font-family: var(--f);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(241, 156, 73, .24);
+    transition: opacity .16s, transform .14s, box-shadow .16s
+}
+
+.cf-submit:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 36px rgba(241, 156, 73, .38)
+}
+
+.cf-submit .bic {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 1;
+    flex-shrink: 0
+}
+
+@media(max-width:720px) {
+    .contact-wrap {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width:600px) {
+    .cf-row {
+        flex-direction: column;
+        gap: 16px
+    }
+}
+
+/* ============================================================
+   404 PAGE (.err-sec)
+   Full-viewport centred error page.
+
+   CLASS REFERENCE:
+     .err-sec      the full-height section
+     .err-sec-in   inner centred content wrapper
+     .err-num      the large "404" stroke text
+     .err-btns     button column (centred, max-width constrained)
+   ============================================================ */
+
+.err-sec {
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden
+}
+
+.err-sec-in {
+    position: relative;
+    z-index: 1;
+    max-width: 520px
+}
+
+.err-num {
+    font-size: clamp(100px, 20vw, 160px);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(241, 156, 73, .16);
+    line-height: 1;
+    margin-bottom: 16px
+}
+
+.err-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px
+}
+
+.err-btns a {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center
+}
+
+/* ============================================================
+   LOCATION PAGE COMPONENTS (.loc-info)
+   Info box, "Also serving" pill row used on expanded location
+   pages (Comox, Cumberland, Parksville).
+
+   CLASS REFERENCE:
+     .loc-info-box      warm-bg info/address callout box
+     .loc-info-lbl      small label inside info box
+     .loc-info-val      address/value text inside info box
+     .loc-info-link     coloured link inside info box
+     .loc-also-lbl      "Also serving" label
+     .loc-also-row      flex row of .pill-link tags
+   ============================================================ */
+
+.loc-info-box {
+    background: var(--warm);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-top: 24px;
+    margin-bottom: 28px
+}
+
+.loc-info-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--tx3);
+    margin-bottom: 8px
+}
+
+.loc-info-val {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx)
+}
+
+.loc-info-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--o2);
+    margin-top: 8px;
+    display: inline-block
+}
+
+/* Interactive map pins */
+
+.map-pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0
+}
+
+.map-pin-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--o2);
+    border: 2.5px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .25), 0 0 0 3px rgba(241, 156, 73, .25);
+    transition: transform .2s, box-shadow .2s;
+    cursor: pointer
+}
+
+.map-pin:hover .map-pin-dot {
+    transform: scale(1.3);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .35), 0 0 0 6px rgba(241, 156, 73, .3)
+}
+
+.map-pin-hq .map-pin-dot {
+    width: 18px;
+    height: 18px;
+    background: var(--o3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3), 0 0 0 4px rgba(224, 120, 40, .3);
+    animation: pin-pulse 2.5s ease-in-out infinite
+}
+
+@keyframes pin-pulse {
+    0%,
+    100% {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .3), 0 0 0 4px rgba(224, 120, 40, .3)
+    }
+    50% {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, .35), 0 0 0 8px rgba(224, 120, 40, .15)
+    }
+}
+
+.map-pin-label {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(14, 14, 14, .92);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    padding: 0 0 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .4);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    min-width: 110px
+}
+
+.map-pin-img {
+    width: 100%;
+    height: 60px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 6px
+}
+
+.map-pin:hover .map-pin-label {
+    opacity: 1
+}
+
+.map-pin-label::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-bottom-color: rgba(14, 14, 14, .92)
+}
+
+@media(max-width:768px) {
+    .map-pin-dot {
+        width: 10px;
+        height: 10px;
+        border-width: 2px
+    }
+    .map-pin-hq .map-pin-dot {
+        width: 14px;
+        height: 14px
+    }
+    .map-pin-label {
+        font-size: 9px;
+        padding: 3px 7px
+    }
+}
+
+.loc-also-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--tx3);
+    margin-bottom: 12px
+}
+
+.loc-also-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+/* ============================================================
+   GUIDE / RESOURCE CARDS (.res-card)
+   Large white cards with image header used on the guides page.
+   Wider than standard cards; 16:7 image ratio.
+
+   CLASS REFERENCE:
+     .res-card         the card link
+     .res-card-img     image container (16:7 ratio)
+     .res-card-body    text content area
+     .res-card-meta    row with category pill + read time
+     .res-card-read    read time label
+     .res-card-title   guide title (larger, 20px)
+     .res-card-desc    description paragraph
+     .res-card-link    "Read the guide" arrow text link
+   ============================================================ */
+
+.res-card {
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color .2s, box-shadow .2s, transform .24s var(--ease);
+    text-decoration: none
+}
+
+.res-card:hover {
+    border-color: var(--o2);
+    box-shadow: 0 12px 44px rgba(0, 0, 0, .1);
+    transform: translateY(-4px)
+}
+
+.res-card-img {
+    aspect-ratio: 16/7;
+    overflow: hidden;
+    background: var(--ink2)
+}
+
+.res-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .38s var(--ease)
+}
+
+.res-card:hover .res-card-img img {
+    transform: scale(1.05)
+}
+
+.res-card-body {
+    padding: 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.res-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.res-card-read {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--tx3)
+}
+
+.res-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--tx);
+    line-height: 1.2;
+    letter-spacing: -.016em;
+    flex: 1
+}
+
+.res-card-desc {
+    font-size: 14.5px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.70
+}
+
+.res-card-link {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-top: 4px
+}
+
+/* ============================================================
+   STAT BAR (.stat-bar)
+   Dark strip with 2-3 stat columns. Used on guides and
+   resource pages above the main content.
+
+   CLASS REFERENCE:
+     .stat-bar         outer dark strip
+     .stat-bar-in      inner grid (equal columns)
+     .stat-bar-item    individual stat column (centred)
+     .stat-bar-item.bd left/right border separator variant
+     .stat-bar-n       large number (orange)
+     .stat-bar-title   item heading (white, bold)
+     .stat-bar-sub     item description (muted) — HARDCODED
+   ============================================================ */
+
+.stat-bar {
+    background: var(--ink2);
+    padding: 52px var(--pad);
+    border-bottom: 1px solid rgba(255, 255, 255, .06)
+}
+
+.stat-bar-in {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px
+}
+
+.stat-bar-item {
+    padding: 28px 24px;
+    text-align: center
+}
+
+.stat-bar-item.bd {
+    border-left: 1px solid rgba(255, 255, 255, .07);
+    border-right: 1px solid rgba(255, 255, 255, .07)
+}
+
+.stat-bar-n {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--o2);
+    letter-spacing: -.02em;
+    margin-bottom: 6px
+}
+
+.stat-bar-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px
+}
+
+.stat-bar-sub {
+    font-size: 13px;
+    font-weight: 300;
+    color: #fff
+}
+
+/* HARDCODED — roadmap: use --tx-dk3 */
+
+/* ============================================================
+   COMPARE SPLIT (.compare-split)
+   Two-column side-by-side comparison block. Used on the
+   guides page to contrast guide vs blog content.
+
+   CLASS REFERENCE:
+     .compare-split      outer grid (1fr 1fr, 3px gap)
+     .compare-col        individual column
+     .compare-col-l      left column (warm bg, rounded left corners)
+     .compare-col-r      right column (page bg, rounded right corners)
+     .compare-lbl        small label at top of column
+     .compare-title      column heading
+     .compare-body       column body text
+   ============================================================ */
+
+.compare-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px
+}
+
+.compare-col {
+    padding: 40px
+}
+
+.compare-col-l {
+    background: var(--warm);
+    border-radius: var(--r1) 0 0 var(--r1)
+}
+
+.compare-col-r {
+    background: var(--page);
+    border-radius: 0 var(--r1) var(--r1) 0
+}
+
+.compare-lbl {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--o3);
+    margin-bottom: 14px
+}
+
+.compare-col-r .compare-lbl {
+    color: var(--tx3)
+}
+
+.compare-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--tx);
+    margin-bottom: 12px;
+    letter-spacing: -.016em
+}
+
+.compare-body {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.72
+}
+
+/* ============================================================
+   ALPHA CHAT PAGE COMPONENTS (.ac-*)
+   Tab interface, why-grid, expect-grid, and FAQ used only on
+   the /resources/alpha-chat/ page.
+
+   CLASS REFERENCE:
+     .ac-tabs           tab row container
+     .ac-tab            individual tab button
+     .ac-tab.active     selected tab state
+     .ac-tab-icon       icon image inside tab
+     .ac-tab-label      small uppercase label inside tab
+     .ac-tab-title      main tab title text
+     .ac-panel          tab content panel (hidden by default)
+     .ac-panel.active   visible panel
+     .ac-why-grid       5-column "why" feature grid
+     .ac-expect-grid    2-column "what to expect" grid
+     .ac-faq            FAQ accordion container
+     .ac-faq-item       individual FAQ row
+     .ac-faq-q          question trigger button
+     .ac-faq-icon       +/x circle icon
+     .ac-faq-a          answer panel (hidden by default)
+     .ac-faq-item.open  expanded state
+   ============================================================ */
+
+.ac-tabs {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 0
+}
+
+.ac-tab {
+    flex: 1;
+    padding: 16px 24px;
+    background: var(--warm);
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 12px 12px 0 0;
+    border-bottom: none;
+    cursor: pointer;
+    transition: background .18s, border-color .18s;
+    text-align: left
+}
+
+.ac-tab:hover {
+    background: var(--page)
+}
+
+.ac-tab.active {
+    background: #fff;
+    border-color: rgba(0, 0, 0, .1);
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+    z-index: 1;
+    position: relative
+}
+
+.ac-tab-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    display: block
+}
+
+.ac-tab-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--tx3);
+    margin-bottom: 4px
+}
+
+.ac-tab.active .ac-tab-label {
+    color: var(--tx3)
+}
+
+.ac-tab-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--tx2);
+    letter-spacing: -.012em
+}
+
+.ac-tab.active .ac-tab-title {
+    color: var(--tx)
+}
+
+.ac-panel {
+    display: none;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 0 0 16px 16px;
+    padding: 40px
+}
+
+.ac-panel.active {
+    display: block
+}
+
+.ac-why-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px
+}
+
+.ac-expect-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px
+}
+
+.ac-faq {
+    border-top: 1px solid rgba(0, 0, 0, .08)
+}
+
+.ac-faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, .08)
+}
+
+.ac-faq-q {
+    width: 100%;
+    text-align: left;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--f)
+}
+
+.ac-faq-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(241, 156, 73, .1);
+    border: 1px solid rgba(241, 156, 73, .24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform .2s, background .18s
+}
+
+.ac-faq-item.open .ac-faq-icon {
+    transform: rotate(45deg);
+    background: rgba(241, 156, 73, .2)
+}
+
+.ac-faq-a {
+    display: none;
+    padding: 0 0 20px
+}
+
+.ac-faq-item.open .ac-faq-a {
+    display: block
+}
+
+@media(max-width:960px) {
+    .ac-why-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+    .ac-panel {
+        border-radius: 16px
+    }
+}
+
+@media(max-width:600px) {
+    .ac-why-grid {
+        grid-template-columns: 1fr 1fr
+    }
+    .ac-expect-grid {
+        grid-template-columns: 1fr
+    }
+    .ac-panel {
+        padding: 24px
+    }
+    /* Tabs — always horizontal, stacked content inside */
+    .ac-tabs {
+        flex-direction: row;
+        gap: 3px
+    }
+    .ac-tab {
+        border-radius: 12px 12px 0 0;
+        border-bottom: none;
+        padding: 14px 16px
+    }
+    .ac-tab.active {
+        border-radius: 12px 12px 0 0;
+        border-bottom: 1px solid #fff;
+        margin-bottom: -1px
+    }
+    .ac-tab-icon {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 6px
+    }
+    .ac-tab-title {
+        font-size: 13px
+    }
+    .ac-tab-label {
+        font-size: 9px
+    }
+}
+
+/* ============================================================
+   BRONCO LANDING PAGE (.br-*)
+   Full-page campaign landing used only on /bronco/.
+
+   CLASS REFERENCE:
+     .br-hero          dark hero section with glow
+     .br-hero-inner    two-column inner grid
+     .br-bronco-img    hero image wrapper (4:3, rounded, shadow)
+     .br-what-grid     3-column feature grid (what section)
+     .br-why-grid      3-column feature grid (why section)
+     .br-card          light bg card (page bg, rounded)
+   ============================================================ */
+
+.br-hero {
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px var(--pad) 80px;
+    position: relative;
+    overflow: hidden
+}
+
+.br-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 70% at 110% 96%, rgba(205, 108, 14, .36) 0%, rgba(178, 72, 8, .14) 38%, transparent 62%), radial-gradient(ellipse 50% 60% at -10% 10%, rgba(182, 82, 10, .2) 0%, transparent 55%)
+}
+
+.br-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
+    position: relative;
+    z-index: 1
+}
+
+.br-bronco-img {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, .55), 0 0 0 1px rgba(255, 255, 255, .06)
+}
+
+.br-bronco-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.br-what-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px
+}
+
+.br-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px
+}
+
+.br-card {
+    background: var(--page);
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid rgba(0, 0, 0, .08)
+}
+
+@media(max-width:960px) {
+    .br-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 44px
+    }
+    .br-bronco-img {
+        aspect-ratio: 16/9
+    }
+}
+
+@media(max-width:720px) {
+    .br-what-grid {
+        grid-template-columns: 1fr
+    }
+    .br-why-grid {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+@media(max-width:480px) {
+    .br-why-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* ============================================================
+   BLOG FEATURED CARD (.blog-featured)
+   Large two-column card used as the editor's pick at the top
+   of the blog index page. Image left, text right.
+
+   CLASS REFERENCE:
+     .blog-featured        the card link (grid, rounded, shadow)
+     .blog-featured-img    left image panel (4:3)
+     .blog-featured-body   right text panel (page bg)
+   ============================================================ */
+
+.blog-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+    transition: box-shadow .24s;
+    text-decoration: none
+}
+
+.blog-featured:hover {
+    box-shadow: 0 12px 44px rgba(0, 0, 0, .12)
+}
+
+.blog-featured-img {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--warm)
+}
+
+.blog-featured-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .38s var(--ease)
+}
+
+.blog-featured:hover .blog-featured-img img {
+    transform: scale(1.04)
+}
+
+.blog-featured-body {
+    background: var(--page);
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+/* ============================================================
+   SITEMAP PAGE (.sm-*)
+   Multi-column link grid used on /sitemap/.
+
+   CLASS REFERENCE:
+     .sm-grid     outer multi-column grid
+     .sm-col      individual column
+     .sm-col-hd   column heading (orange all-caps label)
+     .sm-link     individual sitemap link
+     .sm-list     list container inside each column
+   ============================================================ */
+
+.sm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 48px
+}
+
+.sm-col {
+    margin-bottom: 40px
+}
+
+.sm-col-hd {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-bottom: 16px
+}
+
+.sm-link {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tx);
+    text-decoration: none;
+    transition: color .15s;
+    display: block
+}
+
+.sm-link:hover {
+    color: var(--o2)
+}
+
+.sm-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+/* AI/M365 category pill variant (purple) — used on guides page */
+
+.cat-pill--ai-m365 {
+    color: #7C3AED;
+    background: rgba(124, 58, 237, .08)
+}
+
+/* Footer second column heading top margin */
+
+.f-col-h4-mt {
+    margin-top: 24px
+}
+
+/* ============================================================
+   PILLAR / GUIDE PAGES (.pl-*)
+   Long-form guide layout: sticky sidebar TOC + scrolling article.
+   All sections visible at once. TOC highlights active section
+   via IntersectionObserver as the user scrolls.
+   ============================================================ */
+
+/* Progress bar */
+
+.pl-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(90deg, var(--o1), var(--o2));
+    z-index: 9999;
+    transition: width .12s linear;
+    pointer-events: none
+}
+
+/* Hero */
+
+.pl-hero {
+    background: var(--ink2);
+    padding: 128px var(--pad) 80px;
+    position: relative;
+    overflow: hidden
+}
+
+.pl-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 72% 84% at 112% 100%, rgba(208, 108, 12, .32) 0%, rgba(178, 72, 8, .14) 38%, transparent 64%), radial-gradient(ellipse 42% 52% at 95% 42%, rgba(222, 138, 42, .07) 0%, transparent 52%)
+}
+
+.pl-hero-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    max-width: 860px
+}
+
+.pl-eyebrow {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 9px
+}
+
+.pl-eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--o2);
+    flex-shrink: 0
+}
+
+.pl-h1 {
+    font-size: clamp(28px, 4vw, 54px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.034em;
+    line-height: 1.04;
+    margin-bottom: 20px
+}
+
+.pl-intro {
+    font-size: 17px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.74;
+    margin-bottom: 32px
+}
+
+.pl-meta-bar {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap
+}
+
+/* Two-column layout */
+
+.pl-wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 52px var(--pad) 80px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 56px;
+    align-items: start
+}
+
+/* Sidebar */
+
+.pl-sidebar {
+    position: sticky;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+}
+
+.pl-sidebar-inner {
+    background: var(--page);
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: var(--r2);
+    overflow: hidden
+}
+
+.pl-sidebar-head {
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, .07)
+}
+
+.pl-sidebar-head p {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--tx3);
+    margin: 0
+}
+
+/* TOC items */
+
+.pl-toc-item {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--tx2);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
+    line-height: 1.4;
+    transition: background .14s, color .14s
+}
+
+.pl-toc-item:last-child {
+    border-bottom: none
+}
+
+.pl-toc-item:hover {
+    background: rgba(0, 0, 0, .03);
+    color: var(--o2)
+}
+
+.pl-toc-item.active {
+    background: rgba(241, 156, 73, .06);
+    color: var(--o2);
+    font-weight: 600;
+    border-left: 3px solid var(--o2);
+    padding-left: 17px
+}
+
+/* Article content */
+
+.pl-content {
+    min-width: 0
+}
+
+.pl-section {
+    scroll-margin-top: 120px;
+    margin-bottom: 64px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid rgba(0, 0, 0, .07)
+}
+
+.pl-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+/* Section heading */
+
+.pl-h2 {
+    font-size: clamp(22px, 2.6vw, 32px);
+    font-weight: 700;
+    color: var(--tx);
+    letter-spacing: -.022em;
+    line-height: 1.1;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(241, 156, 73, .2)
+}
+
+/* Prose */
+
+.pl-body p {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--tx2);
+    line-height: 1.78;
+    margin-bottom: 18px
+}
+
+.pl-body h3 {
+    font-size: clamp(17px, 1.8vw, 21px);
+    font-weight: 700;
+    color: var(--tx);
+    letter-spacing: -.015em;
+    margin: 36px 0 12px;
+    line-height: 1.2
+}
+
+.pl-body ul,
+.pl-body ol {
+    font-size: 17px;
+    color: var(--tx2);
+    line-height: 1.78;
+    margin: 0 0 18px 24px
+}
+
+.pl-body ul {
+    list-style: disc;
+    color: var(--o2)
+}
+
+.pl-body ul li {
+    color: var(--tx2)
+}
+
+.pl-body ol {
+    list-style: decimal;
+    color: var(--o2)
+}
+
+.pl-body ol li {
+    color: var(--tx2)
+}
+
+.pl-body li {
+    margin-bottom: 8px;
+    padding-left: 4px
+}
+
+.pl-body strong {
+    font-weight: 700;
+    color: var(--tx)
+}
+
+.pl-body a {
+    color: var(--o2);
+    font-weight: 700;
+    text-decoration: none
+}
+
+.pl-body a:hover {
+    text-decoration: underline
+}
+
+.pl-body a.btn-p,
+.pl-body a.btn-dk,
+.pl-body a.btn-gh {
+    color: #fff;
+    text-decoration: none
+}
+
+.pl-body a.btn-p:hover,
+.pl-body a.btn-dk:hover {
+    text-decoration: none
+}
+
+/* Callout boxes */
+
+.pl-callout {
+    background: rgba(241, 156, 73, .07);
+    border: 1.5px solid rgba(241, 156, 73, .22);
+    border-radius: var(--r2);
+    padding: 24px 28px;
+    margin: 28px 0
+}
+
+.pl-callout p {
+    font-size: 16px;
+    color: var(--tx);
+    line-height: 1.72;
+    margin-bottom: 10px
+}
+
+.pl-callout p:last-child {
+    margin-bottom: 0
+}
+
+.pl-callout strong {
+    color: var(--tx)
+}
+
+.pl-callout-meta {
+    background: var(--page);
+    border-color: rgba(0, 0, 0, .09)
+}
+
+.pl-callout-meta p {
+    color: var(--tx2)
+}
+
+/* Related guides strip */
+
+.pl-rel {
+    background: var(--warm);
+    padding: 64px var(--pad)
+}
+
+.pl-rel-inner {
+    max-width: var(--maxw);
+    margin: 0 auto
+}
+
+.pl-rel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 32px
+}
+
+.pl-rel-card {
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: var(--r2);
+    padding: 28px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: border-color .18s, transform .2s var(--ease), box-shadow .2s
+}
+
+.pl-rel-card:hover {
+    border-color: var(--o2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .08)
+}
+
+.pl-rel-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--o2)
+}
+
+.pl-rel-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--tx);
+    letter-spacing: -.012em;
+    line-height: 1.3
+}
+
+/* Bottom CTA */
+
+.pl-cta {
+    background: var(--ink2);
+    padding: 80px var(--pad);
+    position: relative;
+    overflow: hidden;
+    text-align: center
+}
+
+.pl-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 80% 100% at 50% 120%, rgba(208, 108, 12, .32) 0%, rgba(178, 72, 8, .14) 40%, transparent 62%)
+}
+
+.pl-cta-inner {
+    max-width: 660px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1
+}
+
+/* Responsive */
+
+@media(max-width:1024px) {
+    .pl-wrap {
+        grid-template-columns: 200px 1fr;
+        gap: 36px
+    }
+}
+
+@media(max-width:768px) {
+    .pl-wrap {
+        grid-template-columns: 1fr;
+        padding: 36px var(--pad-sm) 60px
+    }
+    .pl-sidebar {
+        position: static
+    }
+    .pl-hero {
+        padding: 100px var(--pad-sm) 52px
+    }
+    .pl-rel-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* ============================================================
+   SERVICE CARDS WITH COLOURED ICONS (.svc-card-ico)
+   Dark background cards with coloured icon circles. Used on
+   About page "What We Do" section. Each card has an icon with
+   a unique accent colour for visual scanning.
+
+   CLASS REFERENCE:
+     .svc-card-ico-grid   2-column grid container
+     .svc-card-ico        individual card (link)
+     .svc-card-ico-icon   icon circle container
+     .svc-card-ico h4     card heading
+     .svc-card-ico p      card description
+
+   COLOUR VARIANTS (apply to .svc-card-ico):
+     .svc-card-blue       blue tinted card + icon
+     .svc-card-green      green tinted card + icon
+     .svc-card-purple     purple tinted card + icon
+     .svc-card-amber      amber/orange tinted card + icon
+     .svc-card-orange     brand orange tinted card + icon
+   ============================================================ */
+
+.svc-card-ico-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px
+}
+
+.svc-card-ico {
+    border-radius: 14px;
+    padding: 28px;
+    display: block;
+    transition: border-color .18s, background .18s, transform .2s var(--ease);
+    text-decoration: none;
+    border-left: 3px solid transparent
+}
+
+.svc-card-ico:hover {
+    transform: translateY(-2px)
+}
+
+.svc-card-ico-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px
+}
+
+.svc-card-ico-icon svg {
+    width: 24px;
+    height: 24px
+}
+
+.svc-card-ico h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -.01em;
+    line-height: 1.25
+}
+
+.svc-card-ico p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.65;
+    margin: 0
+}
+
+/* Card colour variants - tinted backgrounds with matching icon and left border */
+
+.svc-card-blue {
+    background: rgba(59, 130, 246, .08);
+    border-color: rgba(59, 130, 246, .5);
+    border-top: 1px solid rgba(59, 130, 246, .15);
+    border-right: 1px solid rgba(59, 130, 246, .15);
+    border-bottom: 1px solid rgba(59, 130, 246, .15)
+}
+
+.svc-card-blue:hover {
+    background: rgba(59, 130, 246, .12)
+}
+
+.svc-card-blue .svc-card-ico-icon {
+    background: rgba(59, 130, 246, .2)
+}
+
+.svc-card-blue .svc-card-ico-icon svg {
+    color: #3B82F6
+}
+
+.svc-card-green {
+    background: rgba(34, 197, 94, .08);
+    border-color: rgba(34, 197, 94, .5);
+    border-top: 1px solid rgba(34, 197, 94, .15);
+    border-right: 1px solid rgba(34, 197, 94, .15);
+    border-bottom: 1px solid rgba(34, 197, 94, .15)
+}
+
+.svc-card-green:hover {
+    background: rgba(34, 197, 94, .12)
+}
+
+.svc-card-green .svc-card-ico-icon {
+    background: rgba(34, 197, 94, .2)
+}
+
+.svc-card-green .svc-card-ico-icon svg {
+    color: #22C55E
+}
+
+.svc-card-purple {
+    background: rgba(168, 85, 247, .08);
+    border-color: rgba(168, 85, 247, .5);
+    border-top: 1px solid rgba(168, 85, 247, .15);
+    border-right: 1px solid rgba(168, 85, 247, .15);
+    border-bottom: 1px solid rgba(168, 85, 247, .15)
+}
+
+.svc-card-purple:hover {
+    background: rgba(168, 85, 247, .12)
+}
+
+.svc-card-purple .svc-card-ico-icon {
+    background: rgba(168, 85, 247, .2)
+}
+
+.svc-card-purple .svc-card-ico-icon svg {
+    color: #A855F7
+}
+
+.svc-card-amber {
+    background: rgba(245, 158, 11, .08);
+    border-color: rgba(245, 158, 11, .5);
+    border-top: 1px solid rgba(245, 158, 11, .15);
+    border-right: 1px solid rgba(245, 158, 11, .15);
+    border-bottom: 1px solid rgba(245, 158, 11, .15)
+}
+
+.svc-card-amber:hover {
+    background: rgba(245, 158, 11, .12)
+}
+
+.svc-card-amber .svc-card-ico-icon {
+    background: rgba(245, 158, 11, .2)
+}
+
+.svc-card-amber .svc-card-ico-icon svg {
+    color: #F59E0B
+}
+
+.svc-card-orange {
+    background: rgba(241, 156, 73, .08);
+    border-color: rgba(241, 156, 73, .5);
+    border-top: 1px solid rgba(241, 156, 73, .15);
+    border-right: 1px solid rgba(241, 156, 73, .15);
+    border-bottom: 1px solid rgba(241, 156, 73, .15)
+}
+
+.svc-card-orange:hover {
+    background: rgba(241, 156, 73, .12)
+}
+
+.svc-card-orange .svc-card-ico-icon {
+    background: rgba(241, 156, 73, .2)
+}
+
+.svc-card-orange .svc-card-ico-icon svg {
+    color: var(--o2)
+}
+
+/* Full-width card variant */
+
+.svc-card-ico-full {
+    grid-column: 1 / -1
+}
+
+@media(max-width:768px) {
+    .svc-card-ico-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* ============================================================
+   TIMELINE (.timeline)
+   Vertical timeline for company history / story sections.
+   Used on About page "Our Story" section.
+
+   CLASS REFERENCE:
+     .timeline            outer container (relative for line)
+     .timeline-item       individual milestone row
+     .timeline-marker     year/date marker on the left
+     .timeline-content    text content on the right
+     .timeline-year       year label inside marker
+     .timeline-dot        decorative dot on timeline line
+   ============================================================ */
+
+.timeline {
+    position: relative;
+    padding-left: 140px
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--o2) 0%, rgba(241, 156, 73, .3) 100%)
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 48px
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -140px;
+    width: 100px;
+    text-align: right;
+    padding-right: 24px
+}
+
+.timeline-year {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--o2);
+    letter-spacing: -.01em
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -44px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--o2);
+    border: 3px solid var(--ink);
+    box-shadow: 0 0 0 2px var(--o2)
+}
+
+.timeline-content h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: -.015em;
+    line-height: 1.25
+}
+
+.timeline-content p {
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.72;
+    margin-bottom: 0
+}
+
+.timeline-content p+p {
+    margin-top: 12px
+}
+
+@media(max-width:768px) {
+    .timeline {
+        padding-left: 50px
+    }
+    .timeline::before {
+        left: 16px
+    }
+    .timeline-marker {
+        position: relative;
+        left: 0;
+        width: auto;
+        text-align: left;
+        padding: 0 0 8px 0
+    }
+    .timeline-dot {
+        left: -38px;
+        top: 4px
+    }
+}
+
+/* Timeline section outer grid collapse */
+
+@media(max-width:960px) {
+    .timeline-section-grid {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important
+    }
+}
+
+/* ============================================================
+   FEATURED TESTIMONIAL (.tc-featured)
+   Full-width testimonial card for highlighting a key quote.
+   Used on About page "Client Stories" section as the lead card.
+
+   CLASS REFERENCE:
+     .tc-featured         full-width card container
+     .tc-featured-quote   large quote text
+     .tc-featured-cite    citation row (name + org)
+   ============================================================ */
+
+.tc-featured {
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: var(--r2);
+    padding: 44px 48px;
+    margin-bottom: 18px
+}
+
+.tc-featured-quote {
+    font-size: 19px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.72;
+    margin-bottom: 28px;
+    font-style: italic
+}
+
+.tc-featured-quote::before {
+    content: '"';
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--o2);
+    line-height: 0;
+    vertical-align: bottom;
+    margin-right: 4px
+}
+
+.tc-featured-cite {
+    display: flex;
+    align-items: center;
+    gap: 16px
+}
+
+.tc-featured-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.01em
+}
+
+.tc-featured-org {
+    font-size: 13px;
+    font-weight: 300;
+    color: #fff;
+    margin-top: 2px
+}
+
+@media(max-width:768px) {
+    .tc-featured {
+        padding: 28px
+    }
+    .tc-featured-quote {
+        font-size: 17px
+    }
+}
+
+/* ============================================================
+   TESTIMONIAL GRID (.tc-grid)
+   Responsive grid for testimonial cards. 4 columns on desktop,
+   2 on tablet, 1 on mobile. Last card can be CTA variant.
+   ============================================================ */
+
+.tc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px
+}
+
+.tc-grid .tc {
+    display: flex;
+    flex-direction: column
+}
+
+.tc-grid .tc .body-sm {
+    flex: 1
+}
+
+@media(max-width:1024px) {
+    .tc-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:600px) {
+    .tc-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* ── Blog category archive pages ─────────────────────────── */
+
+.blog-cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.blog-cat-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .08);
+    border-radius: var(--r1);
+    text-decoration: none;
+    transition: border-color .18s, box-shadow .18s;
+}
+
+.blog-cat-card:hover {
+    border-color: var(--o2);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .08);
+}
+
+.blog-cat-card-cat {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--o2);
+    margin-bottom: 10px;
+}
+
+.blog-cat-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--tx);
+    line-height: 1.35;
+    letter-spacing: -.015em;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.blog-cat-card-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--tx2);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* ── Resources hub — category cards ──────────────────────── */
+
+.res-cat-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .08);
+    border-radius: var(--r1);
+    text-decoration: none;
+    transition: border-color .18s, box-shadow .18s;
+}
+
+.res-cat-card:hover {
+    border-color: var(--o2);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .07);
+}
+
+.res-cat-card-ico {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: rgba(241, 156, 73, .1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.res-cat-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--tx);
+    letter-spacing: -.01em;
+    margin-bottom: 4px;
+}
+
+.res-cat-card-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--tx2);
+    line-height: 1.55;
+}
+
+.res-cat-card-arr {
+    flex-shrink: 0;
+    color: var(--o2);
+    font-size: 18px;
+    margin-left: auto;
+}
+
+/* ── Skip-to-content link (accessibility) ── */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 100000;
+    background: var(--o3);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    transition: top .2s
+}
+
+.skip-link:focus {
+    top: 0
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   v83 — Mobile fixes
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Homepage comparison table: stack on mobile ── */
+
+@media(max-width:768px) {
+    .hp-comp-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0 !important;
+        align-items: stretch !important
+    }
+    .hp-comp-grid>div {
+        padding: 12px 14px !important;
+        display: flex;
+        align-items: center
+    }
+    .hp-comp-row>div {
+        padding: 12px 14px !important;
+        display: flex;
+        align-items: center
+    }
+    .hp-comp-grid .body-sm {
+        font-size: 13px !important
+    }
+}
+
+/* ── Homepage location cards: 2-col on mobile ── */
+
+@media(max-width:768px) {
+    .hp-loc-grid {
+        grid-template-columns: repeat(2, 1fr) !important
+    }
+}
+
+@media(max-width:480px) {
+    .hp-loc-grid {
+        grid-template-columns: 1fr !important
+    }
+}
+
+/* ── IT Consulting comparison table: stack on mobile ── */
+
+@media(max-width:768px) {
+    .itc-comp-row {
+        grid-template-columns: 1fr !important
+    }
+    .itc-comp-row>*:first-child {
+        padding-bottom: 4px
+    }
+    .itc-comp-row>*:last-child {
+        padding-top: 4px;
+        border-top: none
+    }
+    .itc-comp-header {
+        grid-template-columns: 1fr !important
+    }
+    .itc-comp-header>*:last-child {
+        display: none
+    }
+}
+
+/* ── ALPHA Chat: why-grid and tabs on mobile ── */
+
+@media(max-width:768px) {
+    .ac-why-grid {
+        grid-template-columns: 1fr !important
+    }
+    /* Tabs stay horizontal — clear active/inactive contrast */
+    .ac-tabs {
+        flex-direction: row !important;
+        gap: 3px
+    }
+    .ac-tab {
+        flex: 1;
+        border-radius: 12px 12px 0 0 !important;
+        border-bottom: none !important;
+        padding: 14px 12px;
+        background: var(--warm)
+    }
+    .ac-tab:first-child {
+        border-radius: 12px 12px 0 0 !important
+    }
+    .ac-tab:last-child {
+        border-radius: 12px 12px 0 0 !important
+    }
+    .ac-tab.active {
+        background: #fff !important;
+        border-bottom: 1px solid #fff !important;
+        margin-bottom: -1px !important;
+        z-index: 1;
+        position: relative
+    }
+    .ac-tab-icon {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 6px
+    }
+    .ac-tab-title {
+        font-size: 13px
+    }
+    .ac-tab-label {
+        font-size: 9px
+    }
+    /* Panel internal grid: stack to single column */
+    .ac-panel .ac-panel-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important
+    }
+}
+
+/* ── Case study images: reduce extreme aspect ratios on mobile ── */
+
+@media(max-width:768px) {
+    .cs-banner-wrap {
+        aspect-ratio: 16/9 !important;
+        max-height: 280px !important
+    }
+    .cs-feature-wrap {
+        aspect-ratio: 16/9 !important;
+        max-height: 320px !important
+    }
+    .cs-grid-2col {
+        grid-template-columns: 1fr !important
+    }
+}
+
+/* ── v84.2: Homepage stats 2x2 on mobile ── */
+
+@media(max-width:768px) {
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important
+    }
+}
+
+/* ── v98: Sitemap + Campaign pages mobile fixes ── */
+
+/* Sitemap: 3-col → 2-col → 1-col */
+
+@media(max-width:768px) {
+    .sm-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 32px
+    }
+}
+
+@media(max-width:480px) {
+    .sm-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* Campaign heroes (first-nations, local-governments, smb):
+   fixed 1fr 440px grid collapses to single column on mobile */
+
+@media(max-width:768px) {
+    .cmp-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important
+    }
+    .cmp-hero-grid [style*="position:sticky"] {
+        position: relative !important;
+        top: auto !important
+    }
+}
