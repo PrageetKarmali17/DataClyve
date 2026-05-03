@@ -1,5 +1,5 @@
 /* ============================================================
-   ALPHA IT — global.css  v7.1
+   DATA CLYVE — global.css  v7.1
    ============================================================
    HOW TO USE THIS FILE
    ─────────────────────────────────────────────────────────────
@@ -53,17 +53,9 @@
 
 /* ============================================================
    FONTS
-   Gotham loaded at six weights. Font files live in /fonts/.
+   Gotham loaded at five weights. Font files live in /fonts/.
    font-display:swap prevents invisible text during load.
    ============================================================ */
-
-@font-face {
-    font-family: 'Gotham';
-    src: url('/fonts/GothamHTF-Thin.otf') format('opentype');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap
-}
 
 @font-face {
     font-family: 'Gotham';

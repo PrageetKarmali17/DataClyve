@@ -1,4 +1,4 @@
-/* ALPHA IT — global.js v7 | getalpha.ca */
+/* DATA CLYVE — global.js v7 | getalpha.ca */
 (function() {
     'use strict';
 
