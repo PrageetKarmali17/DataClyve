@@ -1166,7 +1166,7 @@ button {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse 90% 100% at -14% 110%, rgba(241, 156, 73, .48) 0%, rgba(220, 118, 38, .22) 28%, transparent 54%), radial-gradient(ellipse 55% 65% at 108% 8%, rgba(208, 88, 12, .2) 0%, transparent 50%)
+    background: radial-gradient(ellipse 90% 100% at -14% 110%, rgba(242, 243, 253, 0.76) 0%, rgba(102, 121, 231, 0.178) 28%, transparent 50%), radial-gradient(ellipse 55% 65% at 108% 8%, rgba(126, 134, 248, 0.199) 0%, transparent 50%)
 }
 
 .glow-lt {
