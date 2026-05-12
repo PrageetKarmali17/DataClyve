@@ -126,7 +126,7 @@
     /* Light backgrounds */
     --page: #f4f6fa;
     --warm: #f6f8ff;
-    --white: #ffffff;
+    --white: #0e0404;
     /* Light-bg text */
     --tx: #141414;
     --tx2: #525250;
@@ -223,10 +223,8 @@ button {
    ============================================================ */
 
 .nav {
-    position: fixed;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    margin: 16px auto 0;
     width: calc(100% - 48px);
     max-width: var(--maxw);
     z-index: 1000;
@@ -373,7 +371,7 @@ button {
     visibility: hidden;
     pointer-events: none;
     transition: opacity .18s var(--ease), transform .18s var(--ease), visibility .18s;
-    z-index: 200;
+    z-index: 1100;
 }
 
 .nav-ni:hover .nav-drop,
@@ -3616,7 +3614,7 @@ select.form-input {
 }
 
 .hero-body h1 {
-    font-size: clamp(50px, 6.4vw, 88px);
+    font-size: clamp(50px, 6.4vw, 72px);
     font-weight: 800;
     color: #fff;
     line-height: .95;
@@ -3705,7 +3703,7 @@ select.form-input {
    ============================================================ */
 
 .logo-bar {
-    background: #fff;
+    background: #ffffff;
     padding: 28px 0;
     border-top: 1px solid rgba(0, 0, 0, .06);
     border-bottom: 1px solid rgba(0, 0, 0, .06)
