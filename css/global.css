@@ -129,7 +129,7 @@
     --white: #0e0404;
     /* Light-bg text */
     --tx: #141414;
-    --tx2: #525250;
+    --tx2: #050505f6;
     --tx3: #686864;
     /* Dark-bg text — all full white.
      Previously used opacity scale which caused grey text on dark backgrounds. */
@@ -1294,6 +1294,7 @@ button {
      .ph-in.full  single centred column variant
    ============================================================ */
 
+   
 .ph {
     background: var(--ink2);
     padding: 124px var(--pad) 96px;
@@ -1306,7 +1307,7 @@ button {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse 72% 84% at 112% 100%, rgba(208, 108, 12, .32) 0%, rgba(178, 72, 8, .14) 38%, transparent 64%), radial-gradient(ellipse 42% 52% at 95% 42%, rgba(222, 138, 42, .07) 0%, transparent 52%)
+    background: transparent;
 }
 
 .ph-in {
@@ -1605,7 +1606,14 @@ button {
     font-size: 12px;
     font-weight: 700;
     color: var(--o3);
-    flex-shrink: 0
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    animation: gentle-pulse 3s infinite ease-in-out;
+}
+
+@keyframes gentle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .step-num-md {
@@ -4780,7 +4788,7 @@ article strong {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(241, 156, 73, .1);
+    background: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
