@@ -63,11 +63,12 @@
             background: var(--page);
             border-radius: 6px;
             user-select: none;
-            transition: background 0.2s;
+            transition: background 0.2s, transform 0.3s var(--ease);
         }
 
         .details-item summary:hover {
             background: var(--warm);
+            transform: rotate(1deg);
         }
 
         .details-item[open] summary {

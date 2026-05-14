@@ -56,6 +56,17 @@
         gtag('js', new Date());
         gtag('config', 'G-85Q5TSMQ27');
     </script>
+    <style>
+        .card-solution,
+        .card-usecase {
+            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+        .card-solution:hover,
+        .card-usecase:hover {
+            transform: rotate(1deg);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -128,103 +139,75 @@
                     <p class="hero-desc">Dataclyve delivers outcome-driven solutions designed to address common enterprise challenges across database, cloud, and IT operations. We focus on solving real problems with scalable, secure, and cost-efficient solutions.</p>
                     <div class="hero-btn-row">
                         <a href="/contact.html" class="btn-p">Schedule a Free IT Strategy Session<span class="bic">&#8594;</span></a>
-                        <a href="/services/" class="btn-gh wh"> Explore Our Solutions</a>
+                        <a href="/solutions.html" class="btn-gh wh"> Explore Our Solutions</a>
                     </div>
                 </div>
                 <div>
                     <div class="hero-img">
-                        <img fetchpriority="high" loading="eager" src="/images/DC-solution-team.webp" alt="Dataclyve enterprise solutions" class="img-cover" style="object-position:center top" onerror="this.src='/images/DC-image.jpeg'">
+                        <img fetchpriority="high" loading="eager" src="/images/DC-Data-image.webp" alt="Dataclyve enterprise solutions" class="img-cover" style="object-position:center top" onerror="this.src='/images/DC-image.jpeg'">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- SOLUTIONS GRID SECTION -->
-        <section class="s s-page s-rel" id="solutions-grid" aria-labelledby="solutions-h2">
-            <div class="glow-lt" aria-hidden="true"></div>
-            <div class="w s-zi">
-                <div style="text-align:center;margin-bottom:48px">
-                    <p class="ey" style="justify-content:center">What We Deliver</p>
-                    <h2 class="h2" id="solutions-h2">Solutions That Drive <br>Real Business Outcomes</h2>
-                    <p class="body-md sec-intro-body">End-to-end solutions for your most critical IT, database, and cloud challenges.</p>
-                </div>
 
-                <!-- Solutions Grid - 3x2 layout -->
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
-                    
-                    <!-- 1. Cloud Migration & Modernization -->
-                    <div class="ind-card" style="padding:32px">
-                        <div class="ind-card-ico">
+        <section class="s s-white s-rel" aria-labelledby="inc1">
+        <div class="glow-lt" aria-hidden="true"></div>
+        <div class="w s-zi">
+            <div style="display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;margin-bottom:44px">
+            <div>
+                <p class="ey">What We Deliver</p>
+                <h2 class="h2" id="inc1">Solutions That Drive RealBusiness Outcomes</h2>
+                <p class="body-sm" style="margin-top:16px">End-to-end solutions for your most critical IT, database, and cloud challenges.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+                <div style="background: #d1ddff; border: 1px solid rgba(229, 167, 167, 0.34); border-radius: 14px; padding: 26px 28px; transition-delay: 0.32s;" class="fu vis">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4954f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
                                 <path d="M12 12v6"/>
                                 <path d="M9 15l3 3 3-3"/>
-                            </svg>
-                        </div>
-                        <h3>Cloud Migration & Modernization</h3>
-                        <p>Seamless migration of databases and applications from on-premises to cloud platforms (AWS, Azure, GCP) with minimal downtime. Includes assessment, design, migration, validation, and post-migration support.</p>
-                        <span class="arr-link">Learn more →</span>
-                    </div>
-
-                    <!-- 2. High Availability & Disaster Recovery -->
-                    <div class="ind-card" style="padding:32px">
-                        <div class="ind-card-ico">
+                            </svg>                
+                <h4 class="h-card" style="margin-bottom:8px">Cloud Migration &amp; Modernization</h4>
+                <p class="body-xs">Seamless migration of databases and applications from on-premises to cloud platforms (AWS, Azure, GCP) with minimal downtime. Includes assessment, design, migration, validation, and post-migration support.</p>
+                </div>
+                <div style="background: #d1ddff; border: 1px solid rgba(229, 167, 167, 0.34); border-radius: 14px; padding: 26px 28px; transition-delay: 0.32s;" class="fu vis">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4954f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"/>
                                 <polyline points="12 6 12 12 16 14"/>
                                 <path d="M6 3L3 6"/>
                                 <path d="M18 3l3 3"/>
-                            </svg>
-                        </div>
-                        <h3>High Availability & Disaster Recovery</h3>
-                        <p>Design and implementation of resilient architectures to ensure uptime and business continuity. Includes failover strategies, backup planning, and regular disaster recovery testing aligned to RPO/RTO requirements.</p>
-                        <span class="arr-link">Learn more →</span>
-                    </div>
-
-                    <!-- 3. 24×7 Managed Operations -->
-                    <div class="ind-card" style="padding:32px">
-                        <div class="ind-card-ico">
+                            </svg>               
+                 <h4 class="h-card" style="margin-bottom:8px">High Availability &amp; Disaster Recovery</h4>
+                <p class="body-xs">Design and implementation of resilient architectures to ensure uptime and business continuity. Includes failover strategies, backup planning, and regular disaster recovery testing aligned to RPO/RTO requirements.</p>
+                </div>
+                <div style="background: #d1ddff; border: 1px solid rgba(229, 167, 167, 0.34); border-radius: 14px; padding: 26px 28px; transition-delay: 0.32s;" class="fu vis">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4954f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"/>
                                 <polyline points="12 6 12 12 16 14"/>
                                 <path d="M4 4L8 8"/>
                                 <path d="M20 4L16 8"/>
-                            </svg>
-                        </div>
-                        <h3>24×7 Managed Operations</h3>
-                        <p>Continuous monitoring, proactive incident management, and SLA-driven support to ensure stable and high-performing IT and database environments. Your systems run optimally around the clock.</p>
-                        <span class="arr-link">Learn more →</span>
-                    </div>
-
-                    <!-- 4. Performance Optimization -->
-                    <div class="ind-card" style="padding:32px">
-                        <div class="ind-card-ico">
+                            </svg>               
+                 <h4 class="h-card" style="margin-bottom:8px">24×7 Managed Operations</h4>
+                <p class="body-xs">Continuous monitoring, proactive incident management, and SLA-driven support to ensure stable and high-performing IT and database environments.</p>
+                </div>
+                <div style="background: #d1ddff; border: 1px solid rgba(229, 167, 167, 0.34); border-radius: 14px; padding: 26px 28px; transition-delay: 0.32s;" class="fu vis">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4954f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                            </svg>
-                        </div>
-                        <h3>Performance Optimization</h3>
-                        <p>Advanced tuning of databases, queries, and workloads to improve system performance, reduce latency, and enhance user experience. We make your infrastructure faster and more efficient.</p>
-                        <span class="arr-link">Learn more →</span>
-                    </div>
-
-                    <!-- 5. Cloud Cost Optimization (FinOps) -->
-                    <div class="ind-card" style="padding:32px">
-                        <div class="ind-card-ico">
+                            </svg>                
+                <h4 class="h-card" style="margin-bottom:8px">Performance Optimization</h4>
+                <p class="body-xs">Advanced tuning of databases, queries, and workloads to improve system performance, reduce latency, and enhance user experience</p>
+                </div>
+                <div style="background: #d1ddff; border: 1px solid rgba(229, 167, 167, 0.34); border-radius: 14px; padding: 26px 28px; transition-delay: 0.32s;" class="fu vis">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4954f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="12" y1="1" x2="12" y2="23"/>
                                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                                 <circle cx="12" cy="12" r="10"/>
-                            </svg>
-                        </div>
-                        <h3>Cloud Cost Optimization (FinOps)</h3>
-                        <p>Identify and eliminate cloud waste through rightsizing, storage optimization, and usage analysis to reduce infrastructure and licensing costs. Save 20-40% on your cloud spend.</p>
-                        <span class="arr-link">Learn more →</span>
-                    </div>
-
-                    <!-- 6. Advisory & Architecture Services -->
-                    <div class="ind-card" style="padding:32px">
-                        <div class="ind-card-ico">
+                            </svg>                
+                <h4 class="h-card" style="margin-bottom:8px">Cloud Cost Optimization (FinOps)</h4>
+                <p class="body-xs">Identify and eliminate cloud waste through rightsizing, storage optimization, and usage analysis to reduce infrastructure and licensing costs. <a href="/blog/do-you-want-to-improve-your-level-of-cybersecurity/">Learn more →</a></p>
+                </div>
+                <div style="background: #d1ddff; border: 1px solid rgba(229, 167, 167, 0.34); border-radius: 14px; padding: 26px 28px; transition-delay: 0.32s;" class="fu vis">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4954f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
                                 <line x1="8" y1="21" x2="16" y2="21"/>
@@ -232,49 +215,85 @@
                                 <path d="M7 7h10"/>
                                 <path d="M7 11h6"/>
                             </svg>
-                        </div>
-                        <h3>Advisory & Architecture Services</h3>
-                        <p>Expert guidance for cloud architecture, database strategy, platform design, and modernization roadmaps to align technology with business goals. Strategic advice you can trust.</p>
-                        <span class="arr-link">Learn more →</span>
-                    </div>
+                <h4 class="h-card" style="margin-bottom:8px">Advisory &amp; Architecture Services</h4>
+                <p class="body-xs">Provide expert guidance for cloud architecture, database strategy, platform design, and modernization roadmaps to align technology with business goals.</p>
                 </div>
             </div>
+            </div>
+            <a href="/contact/" class="btn-p">Talk to our team <span class="bic">→</span></a>
+        </div>
         </section>
 
-        <!-- OUR APPROACH SECTION - 5 Steps -->
-        <section class="s s-white s-rel" aria-labelledby="approach-h2">
-            <div class="glow-lt" aria-hidden="true"></div>
+
+
+
+
+
+
+
+        <!-- OUR APPROACH SECTION - 5 Steps (Aligned with Image) -->
+        <section class="s s-ink2 s-rel" aria-labelledby="hiw1">
+            <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 70% at 0% 50%,rgba(73,84,241,.12) 0%,rgba(104,40,224,.08) 40%,transparent 65%)" aria-hidden="true"></div>
             <div class="w s-zi">
-                <div class="sec-intro">
-                    <p class="ey" style="justify-content:center">Our Approach</p>
-                    <h2 class="h2" id="approach-h2">A Proven Process That Delivers</h2>
-                    <p class="body-md sec-intro-body">We follow a structured methodology to ensure success at every stage.</p>
-                </div>
-                <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px;text-align:center">
-                    <div class="fu">
-                        <div class="step-num-md" style="margin:0 auto 16px">01</div>
-                        <h3 class="h-mid" style="margin-bottom:8px">Assess</h3>
-                        <p class="body-sm">Understand current environment and challenges</p>
+                <div style="display:grid;grid-template-columns:5fr 4fr;gap:60px;align-items:center">
+                    <div>
+                        <p class="ey">Our Approach</p>
+                        <h2 class="h2 wh" id="hiw1">A Proven Process That Delivers</h2>
+                        <p class="body-md wh" style="margin-bottom:28px">We follow a structured methodology to ensure success at every stage.</p>
+                        <div>
+                            
+                            <!-- Step 1: Assess -->
+                            <div style="display:grid;grid-template-columns:36px 1fr;gap:16px;padding:14px 0;border-top:1px solid rgba(255,255,255,.06)">
+                                <div class="step-num" style="width:28px;height:28px;font-size:11px">01</div>
+                                <div>
+                                    <h4 class="h4 wh" style="font-size:16px;margin-bottom:4px">Assess</h4>
+                                    <p class="body-sm wh" style="margin:0;font-size:13px;opacity:0.85">Understand current environment and challenges</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2: Design -->
+                            <div style="display:grid;grid-template-columns:36px 1fr;gap:16px;padding:14px 0">
+                                <div class="step-num" style="width:28px;height:28px;font-size:11px">02</div>
+                                <div>
+                                    <h4 class="h4 wh" style="font-size:16px;margin-bottom:4px">Design</h4>
+                                    <p class="body-sm wh" style="margin:0;font-size:13px;opacity:0.85">Build a tailored, scalable solution</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3: Deliver -->
+                            <div style="display:grid;grid-template-columns:36px 1fr;gap:16px;padding:14px 0">
+                                <div class="step-num" style="width:28px;height:28px;font-size:11px">03</div>
+                                <div>
+                                    <h4 class="h4 wh" style="font-size:16px;margin-bottom:4px">Deliver</h4>
+                                    <p class="body-sm wh" style="margin:0;font-size:13px;opacity:0.85">Execute with minimal risk and downtime</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 4: Optimize -->
+                            <div style="display:grid;grid-template-columns:36px 1fr;gap:16px;padding:14px 0">
+                                <div class="step-num" style="width:28px;height:28px;font-size:11px">04</div>
+                                <div>
+                                    <h4 class="h4 wh" style="font-size:16px;margin-bottom:4px">Optimize</h4>
+                                    <p class="body-sm wh" style="margin:0;font-size:13px;opacity:0.85">Improve performance and cost efficiency</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 5: Operate -->
+                            <div style="display:grid;grid-template-columns:36px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+                                <div class="step-num" style="width:28px;height:28px;font-size:11px">05</div>
+                                <div>
+                                    <h4 class="h4 wh" style="font-size:16px;margin-bottom:4px">Operate</h4>
+                                    <p class="body-sm wh" style="margin:0;font-size:13px;opacity:0.85">Provide ongoing support and continuous improvement</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div style="padding-top:24px">
+                            <a href="/contact.html" class="btn-p">Start the process →</a>
+                        </div>
                     </div>
-                    <div class="fu">
-                        <div class="step-num-md" style="margin:0 auto 16px">02</div>
-                        <h3 class="h-mid" style="margin-bottom:8px">Design</h3>
-                        <p class="body-sm">Build a tailored, scalable solution</p>
-                    </div>
-                    <div class="fu">
-                        <div class="step-num-md" style="margin:0 auto 16px">03</div>
-                        <h3 class="h-mid" style="margin-bottom:8px">Deliver</h3>
-                        <p class="body-sm">Execute with minimal risk and downtime</p>
-                    </div>
-                    <div class="fu">
-                        <div class="step-num-md" style="margin:0 auto 16px">04</div>
-                        <h3 class="h-mid" style="margin-bottom:8px">Optimize</h3>
-                        <p class="body-sm">Improve performance and cost efficiency</p>
-                    </div>
-                    <div class="fu">
-                        <div class="step-num-md" style="margin:0 auto 16px">05</div>
-                        <h3 class="h-mid" style="margin-bottom:8px">Operate</h3>
-                        <p class="body-sm">Provide ongoing support and improvement</p>
+                    <div style="background:var(--ink);border-radius:18px;overflow:hidden;aspect-ratio:4/4">
+                        <img fetchpriority="high" loading="eager" src="/images/DC-solution-team.webp" alt="Dataclyve structured approach" class="img-cover" onerror="this.src='/images/DC-image.jpeg'">
                     </div>
                 </div>
             </div>
@@ -319,7 +338,6 @@
         </section>
 
         <!-- CTA SECTION - Free Assessment -->
-        <!-- CTA — s-page: light bg, exact Part 9 pattern -->
         <section class="s s-page s-rel cta-sec">
             <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 100% at 50% 120%,rgba(241,156,73,.22) 0%,rgba(228,136,52,.1) 35%,transparent 58%)" aria-hidden="true"></div>
             <div class="cta-wm" aria-hidden="true"><span class="cta-wm-t">DATA CLYVE</span></div>

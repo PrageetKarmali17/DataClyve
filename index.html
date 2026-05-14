@@ -50,6 +50,22 @@
     </script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-85Q5TSMQ27"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-85Q5TSMQ27');
+    </script>
+    <style>
+        .card-index,
+        .card-service {
+            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+        .card-index:hover,
+        .card-service:hover {
+            transform: rotate(1deg);
+        }
+    </style>
 
 </head>
 
@@ -82,12 +98,7 @@
                     </div> -->
                 </div>
                 <div class="nav-ni">
-                    <a href="/about-us/" class="nav-nl">About Us<svg class="nav-cv" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
-                    <div class="nav-drop" style="min-width:260px">
-                        <a href="/about/our-story/" class="nav-dl"><div class="ndlt">Our Story</div><div class="ndls">Founder-led, senior-staffed</div></a>
-                        <a href="/about/leadership/" class="nav-dl"><div class="ndlt">Leadership</div><div class="ndls">Meet the team</div></a>
-                        <a href="/about/careers/" class="nav-dl"><div class="ndlt">Careers</div><div class="ndls">Join our team</div></a>
-                    </div>
+                    <a href="/about-us.html" class="nav-nl">About Us<svg class="nav-cv" viewBox="0 0 10 10" fill="none"></svg></a>
                 </div>
                 <div class="nav-ni">
                     <a href="/contact-us.html" class="nav-nl">Contact Us<svg class="nav-cv" viewBox="0 0 10 10" fill="none"></svg></a>
@@ -103,7 +114,7 @@
         <div class="nav-mob" id="nav-mob" aria-hidden="true">
             <a href="/services.html">Services</a>
             <a href="/solutions.html">Solutions</a>
-            <a href="/about/">About Us</a>
+            <a href="/about-us/">About Us</a>
             <a href="/contact-us.html">Contact Us</a>
         </div>
     </div>
@@ -143,6 +154,9 @@
                     <div class="logo-bar-item"><img loading="lazy" src="/images/aws-logo.png" alt="AWS — DATA CLYVE IT managed IT client" class="logo-bar-img"></div>
                     <div class="logo-bar-item"><img loading="lazy" src="/images/microsoft-logo.png" alt="Microsoft — DATA CLYVE IT managed IT client" class="logo-bar-img"></div>
                     <div class="logo-bar-item"><img loading="lazy" src="/images/googlecloud-logo.png" alt="Google Cloud — DATA CLYVE IT managed IT client" class="logo-bar-img"></div>
+                    <div class="logo-bar-item"><img loading="lazy" src="/images/sale-force.png" alt="Saleforce — DATA CLYVE IT managed IT client" class="logo-bar-img"></div>
+                    <div class="logo-bar-item"><img loading="lazy" src="/images/oracle-cloud.png" alt="Oracle Cloud — DATA CLYVE IT managed IT client" class="logo-bar-img"></div>
+                    <div class="logo-bar-item"><img loading="lazy" src="/images/azure-logo.png" alt="Azure — DATA CLYVE IT managed IT client" class="logo-bar-img"></div>
                 </div>
             </div>
         </div>
@@ -190,37 +204,38 @@
 
 
         <!-- Why DataClyve — s-page: light bg, default dark text -->
-        <section class="s s-warm " aria-labelledby="cs-h2">
+        <section class="s s-warm" aria-labelledby="why-h2">
             <div class="glow-lt" aria-hidden="true"></div>
             <div class="w s-zi">
                 <div class="sec-intro">
                     <div class="hero-badge">
                         <span class="hero-badge-txt">WHY DATACLYVE</span>
                     </div>
-                    <h2 class="h2" id="steps-h2">Different by design</h2>
+                    <h2 class="h2" id="why-h2">Different by design</h2>
+                    <p class="body-md sec-intro-body">A unified operations partner for cloud, data, and AI — with founder-led support, outcome-focused pricing, and a single SLA across your modern tech stack.</p>
                 </div>
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
-                    <div class="fu">
-                        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:18px">
-                            <div class="step-num-md">01</div>
-                            <h3 class="h3" style="margin-bottom:0">One throat to choke</h3>
+                <div class="why-feature-grid">
+                    <article class="why-card fu">
+                        <div class="why-card-head">
+                            <div class="why-card-num">01</div>
+                            <h3 class="h3">One throat to choke</h3>
                         </div>
-                        <p class="body-md">Stop triangulating between a cloud MSP, a data consultancy, and an AI vendor. One contract. One SLA. One account team.</p>
-                    </div>
-                    <div class="fu">
-                        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:18px">
-                            <div class="step-num-md">02</div>
-                            <h3 class="h3" style="margin-bottom:0">Outcome-priced, not hourly</h3>
+                        <p class="body-md why-card-text">Stop triangulating between a cloud MSP, a data consultancy, and an AI vendor. One contract. One SLA. One account team.</p>
+                    </article>
+                    <article class="why-card fu">
+                        <div class="why-card-head">
+                            <div class="why-card-num">02</div>
+                            <h3 class="h3">Outcome-priced, not hourly</h3>
                         </div>
-                        <p class="body-md">We price our managed services to your business outcomes — cost saved, uptime delivered, tickets resolved — not to an hourly rate card.</p>
-                    </div>
-                    <div class="fu">
-                        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:18px">
-                            <div class="step-num-md">03</div>
-                            <h3 class="h3" style="margin-bottom:0">Founder-led, senior-staffed</h3>
+                        <p class="body-md why-card-text">We price our managed services to your business outcomes — cost saved, uptime delivered, tickets resolved — not to an hourly rate card.</p>
+                    </article>
+                    <article class="why-card fu">
+                        <div class="why-card-head">
+                            <div class="why-card-num">03</div>
+                            <h3 class="h3">Founder-led, senior-staffed</h3>
                         </div>
-                        <p class="body-md">You'll work directly with senior architects — not an offshore pool of juniors. Every engagement is overseen by a named principal.</p>
-                    </div>
+                        <p class="body-md why-card-text">You'll work directly with senior architects — not an offshore pool of juniors. Every engagement is overseen by a named principal.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -242,7 +257,7 @@
                 </div>
                 <div>
                     <div class="hero-img">
-                        <img fetchpriority="high" loading="eager" src="/images/growth-image.avif" alt="DATA CLYVE IT team at their Courtenay head office" class="img-cover" style="object-position:center top">
+                        <img fetchpriority="high" loading="eager" src="/images/growth-image.avif" alt="DATA CLYVE IT team at their Courtenay head office" class="img-cover" style="object-position:center top; animation: float-slow 14s ease-in-out infinite alternate;">
                     </div>
                 </div>
                 </div>
@@ -263,37 +278,37 @@
                     <h2 class="h2" id="steps-h2">From Discovery To Evolution</h2>
                     <p class="body-md sec-intro-body">A proven process that scales with you.</p>
                 </div>
-                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
-                    <div class="fu">
-                        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:18px">
+                <div class="process-grid">
+                    <article class="process-step fu">
+                        <div class="process-step-head">
                             <div class="step-num-md">01</div>
-                            <h3 class="h3" style="margin-bottom:0">Discover</h3>
+                            <h3 class="h3">Discover</h3>
                         </div>
-                        <p class="body-md">2-week fixed-fee assessment to understand your current state, pain points, and goals..</p>
-                    </div>
-                    <div class="fu">
-                        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:18px">
+                        <p class="body-md">2-week fixed-fee assessment to understand your current state, pain points, and goals.</p>
+                    </article>
+                    <article class="process-step fu">
+                        <div class="process-step-head">
                             <div class="step-num-md">02</div>
-                            <h3 class="h3" style="margin-bottom:0">Design</h3>
+                            <h3 class="h3">Design</h3>
                         </div>
                         <p class="body-md">Operating model, runbook library, and transition plan delivered before we touch production.</p>
-                    </div>
-                    <div class="fu">
-                        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:18px">
+                    </article>
+                    <article class="process-step fu">
+                        <div class="process-step-head">
                             <div class="step-num-md">03</div>
-                            <h3 class="h3" style="margin-bottom:0">Operate</h3>
+                            <h3 class="h3">Operate</h3>
                         </div>
                         <p class="body-md">24×7 managed services with weekly ops reviews and a named principal owner.</p>
-                    </div>
-                        <div class="fu">
-                        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:18px">
+                    </article>
+                    <article class="process-step fu">
+                        <div class="process-step-head">
                             <div class="step-num-md">04</div>
-                            <h3 class="h3" style="margin-bottom:0">Evolve</h3>
+                            <h3 class="h3">Evolve</h3>
                         </div>
                         <p class="body-md">Quarterly business reviews and continuous improvement against your KPIs.</p>
-                    </div>
+                    </article>
                 </div>
-                <div style="text-align:center;margin-top:44px">
+                <div class="process-cta">
                     <a href="/contact-us.html" class="btn-p">Schedule a Free IT Strategy Session <span class="bic">&#8594;</span></a>
                 </div>
             </div>
@@ -360,7 +375,7 @@
                 <p class="body-md" style="margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto">Book a 30-minute discovery call. No deck, no sales pitch — just a working session to see if we fit.</p>
                 <div class="cta-sec-btns">
                     <a href="/contact-us.html" class="btn-dk">Schedule a Free IT Strategy Session <span class="bic">&#8594;</span></a>
-                    <a href="#" class="btn-gh">+1 (55) 123-4567</a>
+                    <!-- <a href="#" class="btn-gh">+1 (55) 123-4567</a> -->
                 </div>
             </div>
         </section>
@@ -453,10 +468,11 @@
             <div class="f-col">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="/about-us/">About Us</a></li>
+                    <li><a href="/about-us.html">About Us</a></li>
                     <li><a href="/leadership/">Leadership</a></li>
                     <li><a href="/careers/">Careers</a></li>
                     <li><a href="/partnerships/">Partnerships</a></li>
+                </ul>
                 <h4 class="f-col-h4-mt">Connect</h4>
                 <ul>
                     <li><a href="https://calendly.com/dataclyve" target="_blank">Book a Call</a></li>
