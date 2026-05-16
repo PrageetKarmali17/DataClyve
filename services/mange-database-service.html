@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataclyve | Managed Database Services â€“ Performance, Scale, Reliability</title>
+    <!-- Tailwind + Font Awesome + Google Fonts (matching existing stack) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-grid">
+
+    <!-- Header identical navigation style to other service pages -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f19]/80 border-b border-gray-800/80 transition-all">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <a href="index.html" class="flex items-center space-x-2.5 group" title="Dataclyve â€” Managed IT Services Vancouver Island">
+                <!-- <div class="h-9 w-9 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-md shadow-blue-500/10 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-square-terminal text-white font-bold text-lg"></i>
+                </div> -->
+                <span class="text-xl font-bold tracking-wider text-white">DataClyve</span>
+            </a>
+
+            <nav class="hidden lg:flex space-x-8 text-sm font-medium text-gray-400">
+                <div  class="relative nav-dropdown py-2">
+                    <button  class="hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer">
+                        Services <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
+                    </button>
+                    <div class="dropdown-menu absolute left-0 mt-3 w-64 rounded-2xl bg-[#0f1524] border border-gray-800 p-3 shadow-xl transition-all opacity-0 invisible translate-y-2 duration-200">
+                        <a href="Manage-IT-Service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-desktop text-amber-400 w-5"></i>
+                            <div><div class="font-semibold text-xs">Managed IT Services</div></div>
+                        </a>
+                        <a href="cloud-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-cloud text-pink-400 w-5"></i>
+                            <div><div class="font-semibold text-xs">Managed Cloud Services</div></div>
+                        </a>
+                        <a href="mange-database-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-database text-orange-400 w-5"></i>
+                            <div><div class="font-semibold text-xs">Database Managed Services</div></div>
+                        </a>
+                        <a href="AI-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-brain text-purple-400 w-5"></i>
+                            <div><div class="font-semibold text-xs">AI & Data Services</div></div>
+                        </a>
+                        <a href="devOps-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-code-merge text-amber-500 w-5"></i>
+                            <div><div class="font-semibold text-xs">DevOps Services</div></div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="../solutions.html" class="hover:text-amber-400 py-2 transition-colors">Solutions</a>
+                <a href="../about-us.html" class="hover:text-amber-400 py-2 transition-colors">About Us</a>
+                <a href="../contact-us.html" class="hover:text-amber-400 py-2 transition-colors">Contact Us</a>
+            </nav>
+
+            <div>
+                <a href="../contact-us.html" class="bg-blue-600 hover:bg-blue-500 text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full transition-all shadow-lg shadow-blue-600/20">Book a free call</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section â€“ Database focus -->
+    <section class="relative min-h-[85vh] flex items-center justify-center px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-15">
+            <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1920&q=80" alt="Database architecture visualization" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-[#0b0f19]"></div>
+        </div>
+        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8 mt-12">
+            <div class="inline-flex items-center space-x-2 bg-emerald-950/50 border border-emerald-800/60 rounded-full px-4 py-1.5 text-xs text-emerald-400 uppercase font-semibold">
+                <i class="fa-solid fa-database"></i> <span>Managed Database Services Design Spec</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                Managed Database Services for <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-400">Performance, Reliability & Scale</span>
+            </h1>
+            <p class="text-gray-400 max-w-3xl mx-auto text-base md:text-lg font-light leading-relaxed">
+                Expert management of mission-critical databases across onâ€‘premises and cloud environments â€” ensuring high availability, security, and peak performance with 24/7 monitoring and SLAâ€‘backed support.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                <a href="#contact" class="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-medium px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20">Get Free Database Assessment</a>
+                <a href="#capabilities" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-800 font-medium px-8 py-3.5 rounded-xl transition-all">Explore Services</a>
+            </div>
+            <div class="pt-12 border-t border-gray-900 max-w-4xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs md:text-sm text-gray-400 font-medium">
+                    <span><i class="fa-solid fa-circle-check text-emerald-500 mr-1.5 text-[10px]"></i> SQL & NoSQL Experts</span>
+                    <span><i class="fa-solid fa-circle-check text-emerald-500 mr-1.5 text-[10px]"></i> Oracle â€¢ SQL Server â€¢ PostgreSQL</span>
+                    <span><i class="fa-solid fa-circle-check text-emerald-500 mr-1.5 text-[10px]"></i> AWS RDS â€¢ Azure â€¢ GCP</span>
+                    <span><i class="fa-solid fa-circle-check text-emerald-500 mr-1.5 text-[10px]"></i> Cloud Migration & HA/DR</span>
+                    <span><i class="fa-solid fa-circle-check text-emerald-500 mr-1.5 text-[10px]"></i> 24/7 DBA Operations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core capabilities section based on design spec -->
+    <section id="capabilities" class="py-24 max-w-7xl mx-auto px-6 reveal">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">End-to-End Database Management</h2>
+            <div class="h-1 w-20 bg-emerald-500 mx-auto rounded-full"></div>
+            <p class="text-gray-400 font-light">Full lifecycle administration â€“ from deployment, optimization, HA/DR to 24/7 operations across multiâ€‘cloud and onâ€‘prem.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40">
+                <div class="h-11 w-11 rounded-xl bg-emerald-600/10 text-emerald-400 flex items-center justify-center text-lg"><i class="fa-solid fa-chart-simple"></i></div>
+                <h3 class="text-lg font-semibold text-white mt-3">Performance & Query Optimization</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light mt-2">
+                    <li><i class="fa-solid fa-bolt text-emerald-400 mr-1.5"></i> Query tuning & index optimization</li>
+                    <li><i class="fa-solid fa-bolt text-emerald-400 mr-1.5"></i> Deadlock resolution & workload analysis</li>
+                    <li><i class="fa-solid fa-bolt text-emerald-400 mr-1.5"></i> Proactive performance baselining</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40">
+                <div class="h-11 w-11 rounded-xl bg-blue-600/10 text-blue-400 flex items-center justify-center text-lg"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <h3 class="text-lg font-semibold text-white mt-3">Migration & Modernization</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light mt-2">
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Onâ€‘prem to cloud (AWS RDS/Azure/GCP)</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Zero/minimal downtime migration</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Legacy to cloud-native transformation</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40">
+                <div class="h-11 w-11 rounded-xl bg-purple-600/10 text-purple-400 flex items-center justify-center text-lg"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3 class="text-lg font-semibold text-white mt-3">Security & Compliance</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light mt-2">
+                    <li><i class="fa-solid fa-lock text-emerald-400 mr-1.5"></i> AES-256 encryption & TLS 1.2+</li>
+                    <li><i class="fa-solid fa-lock text-emerald-400 mr-1.5"></i> IAM / RBAC, SSO, MFA enforcement</li>
+                    <li><i class="fa-solid fa-lock text-emerald-400 mr-1.5"></i> SOC2, ISO27001, HIPAA readiness</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40">
+                <div class="h-11 w-11 rounded-xl bg-cyan-600/10 text-cyan-400 flex items-center justify-center text-lg"><i class="fa-solid fa-arrows-rotate"></i></div>
+                <h3 class="text-lg font-semibold text-white mt-3">HA/DR & Replication</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light mt-2">
+                    <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Active-Passive / Active-Active clusters</li>
+                    <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Automated failover & backup strategies</li>
+                    <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Multi-region / zone resilience</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40">
+                <div class="h-11 w-11 rounded-xl bg-orange-600/10 text-orange-400 flex items-center justify-center text-lg"><i class="fa-solid fa-clock"></i></div>
+                <h3 class="text-lg font-semibold text-white mt-3">24/7 DBA Operations</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light mt-2">
+                    <li><i class="fa-solid fa-headset text-emerald-400 mr-1.5"></i> Continuous monitoring & alerting</li>
+                    <li><i class="fa-solid fa-headset text-emerald-400 mr-1.5"></i> Patch management & version upgrades</li>
+                    <li><i class="fa-solid fa-headset text-emerald-400 mr-1.5"></i> SLA-driven incident resolution</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40">
+                <div class="h-11 w-11 rounded-xl bg-teal-600/10 text-teal-400 flex items-center justify-center text-lg"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 class="text-lg font-semibold text-white mt-3">Capacity & Cost Optimization</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light mt-2">
+                    <li><i class="fa-solid fa-chart-pie text-emerald-400 mr-1.5"></i> Resource rightâ€‘sizing & scaling</li>
+                    <li><i class="fa-solid fa-chart-pie text-emerald-400 mr-1.5"></i> Storage tiering & reserved capacity</li>
+                    <li><i class="fa-solid fa-chart-pie text-emerald-400 mr-1.5"></i> Cloud cost governance (FinOps)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Database Technologies & Platforms (Tabs) -->
+    <section id="technologies" class="py-24 bg-[#090d16] border-y border-gray-900 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12 space-y-4">
+                <h2 class="text-3xl font-bold text-white">Supported Database Technologies</h2>
+                <p class="text-gray-400 text-sm">Deep expertise across SQL, NoSQL, cloud-native and modern data platforms.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 mb-10 bg-gray-950 p-1.5 rounded-xl border border-gray-850 w-fit mx-auto">
+                <button onclick="switchTab(event, 'sql-tab')" class="tab-btn px-5 py-2 rounded-lg text-xs font-medium text-gray-400 transition-all active">Relational (SQL)</button>
+                <button onclick="switchTab(event, 'nosql-tab')" class="tab-btn px-5 py-2 rounded-lg text-xs font-medium text-gray-400 transition-all">NoSQL & Modern</button>
+                <button onclick="switchTab(event, 'cloud-tab')" class="tab-btn px-5 py-2 rounded-lg text-xs font-medium text-gray-400 transition-all">Cloud & Analytics</button>
+            </div>
+            <div id="sql-tab" class="tab-content active max-w-5xl mx-auto">
+                <div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden">
+                    <table class="w-full text-left text-sm"><thead class="bg-gray-950"><tr><th class="p-4 text-gray-400">Database Engine</th><th class="p-4 text-gray-400">Expertise Highlights</th></tr></thead>
+                    <tbody class="divide-y divide-gray-800 text-gray-300">
+                        <tr><td class="p-4 font-semibold text-white">Oracle Database</td><td class="p-4 text-xs">RAC, Data Guard, performance tuning, Exadata readiness</td></tr>
+                        <tr><td class="p-4 font-semibold text-white">Microsoft SQL Server</td><td class="p-4 text-xs">Always On availability groups, SSIS, SSRS, migration to Azure SQL MI</td></tr>
+                        <tr><td class="p-4 font-semibold text-white">PostgreSQL / MySQL</td><td class="p-4 text-xs">Streaming replication, logical replication, query optimization, Aurora/Cloud SQL</td></tr>
+                        <tr><td class="p-4 font-semibold text-white">IBM Db2 & MariaDB</td><td class="p-4 text-xs">Enterprise migration, cross-platform replication</td></tr>
+                    </tbody></table>
+                </div>
+            </div>
+            <div id="nosql-tab" class="tab-content max-w-5xl mx-auto">
+                <div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden">
+                    <table class="w-full text-left text-sm"><thead class="bg-gray-950"><tr><th class="p-4 text-gray-400">NoSQL Platform</th><th class="p-4 text-gray-400">Capabilities</th></tr></thead>
+                    <tbody class="divide-y divide-gray-800 text-gray-300">
+                        <tr><td class="p-4 font-semibold text-white">MongoDB / Atlas</td><td class="p-4 text-xs">Sharding, replica sets, aggregation pipelines, cloud migration</td></tr>
+                        <tr><td class="p-4 font-semibold text-white">Cassandra / ScyllaDB</td><td class="p-4 text-xs">Ring topology, tunable consistency, cluster-wide repair</td></tr>
+                        <tr><td class="p-4 font-semibold text-white">Redis / Redis Enterprise</td><td class="p-4 text-xs">Highâ€‘performance caching, sentinel, cluster mode</td></tr>
+                        <tr><td class="p-4 font-semibold text-white">Amazon DynamoDB / Cosmos DB</td><td class="p-4 text-xs">Autoâ€‘scaling, global tables, multiâ€‘master</td></tr>
+                    </tbody></table>
+                </div>
+            </div>
+            <div id="cloud-tab" class="tab-content max-w-5xl mx-auto">
+                <div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden">
+                    <table class="w-full text-left text-sm"><thead class="bg-gray-950"><tr><th class="p-4 text-gray-400">Cloud & Analytics Platform</th><th class="p-4 text-gray-400">Key Services</th></tr></thead>
+                    <tbody class="divide-y divide-gray-800 text-gray-300">
+                        <tr><td class="p-4 font-semibold text-white">AWS RDS / Aurora</td><td class="p-4 text-xs">Multi-AZ, global database, performance insights, serverless</td></tr>
+                        <tr><td class="p-4 font-semibold text-white">Azure SQL / Managed Instance</td><td class="p-4 text-xs">Hyperscale, geoâ€‘replication, TDE, ledger tables</td></tr>
+                        <tr><td class="p-4 font-semibold text-white">Google Cloud SQL / Spanner</td><td class="p-4 text-xs">Global transactions, automatic replication</td></tr>
+                        <tr><td class="p-4 font-semibold text-white">Snowflake / BigQuery / Redshift</td><td class="p-4 text-xs">Data warehouse optimization, zeroâ€‘copy cloning, scaling</td></tr>
+                    </tbody></table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HA/DR & SLA matrix combined (detailed from spec) -->
+    <section id="ha-dr" class="py-24 max-w-7xl mx-auto px-6 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="space-y-6">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-dice-d6 text-emerald-400 text-xl"></i><h3 class="text-2xl font-bold text-white">High Availability & Disaster Recovery</h3></div>
+                <p class="text-gray-400 text-sm">Active-Passive, Active-Active, multiâ€‘region architectures designed to meet your RTO/RPO thresholds.</p>
+                <div class="bg-[#111625] p-6 rounded-2xl border border-gray-800">
+                    <h4 class="text-md font-semibold text-white">Recovery Objectives by Architecture</h4>
+                    <div class="mt-4 space-y-2 text-xs text-gray-300">
+                        <div class="flex justify-between border-b border-gray-700 pb-1"><span>Active-Passive (same region)</span><span class="text-emerald-400">RTO <5 min / RPO <5 min</span></div>
+                        <div class="flex justify-between border-b border-gray-700 pb-1"><span>Active-Passive (multi-region)</span><span class="text-emerald-400">RTO <15 min / RPO <5 min</span></div>
+                        <div class="flex justify-between border-b border-gray-700 pb-1"><span>Active-Active</span><span class="text-emerald-400">RTO <1 min / Nearâ€‘zero RPO</span></div>
+                        <div class="flex justify-between"><span>Backupâ€‘only restore</span><span class="text-yellow-400">RTO <4h / RPO <24h</span></div>
+                    </div>
+                </div>
+            </div>
+            <div id="sla-matrix" class="space-y-6">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-chart-simple text-emerald-400 text-xl"></i><h3 class="text-2xl font-bold text-white">SLA Response & Escalation</h3></div>
+                <div class="overflow-hidden border border-gray-800 rounded-xl">
+                    <table class="w-full text-left text-xs"><thead class="bg-gray-950"><tr><th class="p-3">Severity</th><th class="p-3">Response Target</th><th class="p-3">Update Freq.</th></tr></thead>
+                    <tbody class="divide-y divide-gray-800 text-gray-300">
+                        <tr><td class="p-3 font-semibold text-white">Sev1 (Critical â€“ outage)</td><td class="p-3"><15 min</td><td class="p-3">Every 30 min</td></tr>
+                        <tr><td class="p-3 font-semibold text-white">Sev2 (High â€“ degradation)</td><td class="p-3"><1 hour</td><td class="p-3">Every 2 hours</td></tr>
+                        <tr><td class="p-3 font-semibold text-white">Sev3 (Normal)</td><td class="p-3"><4 hours</td><td class="p-3">Daily</td></tr>
+                        <tr><td class="p-3 font-semibold text-white">Sev4 (Low/Request)</td><td class="p-3"><24 hours</td><td class="p-3">As needed</td></tr>
+                    </tbody></table>
+                </div>
+                <div class="bg-gray-950/40 rounded-xl p-4 text-center text-gray-400 text-xs"><i class="fa-solid fa-people-arrows"></i> Escalation: L1 â†’ L2 (DBA Eng) â†’ L3 (Sr DBA) â†’ L4 (Architect) â†’ CTO Office</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Dataclyve vs alternatives + success stories -->
+    <section id="comparison" class="py-24 bg-[#090d16] reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <h2 class="text-3xl font-bold text-white">Strategic Advantage</h2>
+                <p class="text-gray-400 text-sm">Dataclyve vs. inâ€‘house teams, cloud provider managed services, and traditional MSPs.</p>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border border-gray-800 bg-[#111625]">
+                <table class="w-full text-sm text-left min-w-[750px]">
+                    <thead><tr class="bg-gray-950 text-gray-400"><th class="p-4">Capability</th><th class="p-4 text-emerald-400">Dataclyve</th><th class="p-4">Inâ€‘house DBA Team</th><th class="p-4">Cloud Provider (RDS etc.)</th><th class="p-4">Generalist MSP</th></tr></thead>
+                    <tbody class="divide-y divide-gray-800 text-gray-300">
+                        <tr><td class="p-4 font-medium">Multiâ€‘cloud & onâ€‘prem expertise</td><td class="p-4 text-emerald-400"><i class="fa-solid fa-circle-check"></i> Yes</td><td class="p-4 text-gray-500">Limited</td><td class="p-4 text-gray-500">Vendorâ€‘locked</td><td class="p-4 text-amber-500">Varies</td></tr>
+                        <tr><td class="p-4 font-medium">24/7/365 coverage</td><td class="p-4 text-emerald-400"><i class="fa-solid fa-circle-check"></i> Yes</td><td class="p-4 text-red-400">Rare</td><td class="p-4 text-emerald-400">Yes</td><td class="p-4 text-amber-500">Varies</td></tr>
+                        <tr><td class="p-4 font-medium">Crossâ€‘platform SQL & NoSQL</td><td class="p-4 text-emerald-400"><i class="fa-solid fa-circle-check"></i> Deep</td><td class="p-4 text-gray-500">Niche</td><td class="p-4 text-gray-500">No</td><td class="p-4 text-amber-500">Often limited</td></tr>
+                        <tr><td class="p-4 font-medium">SLAâ€‘backed resolution</td><td class="p-4 text-emerald-400"><i class="fa-solid fa-circle-check"></i> Yes</td><td class="p-4 text-red-400">No</td><td class="p-4 text-gray-500">Uptime only</td><td class="p-4 text-amber-500">Varies</td></tr>
+                        <tr><td class="p-4 font-medium">Fixed monthly cost</td><td class="p-4 text-emerald-400"><i class="fa-solid fa-circle-check"></i> Yes</td><td class="p-4 text-red-400">High overhead</td><td class="p-4 text-gray-500">Consumption</td><td class="p-4 text-amber-500">Varies</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Success stories from doc -->
+            <div class="mt-16 grid md:grid-cols-3 gap-6">
+                <div class="bg-[#111625] p-5 rounded-xl border border-gray-800"><i class="fa-solid fa-building-columns text-emerald-400 text-xl mb-2 block"></i><h4 class="font-semibold text-white">Financial Services Firm</h4><p class="text-xs text-gray-400 mt-1">SQL Server deadlocks eliminated â†’ 99.99% uptime, zero deadlock incidents over 9 months.</p></div>
+                <div class="bg-[#111625] p-5 rounded-xl border border-gray-800"><i class="fa-solid fa-cart-shopping text-emerald-400 text-xl mb-2 block"></i><h4 class="font-semibold text-white">Eâ€‘commerce Retailer</h4><p class="text-xs text-gray-400 mt-1">PostgreSQL Black Friday scaling â†’ 4x peak traffic, subâ€‘1s query latency.</p></div>
+                <div class="bg-[#111625] p-5 rounded-xl border border-gray-800"><i class="fa-solid fa-heart-pulse text-emerald-400 text-xl mb-2 block"></i><h4 class="font-semibold text-white">Healthcare SaaS</h4><p class="text-xs text-gray-400 mt-1">12TB Oracle to AWS RDS â†’ 12 seconds downtime, zero data loss migration.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onboarding phases & final CTA -->
+    <section class="py-24 max-w-7xl mx-auto px-6 reveal">
+        <div class="text-center mb-12"><span class="bg-emerald-950/50 border border-emerald-800 px-4 py-1 rounded-full text-xs font-bold text-emerald-400">Structured Onboarding</span><h2 class="text-3xl font-bold text-white mt-4">From Discovery to Full Management in 2â€“3 Weeks</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5 text-center">
+            <div class="bg-[#111625]/60 p-5 rounded-2xl border border-gray-800"><div class="text-2xl font-bold text-emerald-400">01</div><h4 class="font-semibold text-white mt-2">Discovery & Access</h4><p class="text-xs text-gray-400">Secure peering, credential vaulting, readâ€‘only audit</p></div>
+            <div class="bg-[#111625]/60 p-5 rounded-2xl border border-gray-800"><div class="text-2xl font-bold text-emerald-400">02</div><h4 class="font-semibold text-white mt-2">Baseline & Risk</h4><p class="text-xs text-gray-400">Performance profile, config audit, threat mapping</p></div>
+            <div class="bg-[#111625]/60 p-5 rounded-2xl border border-gray-800"><div class="text-2xl font-bold text-emerald-400">03</div><h4 class="font-semibold text-white mt-2">Remediation</h4><p class="text-xs text-gray-400">Apply quick wins, tune params, validate backups</p></div>
+            <div class="bg-[#111625]/60 p-5 rounded-2xl border border-gray-800"><div class="text-2xl font-bold text-emerald-400">04</div><h4 class="font-semibold text-white mt-2">24/7 Management</h4><p class="text-xs text-gray-400">Monitoring activation, SLA start, onâ€‘call rotation</p></div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 relative overflow-hidden px-6">
+        <div class="absolute inset-0 opacity-10 z-0">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80" alt="server room" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto bg-gradient-to-b from-[#121829] to-[#0e1322] border border-gray-800 rounded-3xl p-8 md:p-12 text-center space-y-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Keep Your Databases Performing at Peak Efficiency</h2>
+            <p class="text-gray-400">Request a complimentary database assessment â€“ performance health check, risk analysis, and actionable roadmap.</p>
+            <form onsubmit="handleFormSubmit(event)" class="max-w-md mx-auto space-y-3 pt-2">
+                <input type="email" placeholder="Enter corporate email" required class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white text-sm focus:border-emerald-500 outline-none">
+                <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-600 text-white font-semibold py-3 rounded-xl transition shadow-lg shadow-emerald-600/20">Get Free Database Assessment â†’</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 border-t border-gray-900 py-12 text-xs text-gray-600">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2"><div class="h-6 w-6 bg-emerald-800 rounded flex items-center justify-center text-white text-xs">D</div><span class="font-semibold text-gray-400">DATACLYVE DATABASE OPS</span></div>
+            <div class="flex gap-6"><span>SOC2 Type II | ISO27001 | HIPAA Capable</span><span>AWS, Azure, GCP, Oracle, MongoDB, Snowflake</span></div>
+            <p>Â© 2026 Dataclyve â€“ Managed Database Services</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(event, tabId) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        function revealElements() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', revealElements);
+        window.addEventListener('load', revealElements);
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert("âœ… Thank you â€” your Database Assessment request is received. A senior DBA architect will reach out within 30 minutes.");
+        }
+    </script>
+</body>
+</html>
+
+
+
+

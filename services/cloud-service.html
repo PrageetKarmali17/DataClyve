@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataclyve | End-to-End Cloud Services â€” Database & Cloud Experts</title>
+    <meta name="description" content="End-to-End Cloud Services: Design, Migrate, Manage across AWS, Azure, and GCP â€” enabling seamless cloud adoption, modernization, and optimization with 24/7 operations and SLA-driven support.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-grid">
+
+    <!-- ============================================= -->
+    <!-- REUSABLE NAVBAR (identical to contact-us.html) -->
+    <!-- ============================================= -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f19]/80 border-b border-gray-800/80 transition-all">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2.5 group" title="Dataclyve â€” Managed IT Services Vancouver Island">
+                <div class="h-9 w-9 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-md shadow-blue-500/10 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-square-terminal text-white font-bold text-lg"></i>
+                </div>
+                <span class="text-xl font-bold tracking-wider text-white">DataClyve</span>
+            </a>
+
+            <nav class="hidden lg:flex space-x-8 text-sm font-medium text-gray-400">
+                <div class="relative nav-dropdown py-2">
+                    <button class="hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer">
+                        Services <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
+                    </button>
+                    <div class="dropdown-menu absolute left-0 mt-3 w-64 rounded-2xl bg-[#0f1524] border border-gray-800 p-3 shadow-xl transition-all opacity-0 invisible translate-y-2 duration-200">
+                        <a href="Manage-IT-Service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-desktop text-blue-400 w-5"></i>
+                            <div><div class="font-semibold text-xs">Managed IT Services</div></div>
+                        </a>
+                        <a href="cloud-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-cloud text-cyan-400 w-5"></i>
+                            <div><div class="font-semibold text-xs">Managed Cloud Services</div></div>
+                        </a>
+                        <a href="mange-database-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-database text-emerald-400 w-5"></i>
+                            <div><div class="font-semibold text-xs">Database Managed Services</div></div>
+                        </a>
+                        <a href="AI-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-brain text-purple-400 w-5"></i>
+                            <div><div class="font-semibold text-xs">AI & Data Services</div></div>
+                        </a>
+                        <a href="devOps-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-code-merge text-amber-400 w-5"></i>
+                            <div><div class="font-semibold text-xs">DevOps Services</div></div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="solutions.html" class="hover:text-blue-400 py-2 transition-colors">Solutions</a>
+                <a href="about-us.html" class="hover:text-blue-400 py-2 transition-colors">About Us</a>
+                <a href="contact-us.html" class="text-blue-400 py-2 transition-colors">Contact Us</a>
+            </nav>
+
+            <div>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full transition-all shadow-lg shadow-blue-600/20">Book a free call</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[85vh] flex items-center justify-center px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-15">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80" alt="Global Cloud Net" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-[#0b0f19]"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8 mt-12">
+            <div class="inline-flex items-center space-x-2 bg-blue-950/40 border border-blue-800/50 rounded-full px-4 py-1.5 text-xs text-blue-400 uppercase tracking-wider font-semibold">
+                <i class="fa-solid fa-cloud"></i> <span>Cloud Services â€” Enterprise Grade</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                End-to-End Cloud Services <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-400">Design, Migrate, Manage</span>
+            </h1>
+            <p class="text-gray-400 max-w-3xl mx-auto text-base md:text-lg font-light leading-relaxed">
+                Dataclyve delivers comprehensive cloud services across AWS, Azure, and GCP â€” enabling seamless cloud adoption, modernization, and optimization with 24/7 operations and SLA-driven support.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                <a href="#contact" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-medium px-8 py-3.5 rounded-xl transition-all transform hover:-translate-y-0.5 shadow-lg shadow-blue-500/20">
+                    Get a Free Cloud Assessment
+                </a>
+                <a href="#capabilities" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-800 font-medium px-8 py-3.5 rounded-xl transition-all">
+                    Explore Cloud Services
+                </a>
+            </div>
+            
+            <div class="pt-12 border-t border-gray-900 max-w-4xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs md:text-sm text-gray-400 font-medium">
+                    <span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[8px]"></i>Cloud Strategy</span>
+                    <span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[8px]"></i>Migration</span>
+                    <span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[8px]"></i>Infrastructure Management</span>
+                    <span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[8px]"></i>Security & Compliance</span>
+                    <span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[8px]"></i>HA/DR</span>
+                    <span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[8px]"></i>FinOps</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE CLOUD CAPABILITIES -->
+    <section id="capabilities" class="py-24 max-w-7xl mx-auto px-6 reveal">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Core Cloud Capabilities</h2>
+            <div class="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
+            <p class="text-gray-400 font-light text-sm">Supporting multi-cloud expertise with an automation-first approach using Infrastructure as Code.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40 space-y-3">
+                <div class="h-11 w-11 rounded-xl bg-blue-600/10 text-blue-400 flex items-center justify-center text-lg"><i class="fa-solid fa-compass"></i></div>
+                <h3 class="text-lg font-semibold text-white">Cloud Strategy & Architecture</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light">
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Cloud readiness assessment & planning</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Business goal architecture alignment</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Hybrid and multi-cloud systems design</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Governance best practices deployment</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40 space-y-3">
+                <div class="h-11 w-11 rounded-xl bg-cyan-600/10 text-cyan-400 flex items-center justify-center text-lg"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
+                <h3 class="text-lg font-semibold text-white">Cloud Migration & Modernization</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light">
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> On-prem to cloud (Lift & Shift / Re-platform)</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Cloud-to-cloud migration patterns</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Database & application modernization</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Zero / minimal downtime transition strategies</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40 space-y-3">
+                <div class="h-11 w-11 rounded-xl bg-purple-600/10 text-purple-400 flex items-center justify-center text-lg"><i class="fa-solid fa-sliders"></i></div>
+                <h3 class="text-lg font-semibold text-white">Cloud Infrastructure Management</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light">
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Infrastructure provisioning & configuration</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Virtual machines, containers & platform stacks</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> IaC (Terraform, ARM, CloudFormation)</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Dev, test, and production environment builds</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40 space-y-3">
+                <div class="h-11 w-11 rounded-xl bg-teal-600/10 text-teal-400 flex items-center justify-center text-lg"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 class="text-lg font-semibold text-white">Cloud Operations & Monitoring</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light">
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> 24/7 environment monitoring & alerting</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Incident triage & proactive issue handling</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Infrastructure performance optimization</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Datadog, CloudWatch, Azure Monitor pipelines</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40 space-y-3">
+                <div class="h-11 w-11 rounded-xl bg-red-600/10 text-red-400 flex items-center justify-center text-lg"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3 class="text-lg font-semibold text-white">Cloud Security & Compliance</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light">
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Identity and Access Management (IAM) matrices</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Cryptographic data encryption controls</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> System vulnerability tracking & automated patching</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> HIPAA, PCI, and SOC 2 compliance readiness</li>
+                </ul>
+            </div>
+            <div class="glow-card bg-[#111625]/60 p-6 rounded-2xl border border-gray-800/40 space-y-3">
+                <div class="h-11 w-11 rounded-xl bg-emerald-600/10 text-emerald-400 flex items-center justify-center text-lg"><i class="fa-solid fa-network-wired"></i></div>
+                <h3 class="text-lg font-semibold text-white">High Availability & Disaster Recovery</h3>
+                <ul class="text-xs text-gray-400 space-y-1.5 font-light">
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Multi-region & multi-zone systems layouts</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Backup and business continuity mapping</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Automatic failover and failback parameters</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> RTO/RPO algorithm driven recovery steps</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-[#111625]/40 border border-gray-800 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h4 class="text-md font-semibold text-white"><i class="fa-solid fa-scale-balanced text-amber-400 mr-2"></i> Integrated FinOps Cost Optimization</h4>
+                <p class="text-xs text-gray-400 font-light mt-1">Analysis, resource rightsizing, usage analytics, reserved instances strategy, and continuous monthly reporting tracks.</p>
+            </div>
+            <span class="text-xs font-mono bg-blue-950 text-blue-400 border border-blue-900/60 px-3 py-1 rounded-md shrink-0">Continuous FinOps</span>
+        </div>
+    </section>
+
+    <!-- PLATFORMS & TECH TABS -->
+    <section id="platforms" class="py-24 bg-[#090d16] border-y border-gray-900 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Cloud Platforms & Technologies</h2>
+                <p class="text-gray-400 font-light text-sm">Deep, native configuration expertise across leading public providers, container meshes, and global distributed database layers.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-10 max-w-2xl mx-auto bg-gray-950 p-1.5 rounded-xl border border-gray-800">
+                <button onclick="switchTab(event, 'public-cloud')" class="tab-btn px-4 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition-all active">Public Clouds</button>
+                <button onclick="switchTab(event, 'containers-mesh')" class="tab-btn px-4 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition-all">Containers & Databases</button>
+                <button onclick="switchTab(event, 'sec-compliance')" class="tab-btn px-4 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition-all">Security & Controls</button>
+            </div>
+
+            <div id="public-cloud" class="tab-content active max-w-4xl mx-auto">
+                <div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden">
+                    <table class="w-full text-left text-sm border-collapse">
+                        <thead><tr class="bg-gray-950 text-gray-400 border-b border-gray-800 font-semibold"><th class="p-4">Cloud Provider</th><th class="p-4">Core Services Managed Platforms</th></tr></thead>
+                        <tbody class="divide-y divide-gray-800 text-xs md:text-sm text-gray-300">
+                            <tr><td class="p-4 font-bold text-orange-400"><i class="fa-brands fa-aws mr-2 text-base"></i> Amazon Web Services (AWS)</td><td class="p-4 font-mono text-gray-400">EC2, S3, RDS, VPC, Lambda, EKS, CloudWatch, IAM</td></tr>
+                            <tr><td class="p-4 font-bold text-blue-400"><i class="fa-brands fa-microsoft mr-2 text-base"></i> Microsoft Azure</td><td class="p-4 font-mono text-gray-400">VMs, Blob Storage, SQL MI, AKS, Entra ID, Monitor</td></tr>
+                            <tr><td class="p-4 font-bold text-red-400"><i class="fa-brands fa-google mr-2 text-base"></i> Google Cloud Platform (GCP)</td><td class="p-4 font-mono text-gray-400">Compute Engine, Cloud Storage, GKE, Cloud Monitoring, IAM</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="containers-mesh" class="tab-content max-w-4xl mx-auto">
+                <div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden">
+                    <table class="w-full text-left text-sm border-collapse">
+                        <thead><tr class="bg-gray-950 text-gray-400 border-b border-gray-800 font-semibold"><th class="p-4">Architecture Layer</th><th class="p-4">Core Stacks Under Active Management</th></tr></thead>
+                        <tbody class="divide-y divide-gray-800 text-xs md:text-sm text-gray-300">
+                            <tr><td class="p-4 font-semibold text-white">Kubernetes & Containers</td><td class="p-4 font-mono text-gray-400">EKS, AKS, GKE, OpenShift, Docker</td></tr>
+                            <tr><td class="p-4 font-semibold text-white">Cloud-Native Databases</td><td class="p-4 font-mono text-gray-400">RDS, Aurora, Cosmos DB, Cloud SQL, DynamoDB, Bigtable</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="sec-compliance" class="tab-content max-w-4xl mx-auto">
+                <div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden">
+                    <table class="w-full text-left text-sm border-collapse">
+                        <thead><tr class="bg-gray-950 text-gray-400 border-b border-gray-800 font-semibold"><th class="p-4">Area</th><th class="p-4">Implementation Protocol Standard</th></tr></thead>
+                        <tbody class="divide-y divide-gray-800 text-xs md:text-sm text-gray-300">
+                            <tr><td class="p-4 font-semibold text-white">IAM Security Controls</td><td class="p-4 text-gray-400">Least privilege governance, mandatory MFA, Enterprise SSO, periodic access reviews</td></tr>
+                            <tr><td class="p-4 font-semibold text-white">Data Encryption Platform</td><td class="p-4 text-gray-400">AES-256 at rest, TLS 1.2+ in transit, centralized KMS framework</td></tr>
+                            <tr><td class="p-4 font-semibold text-white">Network Perimeter Hardening</td><td class="p-4 text-gray-400">VPC micro-segmentation, security groups, WAF integration, DDoS scrubbing</td></tr>
+                            <tr><td class="p-4 font-semibold text-white">Regulatory Framework Compliance</td><td class="p-4 text-gray-400">SOC 2, ISO 27001, HIPAA, PCI DSS aligned environments</td></tr>
+                            <tr><td class="p-4 font-semibold text-white">Audit Tracking Ingestion</td><td class="p-4 font-mono text-gray-400">CloudTrail, Azure Monitor, GCP Audit Logs</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-16 border-t border-gray-900 pt-12 text-center">
+                <p class="text-xs uppercase font-bold text-gray-500 tracking-widest mb-6">Ideal Customer & Architecture Profile Target Mapping</p>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto text-xs font-medium text-gray-400">
+                    <div class="p-3 bg-gray-950 rounded-xl border border-gray-800"><i class="fa-solid fa-building text-blue-500 block text-lg mb-2"></i> Mid-Market & Enterprise</div>
+                    <div class="p-3 bg-gray-950 rounded-xl border border-gray-800"><i class="fa-solid fa-truck-ramp-box text-cyan-500 block text-lg mb-2"></i> Modernization Journeys</div>
+                    <div class="p-3 bg-gray-950 rounded-xl border border-gray-800"><i class="fa-solid fa-cubes-stacked text-purple-500 block text-lg mb-2"></i> Hybrid / Multi-Cloud Setup</div>
+                    <div class="p-3 bg-gray-950 rounded-xl border border-gray-800"><i class="fa-solid fa-sack-dollar text-emerald-500 block text-lg mb-2"></i> Skyrocketing Cloud Spend</div>
+                    <div class="p-3 bg-gray-950 rounded-xl border border-gray-800"><i class="fa-solid fa-vault text-red-500 block text-lg mb-2"></i> Highly Regulated Fields</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ONBOARDING ROADMAP -->
+    <section id="onboarding" class="py-24 max-w-7xl mx-auto px-6 reveal">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="text-xs uppercase font-bold tracking-widest text-blue-500 bg-blue-950/40 border border-blue-800 px-3 py-1 rounded-full">Deployment Roadmap</span>
+            <h2 class="text-3xl font-bold tracking-tight text-white">Systematic Cloud Onboarding Journey</h2>
+            <p class="text-gray-400 font-light text-sm">Transitioning complex environments incrementally to avoid system degradation or service interruptions.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div class="bg-[#111625]/40 border border-gray-800/60 p-5 rounded-2xl space-y-3"><div class="flex justify-between items-center"><span class="text-xs font-mono font-bold text-blue-400 uppercase">Phase 1</span> <span class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">1-2 Weeks</span></div><h4 class="text-sm font-semibold text-white">Discovery & Assessment</h4><p class="text-xs text-gray-400 font-light">Asset inventory, cost baseline analysis, security audit, migration wave planning.</p></div>
+            <div class="bg-[#111625]/40 border border-gray-800/60 p-5 rounded-2xl space-y-3"><div class="flex justify-between items-center"><span class="text-xs font-mono font-bold text-cyan-400 uppercase">Phase 2</span> <span class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">1-2 Weeks</span></div><h4 class="text-sm font-semibold text-white">Design & Planning</h4><p class="text-xs text-gray-400 font-light">Technical architecture blueprints, workload wave planning, runbook construction.</p></div>
+            <div class="bg-[#111625]/40 border border-gray-800/60 p-5 rounded-2xl space-y-3"><div class="flex justify-between items-center"><span class="text-xs font-mono font-bold text-purple-400 uppercase">Phase 3</span> <span class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">2-8 Weeks</span></div><h4 class="text-sm font-semibold text-white">Migration & Enablement</h4><p class="text-xs text-gray-400 font-light">Target environment provisioning, workload migration, automated validation.</p></div>
+            <div class="bg-[#111625]/40 border border-gray-800/60 p-5 rounded-2xl space-y-3"><div class="flex justify-between items-center"><span class="text-xs font-mono font-bold text-emerald-400 uppercase">Phase 4</span> <span class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">Ongoing</span></div><h4 class="text-sm font-semibold text-white">Cutover to Managed Ops</h4><p class="text-xs text-gray-400 font-light">Telemetry activation, engineering handoff, SLA contract start window.</p></div>
+        </div>
+    </section>
+
+    <!-- SLA & SUPPORT -->
+    <section id="sla" class="py-24 bg-[#090d16] border-y border-gray-900 reveal">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-6 space-y-6">
+                <div class="flex items-center space-x-2"><i class="fa-solid fa-headset text-blue-500 text-lg"></i> <h3 class="text-xl font-bold text-white">Support Escalation Targets</h3></div>
+                <div class="overflow-hidden border border-gray-800 bg-[#111625] rounded-xl text-xs"><table class="w-full text-left border-collapse"><thead><tr class="bg-gray-950 text-gray-400 border-b border-gray-800"><th class="p-3">Support Tier</th><th class="p-3">Core Responsibility</th><th class="p-3 text-blue-400">Response Window</th></tr></thead><tbody class="divide-y divide-gray-800 text-gray-300"><tr><td class="p-3 font-bold text-white">L1 Tier</td><td class="p-3">Initial triage, access issues, job reruns</td><td class="p-3 text-emerald-400">&lt; 15 Minutes</td></tr><tr><td class="p-3 font-bold text-white">L2 Tier</td><td class="p-3">Infrastructure troubleshooting, scaling validation</td><td class="p-3 text-emerald-400">&lt; 1 Hour</td></tr><tr><td class="p-3 font-bold text-white">L3 Tier</td><td class="p-3">Complex incident handling, failover execution</td><td class="p-3 text-amber-500">&lt; 2 Hours</td></tr><tr><td class="p-3 font-bold text-white">L4 Tier</td><td class="p-3">Critical outages, structural platform updates</td><td class="p-3 text-red-400">&lt; 4 Hours</td></tr></tbody></table></div>
+            </div>
+            <div class="lg:col-span-6 space-y-6">
+                <div class="flex items-center space-x-2"><i class="fa-solid fa-clock-rotate-left text-cyan-500 text-lg"></i> <h3 class="text-xl font-bold text-white">RTO & RPO Continuity Commitments</h3></div>
+                <div class="overflow-hidden border border-gray-800 bg-[#111625] rounded-xl text-xs"><table class="w-full text-left border-collapse"><thead><tr class="bg-gray-950 text-gray-400 border-b border-gray-800"><th class="p-3">Target Architecture Profile</th><th class="p-3 text-cyan-400">RTO</th><th class="p-3 text-purple-400">RPO</th></tr></thead><tbody class="divide-y divide-gray-800 text-gray-300"><tr><td class="p-3 font-medium text-white">Single Region, Active-Passive</td><td class="p-3">&lt; 30 Minutes</td><td class="p-3">&lt; 15 Minutes</td></tr><tr><td class="p-3 font-medium text-white">Multi-Region, Active-Passive</td><td class="p-3">&lt; 15 Minutes</td><td class="p-3">&lt; 5 Minutes</td></tr><tr><td class="p-3 font-medium text-white">Multi-Region, Active-Active</td><td class="p-3 text-cyan-400">&lt; 1 Minute</td><td class="p-3 text-purple-400">Near Zero</td></tr><tr><td class="p-3 font-medium text-white">Backup-Only Recovery</td><td class="p-3">&lt; 4 Hours</td><td class="p-3">&lt; 24 Hours</td></tr></tbody></table></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON GRID -->
+    <section id="comparison" class="py-24 max-w-7xl mx-auto px-6 reveal">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 class="text-3xl font-bold tracking-tight text-white">Strategic Operational Competency Grid</h2>
+            <p class="text-gray-400 font-light text-sm">Evaluating systemic service criteria parameters against classic general providers and vendor consulting structures.</p>
+        </div>
+        <div class="overflow-x-auto bg-[#111625] rounded-2xl border border-gray-800 shadow-2xl">
+            <table class="w-full text-sm text-left border-collapse min-w-[700px]">
+                <thead><tr class="bg-gray-950 text-gray-400 border-b border-gray-800 font-semibold"><th class="p-4">Operational Requirement Track</th><th class="p-4 text-blue-400 bg-blue-950/20 font-bold">Dataclyve Platforms</th><th class="p-4">Provider Professional Services</th><th class="p-4">Generalist MSP Shops</th></tr></thead>
+                <tbody class="divide-y divide-gray-800 text-xs md:text-sm text-gray-300">
+                    <tr><td class="p-4 font-semibold text-white">Multi-Cloud Deep Architecture Expertise</td><td class="p-4 text-emerald-400 bg-blue-950/10 font-bold"><i class="fa-solid fa-circle-check"></i> Yes</td><td class="p-4 text-red-500">âŒ Single cloud vendor scope</td><td class="p-4 text-amber-500">Varies significantly</td></tr>
+                    <tr><td class="p-4 font-semibold text-white">Continuous 24/7 Ongoing Managed Operations</td><td class="p-4 text-emerald-400 bg-blue-950/10 font-bold"><i class="fa-solid fa-circle-check"></i> Yes</td><td class="p-4 text-red-500">âŒ Project-only scopes</td><td class="p-4 text-emerald-400"><i class="fa-solid fa-circle-check"></i> Yes</td></tr>
+                    <tr><td class="p-4 font-semibold text-white">Built-in FinOps & Cost Optimization Programs</td><td class="p-4 text-emerald-400 bg-blue-950/10 font-bold"><i class="fa-solid fa-circle-check"></i> Yes</td><td class="p-4 text-amber-500">Varies significantly</td><td class="p-4 text-red-500">âŒ Rare implementation</td></tr>
+                    <tr><td class="p-4 font-semibold text-white">Structured Database Migration Expertise</td><td class="p-4 text-emerald-400 bg-blue-950/10 font-bold"><i class="fa-solid fa-circle-check"></i> Yes</td><td class="p-4 text-amber-500">Varies significantly</td><td class="p-4 text-red-500">âŒ Rare capability</td></tr>
+                    <tr><td class="p-4 font-semibold text-white">Guarded SLA-Backed Production Operations</td><td class="p-4 text-emerald-400 bg-blue-950/10 font-bold"><i class="fa-solid fa-circle-check"></i> Yes</td><td class="p-4 text-red-500">âŒ Commitment missing</td><td class="p-4 text-amber-500">Varies significantly</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-16 text-center space-y-4"><p class="text-xs uppercase font-bold text-gray-500 tracking-widest">Certified Strategic Technology Alliances</p><div class="flex flex-wrap justify-center gap-3 text-xs text-gray-400 font-medium"><span class="bg-gray-950 px-4 py-2 border border-gray-800 rounded-xl"><i class="fa-brands fa-aws text-orange-400 mr-1.5"></i> AWS Select Tier</span><span class="bg-gray-950 px-4 py-2 border border-gray-800 rounded-xl"><i class="fa-brands fa-microsoft text-blue-400 mr-1.5"></i> Microsoft Azure</span><span class="bg-gray-950 px-4 py-2 border border-gray-800 rounded-xl"><i class="fa-brands fa-google text-red-400 mr-1.5"></i> Google Cloud</span><span class="bg-gray-950 px-4 py-2 border border-gray-800 rounded-xl"><i class="fa-solid fa-box text-cyan-400 mr-1.5"></i> HashiCorp</span><span class="bg-gray-950 px-4 py-2 border border-gray-800 rounded-xl"><i class="fa-solid fa-cloud-sun text-purple-400 mr-1.5"></i> Datadog</span></div></div>
+    </section>
+
+    <!-- CASE HIGHLIGHTS -->
+    <section class="py-24 bg-[#090d16] border-t border-gray-900 reveal">
+        <div class="max-w-7xl mx-auto px-6"><div class="text-center max-w-3xl mx-auto mb-16 space-y-4"><h2 class="text-3xl font-bold tracking-tight text-white">Cloud Case Highlights</h2><p class="text-gray-400 font-light text-sm">Realized business transformations across global manufacturing, financial, and retail ecosystems.</p></div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8"><div class="bg-[#111625] rounded-2xl p-6 border border-gray-800 space-y-4"><div class="flex items-center space-x-2 text-blue-400 font-semibold text-xs uppercase"><i class="fa-solid fa-industry"></i><span>Manufacturing</span></div><p class="text-xs text-gray-400 font-light">Legacy data center EOL migration â†’ 6-month AWS re-platforming with zero downtime and 40% cost reduction.</p></div><div class="bg-[#111625] rounded-2xl p-6 border border-gray-800 space-y-4"><div class="flex items-center space-x-2 text-cyan-400 font-semibold text-xs uppercase"><i class="fa-solid fa-credit-card"></i><span>Financial Services</span></div><p class="text-xs text-gray-400 font-light">PCI DSS compliance hardening â†’ Automated security IaC stacks, passed enterprise audit first attempt.</p></div><div class="bg-[#111625] rounded-2xl p-6 border border-gray-800 space-y-4"><div class="flex items-center space-x-2 text-purple-400 font-semibold text-xs uppercase"><i class="fa-solid fa-basket-shopping"></i><span>Global E-commerce</span></div><p class="text-xs text-gray-400 font-light">FinOps optimization â†’ 35% monthly cloud cost reduction via rightsizing and RI strategy deployment.</p></div></div></div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 relative overflow-hidden px-6">
+        <div class="absolute inset-0 opacity-10 z-0"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80" alt="Abstract background" class="w-full h-full object-cover"></div>
+        <div class="relative z-10 max-w-4xl mx-auto bg-gradient-to-b from-[#121829] to-[#0e1322] border border-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl text-center space-y-8">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Accelerate Your Cloud Journey</h2>
+            <p class="text-sm text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">Get a complimentary cloud assessment to evaluate readiness, estimate costs, and build your migration roadmap.</p>
+            <div class="max-w-md mx-auto pt-4"><form onsubmit="handleFormSubmissionEvent(event)" class="space-y-3"><input type="email" placeholder="Enter corporate email address" required class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"><button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-3 px-6 rounded-xl transition-colors shadow-lg shadow-blue-600/10">Get Your Free Cloud Assessment</button></form></div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- REUSABLE FOOTER (identical to contact-us.html) -->
+    <!-- ============================================= -->
+    <footer class="bg-[#070a12] border-t border-gray-900 text-gray-400 text-xs py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+            <div class="space-y-4">
+                <a href="index.html" class="flex items-center space-x-2 text-white font-bold tracking-wider text-base">
+                    <div class="h-7 w-7 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-lg flex items-center justify-center"><i class="fa-solid fa-square-terminal text-white text-xs"></i></div>
+                    <span>DataClyve</span>
+                </a>
+                <div class="space-y-2 font-light text-gray-500"><p><i class="fa-solid fa-phone mr-2 text-[10px]"></i>+1 437-224-6600</p><p><i class="fa-solid fa-envelope mr-2 text-[10px]"></i>sanjeev.kumar@datclyve.com</p><p><i class="fa-solid fa-location-dot mr-2 text-[10px]"></i>North America</p></div>
+                <div class="flex space-x-3 pt-2"><a href="#" class="hover:text-blue-500"><i class="fa-brands fa-facebook text-base"></i></a><a href="#" class="hover:text-blue-500"><i class="fa-brands fa-linkedin text-base"></i></a></div>
+                <div class="pt-2 flex flex-col gap-1 text-[11px] text-gray-500"><a href="#" class="hover:text-blue-400 flex items-center gap-1.5"><i class="fa-brands fa-google text-blue-400"></i> Review â€” Courtenay</a><a href="#" class="hover:text-blue-400 flex items-center gap-1.5"><i class="fa-brands fa-google text-blue-400"></i> Review â€” Nanaimo</a></div>
+            </div>
+            <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Services</h4><ul class="space-y-2.5 font-light"><li><a href="Manage-IT-Service.html" class="hover:text-white transition-colors">Managed Cloud & Infrastructure</a></li><li><a href="AI-service.html" class="hover:text-white transition-colors">Data & Analytics</a></li><li><a href="AI-service.html" class="hover:text-white transition-colors">AI & GenAI</a></li><li><a href="#" class="text-gray-600 cursor-not-allowed">App Dev <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded-md ml-1">Coming Soon</span></a></li></ul></div>
+            <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Industries</h4><ul class="space-y-2.5 font-light"><li><a href="#" class="hover:text-white transition-colors">Healthcare</a></li><li><a href="#" class="hover:text-white transition-colors">Financial Services</a></li><li><a href="#" class="hover:text-white transition-colors">Retail & E-commerce</a></li><li><a href="#" class="hover:text-white transition-colors">Technology</a></li></ul></div>
+            <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Company</h4><ul class="space-y-2.5 font-light"><li><a href="about-us.html" class="hover:text-white transition-colors">About Us</a></li><li><a href="#" class="hover:text-white transition-colors">Leadership</a></li><li><a href="#" class="hover:text-white transition-colors">Careers</a></li><li><a href="#" class="hover:text-white transition-colors">Partnerships</a></li></ul></div>
+            <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Connect</h4><ul class="space-y-2.5 font-light"><li><a href="#contact" class="hover:text-white transition-colors">Book a free call</a></li><li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li><li><a href="contact-us.html" class="text-white font-medium transition-colors">Contact</a></li><li><a href="#" class="hover:text-white transition-colors">Support Portal</a></li></ul></div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500 font-light">
+            <div>Â© 2026 Dataclyve Technologies Inc. All rights reserved.</div>
+            <div class="flex space-x-6"><a href="#" class="hover:text-white transition-colors">Privacy Policy</a><a href="#" class="hover:text-white transition-colors">Sitemap</a></div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(event, tabId) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        function revealElements() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 120) el.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', revealElements);
+        window.addEventListener('load', revealElements);
+        function handleFormSubmissionEvent(e) {
+            e.preventDefault();
+            alert("Cloud Assessment Form Received. Your infrastructure analysis pipelines have been initialized. Our onboarding engineering desk will respond within our Tier 1 SLA window (< 15 Minutes).");
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+

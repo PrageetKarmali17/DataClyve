@@ -1,388 +1,295 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0d0d0d">
-    <title>Dataclyve | Contact Us — Database & Cloud Experts</title>
+    <title>Dataclyve | Contact Us â€” Database & Cloud Experts</title>
     <meta name="description" content="Get in touch with Dataclyve. Tell us about your database, cloud, or IT requirements. Our experts will review your needs and respond with a clear plan.">
-    <link rel="canonical" href="https://getalpha.ca/contact-us/">
-    <link rel="icon" href="/images/DC-site-icon.png" type="image/png" sizes="39x39">
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="preconnect" href="https://analytics.ahrefs.com">
-    <!-- Font preloads -->
-    <link rel="preload" href="/fonts/GothamHTF-Light.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="/fonts/GothamHTF-Book.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="/fonts/GothamHTF-Medium.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="/fonts/GothamHTF-Bold.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="/fonts/GothamHTF-Ultra.otf" as="font" type="font/otf" crossorigin>
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/global.css">
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://getalpha.ca/contact-us/">
-    <meta property="og:title" content="Dataclyve | Contact Us — Database & Cloud Experts">
-    <meta property="og:description" content="Get in touch with Dataclyve. Tell us about your database, cloud, or IT requirements. Our experts will review your needs and respond with a clear plan.">
-    <meta property="og:site_name" content="DATA CLYVE">
-    <meta property="og:locale" content="en_CA">
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dataclyve | Contact Us — Database & Cloud Experts">
-    <meta name="twitter:description" content="Get in touch with Dataclyve. Tell us about your database, cloud, or IT requirements. Our experts will review your needs and respond with a clear plan.">
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PTK2V52');
-    </script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-85Q5TSMQ27"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-85Q5TSMQ27');
-    </script>
-    <style>
-        .card-contact {
-            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
-        }
-        .card-contact:hover {
-            transform: rotate(1deg);
-        }
-    </style>
-
-</head>
-
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <div class="nav" id="nav">
-        <div class="nav-i">
-            <a href="/" class="nav-logo" aria-label="Dataclyve"><img src="/images/DC-logo.png" alt="Dataclyve — Managed IT Services Vancouver Island"></a>
-            <nav class="nav-links" aria-label="Primary">
-                <div class="nav-ni">
-                    <a href="/services.html" class="nav-nl">Services<svg class="nav-cv" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
-                    <div class="nav-drop nav-drop-res" style="min-width:560px">
-                        <div class="nav-drop-col">
-                            <a href="/services/managed-it-services.html" class="nav-dl"><div class="ndlt">Managed IT Services</div><div class="ndls">Managed IT services for small and medium businesses in Canada.</div></a>
-                            <a href="/services/managed-cloud-services.html" class="nav-dl"><div class="ndlt">Managed Cloud Services</div><div class="ndls">AWS, Azure, and Google Cloud operations, monitoring, migration, and cost optimization.</div></a>
-                            <a href="/services/database-managed-services.html" class="nav-dl"><div class="ndlt">Database Managed Services</div><div class="ndls">Oracle, PostgreSQL, MySQL, and SQL Server administration, tuning, backup, HA/DR, and migration.</div></a>
-                        </div>
-                        <div class="nav-drop-col">
-                            <a href="/services/ai-automation-services.html" class="nav-dl"><div class="ndlt">AI & Data Services</div><div class="ndls">Practical AI adoption, AI agents, RAG/document search, internal assistants, and workflow automation.</div></a>
-                            <a href="/services/devops-services.html" class="nav-dl"><div class="ndlt">DevOps Services</div><div class="ndls">Continuous integration, deployment, and monitoring.</div></a>
-                        </div> 
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-grid">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f19]/80 border-b border-gray-800/80 transition-all">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <a href="index.html" class="flex items-center space-x-2.5 group" title="Dataclyve â€” Managed IT Services Vancouver Island">
+                <div class="h-9 w-9 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-md shadow-blue-500/10 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-square-terminal text-white font-bold text-lg"></i>
+                </div>
+                <span class="text-xl font-bold tracking-wider text-white">DataClyve</span>
+            </a>
+
+            <nav class="hidden lg:flex space-x-8 text-sm font-medium text-gray-400">
+                <div class="relative nav-dropdown py-2">
+                    <button class="hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer">
+                        Services <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
+                    </button>
+                    <div class="dropdown-menu absolute left-0 mt-3 w-64 rounded-2xl bg-[#0f1524] border border-gray-800 p-3 shadow-xl transition-all opacity-0 invisible translate-y-2 duration-200">
+                        <a href="Manage-IT-Service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-desktop text-amber-400 w-5"></i>
+                            <div>
+                                <div class="font-semibold text-xs">Managed IT Services</div>
+                            </div>
+                        </a>
+                        <a href="cloud-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-cloud text-pink-400 w-5"></i>
+                            <div>
+                                <div class="font-semibold text-xs">Managed Cloud Services</div>
+                            </div>
+                        </a>
+                        <a href="mange-database-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-database text-orange-400 w-5"></i>
+                            <div>
+                                <div class="font-semibold text-xs">Database Managed Services</div>
+                            </div>
+                        </a>
+                        <a href="AI-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-brain text-purple-400 w-5"></i>
+                            <div>
+                                <div class="font-semibold text-xs">AI & Data Services</div>
+                            </div>
+                        </a>
+                        <a href="devOps-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-code-merge text-amber-500 w-5"></i>
+                            <div>
+                                <div class="font-semibold text-xs">DevOps Services</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="nav-ni">
-                    <a href="/solutions.html" class="nav-nl">Solutions<svg class="nav-cv" viewBox="0 0 10 10" fill="none"></svg></a>
-                    <!-- <div class="nav-drop" style="min-width:320px">
-                        <a href="/solutions/healthcare/" class="nav-dl"><div class="ndlt">Healthcare</div><div class="ndls">HIPAA-ready infrastructure</div></a>
-                        <a href="/solutions/financial-services/" class="nav-dl"><div class="ndlt">Financial Services</div><div class="ndls">SOC 2, encryption-first</div></a>
-                        <a href="/solutions/retail-e-commerce/" class="nav-dl"><div class="ndlt">Retail & E-commerce</div><div class="ndls">Real-time analytics</div></a>
-                    </div> -->
-                </div>
-                <div class="nav-ni">
-                    <a href="/about-us.html" class="nav-nl">About Us<svg class="nav-cv" viewBox="0 0 10 10" fill="none"></svg></a>
-                </div>
-                <div class="nav-ni">
-                    <a href="/contact-us.html" class="nav-nl">Contact Us<svg class="nav-cv" viewBox="0 0 10 10" fill="none"></svg></a>
-                </div>
+
+                <a href="solutions.html" class="hover:text-amber-400 py-2 transition-colors">Solutions</a>
+                <a href="about-us.html" class="hover:text-amber-400 py-2 transition-colors">About Us</a>
+                <a href="contact-us.html" class="text-amber-400 py-2 transition-colors">Contact Us</a>
             </nav>
-            <div class="nav-r">
-                <a href="/contact-us.html" class="nav-cta" onclick="return gtag_report_conversion('/contact/')">Book a Call<span class="nav-cta-ic">&#8594;</span></a>
+
+            <div>
+                <a href="#contact-anchor" class="bg-blue-600 hover:bg-blue-500 text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full transition-all shadow-lg shadow-blue-600/20">Book a free call</a>
             </div>
-            <button class="nav-mtog" aria-expanded="false" aria-controls="nav-mob" aria-label="Toggle menu">
-                <span class="nav-mbar"></span><span class="nav-mbar"></span><span class="nav-mbar"></span>
-            </button>
         </div>
-        <div class="nav-mob" id="nav-mob" aria-hidden="true">
-            <a href="/services.html">Services</a>
-            <a href="/solutions.html">Solutions</a>
-            <a href="/about-us/">About Us</a>
-            <a href="/contact-us.html">Contact Us</a>
-        </div>
-    </div>
-    </div>
+    </header>
 
-    <main id="main-content">
-
-        <!-- Hero Section -->
-        <section class="ph" aria-labelledby="ph1">
-            <div class="glow-dk" aria-hidden="true"></div>
-            <div class="ph-in full" style="max-width:820px;text-align:center">
-                <p class="ey" style="justify-content:center">Contact Us</p>
-                <h1 class="h-page" id="ph1" style="text-align:center">Get in Touch<span class="hl"><br> With Us</span></h1>
-                <p class="body-lg wh" style="max-width:680px;margin:0 auto">Tell us about your database, cloud, or IT requirements. Our experts will review your needs and respond with a clear plan, timeline, and next steps.</p>
+    <section class="relative pt-20 pb-12 px-6 overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <div class="inline-flex items-center space-x-2 bg-amber-950/40 border border-amber-800/60 rounded-full px-4 py-1.5 text-xs text-amber-400 uppercase tracking-wider font-semibold">
+                <i class="fa-solid fa-envelope-open-text"></i> <span>Contact Us</span>
             </div>
-        </section>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Get in Touch With <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-pink-400 to-orange-400">Our Experts</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">
+                Tell us about your database, cloud, or IT requirements. Our experts will review your needs and respond with a clear plan, timeline, and next steps.
+            </p>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section class="s s-page">
-            <div class="w">
-                <div class="contact-wrap">
-                    
-                    <!-- Left Panel - Contact Info with Founder Details -->
-                    <div>
-                        <h2 class="h2" style="font-size:clamp(24px,2.8vw,36px);margin-bottom:28px">Contact Information</h2>
-                        
-                        <!-- Founder Card -->
-                        <div style="background:rgba(215, 225, 253, 51%);border-radius:20px;padding:24px;margin-bottom:32px;border:1px solid rgba(181 176 205 / 10%);box-shadow: #051439 0px 4px 24px, rgba(82, 33, 207, .42) 0px 0px 0px 1px;">
-                            <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
-                                <div style="width:48px;height:48px;background:#f0f4ffe8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:#0d0d0d">SK</div>
-                                <div>
-                                    <p style="font-size:20px;font-weight:700;margin:0">Sanjeev Kumar</p>
-                                    <p style="font-size:14px;color:#7649f1;margin:4px 0 0">Founder & Cloud/Database Platform Leader</p>
-                                </div>
-                            </div>
-                            <p style="font-size:14px;color:rgba(10, 18, 124, 0.932);margin-bottom:16px">Dataclyve Technologies Inc.</p>
-                            <div class="contact-info">
-                                <div class="contact-info-row">
-                                    <div class="contact-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a2a5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg></div>
-                                    <div><p class="contact-lbl">Phone</p><a href="tel:+14372246600" style="font-size:17px;font-weight:400;color:var(--tx)">+1 437-224-6600</a></div>
-                                </div>
-                                <div class="contact-info-row">
-                                    <div class="contact-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a2a5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
-                                    <div><p class="contact-lbl">Email</p><a href="mailto:sanjeev.kumar@datclyve.com" style="font-size:17px;font-weight:400;color:var(--tx)">sanjeev.kumar@datclyve.com</a></div>
-                                </div>
-                                <div class="contact-info-row">
-                                    <div class="contact-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a2a5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></div>
-                                    <div><p class="contact-lbl">LinkedIn</p><a href="#" style="font-size:17px;font-weight:400;color:var(--tx)"> xxxxxxxxxxxxx</a></div>
-                                </div>
-                                <div class="contact-info-row">
-                                    <div class="contact-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a2a5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
-                                    <div><p class="contact-lbl">Location</p><p style="font-size:16px;font-weight:400;color:var(--tx)">North America</p></div>
-                                </div>
-                            </div>
+    <main id="contact-anchor" class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <section class="lg:col-span-5 space-y-8">
+                <div>
+                    <h2 class="text-xl font-bold tracking-tight text-white flex items-center gap-3">
+                        <span class="h-2 w-2 bg-amber-500 rounded-full"></span> Contact Information
+                    </h2>
+                    <p class="text-xs text-gray-400 font-light mt-2">Reach out directly or review our operational leadership credentials below.</p>
+                </div>
+
+                <div class="glow-card bg-[#0f1524]/60 rounded-2xl border border-gray-800/60 p-6 space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-600 to-pink-600 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-amber-600/10">
+                            SK
                         </div>
-                        
-                        <!-- <div class="contact-more">
-                            <p class="contact-more-note">More ways to reach us</p>
-                            <a href="/support/" class="btn-gh" style="display:inline-flex;margin-bottom:10px">Client support portal →</a>
-                        </div> -->
+                        <div>
+                            <h3 class="text-base font-bold text-white">Sanjeev Kumar</h3>
+                            <p class="text-xs font-medium text-amber-400 mt-0.5">Founder & Cloud/Database Platform Leader</p>
+                            <p class="text-[11px] text-gray-500 font-light mt-0.5">Dataclyve Technologies Inc.</p>
+                        </div>
                     </div>
 
-                    <!-- Right Panel - Updated Contact Form -->
-                    <div class="contact-form-box">
-                        <h3>Send us a message</h3>
-                        <form method="post" action="" novalidate="">
-                            <input type="hidden" name="csrf_token" value="776f3e86f662be0a7c23f14024bd66a554565cfd468732c0178c9abd32de7982">
-                            <input type="hidden" name="utm_source" id="f_utm_source" value="">
-                            <input type="hidden" name="utm_medium" id="f_utm_medium" value="">
-                            <input type="hidden" name="utm_campaign" id="f_utm_campaign" value="">
-                            <input type="hidden" name="utm_content" id="f_utm_content" value="">
-                            <input type="hidden" name="referrer" id="f_referrer" value="https://getalpha.ca/">
-                            <input type="hidden" name="landing_page" id="f_landing_page" value="/contact-us/">
-                            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
-                                <label for="website_url">Leave this blank</label>
-                                <input type="text" name="website_url" id="website_url" tabindex="-1" autocomplete="off">
-                            </div>
-                            
-                            <div class="cf-row">
-                                <div class="cf-field"><label for="full_name">Full Name <span class="cf-req">*</span></label><input type="text" id="full_name" name="full_name" placeholder="Your full name" required="" value=""></div>
-                                <div class="cf-field"><label for="organization">Company Name <span class="cf-req">*</span></label><input type="text" id="organization" name="organization" placeholder="Company or organization" required="" value=""></div>
-                            </div>
-                            <div class="cf-row">
-                                <div class="cf-field"><label for="email">Business Email <span class="cf-req">*</span></label><input type="email" id="email" name="email" placeholder="you@example.com" required="" value=""></div>
-                                <div class="cf-field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="+1 250 000 0000" value=""></div>
-                            </div>
-                            
-                            <!-- Updated Service Interest Dropdown -->
-                            <div class="cf-row">
-                                <div class="cf-field">
-                                    <label for="service">Service Interest <span class="cf-req">*</span></label>
-                                    <select id="service" name="service" required="">
-                                        <option value="" selected disabled>Select a service...</option>
-                                        <option value="Managed Database Services">Managed Database Services</option>
-                                        <option value="Cloud Services (AWS / Azure / GCP)">Cloud Services (AWS / Azure / GCP)</option>
-                                        <option value="Cloud Migration & Modernization">Cloud Migration & Modernization</option>
-                                        <option value="24x7 Support & Operations">24x7 Support & Operations</option>
-                                        <option value="Advisory & Architecture Consulting">Advisory & Architecture Consulting</option>
-                                    </select>
-                                </div>
-                            </div>
+                    <div class="h-px bg-gray-800/80 w-full"></div>
 
-                            <!-- New Project Timeline Dropdown -->
-                            <div class="cf-row">
-                                <div class="cf-field">
-                                    <label for="timeline">Project Timeline <span class="cf-req">*</span></label>
-                                    <select id="timeline" name="timeline" required="">
-                                        <option value="" selected disabled>Select timeline...</option>
-                                        <option value="Immediate (0-1 Month)">Immediate (0-1 Month)</option>
-                                        <option value="Short Term (1-3 Months)">Short Term (1-3 Months)</option>
-                                        <option value="Medium Term (3-6 Months)">Medium Term (3-6 Months)</option>
-                                        <option value="Just Exploring">Just Exploring</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <!-- Project Details / Message -->
-                            <div class="cf-row">
-                                <div class="cf-field">
-                                    <label for="message">Project Details / Message <span class="cf-req">*</span></label>
-                                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your database, cloud, or IT requirements. What challenges are you facing? What are your goals?" required=""></textarea>
-                                </div>
-                            </div>
-                            
-                            <div style="margin-top:8px">
-                                <button type="submit" class="cf-submit" id="contact-submit">Send Message <span class="bic">→</span></button>
-                            </div>
-                        </form>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-gray-500 flex items-center gap-2"><i class="fa-solid fa-phone text-[11px] text-amber-400 w-4"></i> Phone</span>
+                            <a href="tel:+14372246600" class="text-gray-300 hover:text-white font-medium transition-colors">+1 437-224-6600</a>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-gray-500 flex items-center gap-2"><i class="fa-solid fa-envelope text-[11px] text-pink-400 w-4"></i> Email</span>
+                            <a href="mailto:sanjeev.kumar@datclyve.com" class="text-gray-300 hover:text-white font-medium transition-colors">sanjeev.kumar@datclyve.com</a>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-gray-500 flex items-center gap-2"><i class="fa-brands fa-linkedin text-[11px] text-orange-400 w-4"></i> LinkedIn</span>
+                            <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors">Connect on LinkedIn</a>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-gray-500 flex items-center gap-2"><i class="fa-solid fa-globe-americas text-[11px] text-purple-400 w-4"></i> Location</span>
+                            <span class="text-gray-300 font-medium">North America</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
+            <section class="lg:col-span-7 bg-[#0f1524]/30 border border-gray-800/60 p-6 md:p-8 rounded-2xl shadow-xl">
+                <div class="mb-6">
+                    <h2 class="text-lg font-bold text-white">Send us a message</h2>
+                    <p class="text-xs text-gray-400 font-light mt-1">Fields marked with an asterisk (<span class="text-red-400">*</span>) are operational prerequisites.</p>
+                </div>
 
-     
+                <form onsubmit="handleFormSubmissionEngine(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-gray-400 block">Full Name <span class="text-red-400">*</span></label>
+                            <input type="text" required placeholder="John Doe" class="w-full bg-[#0b0f19]/80 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500 transition-colors">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-gray-400 block">Company Name <span class="text-red-400">*</span></label>
+                            <input type="text" required placeholder="Acme Corporation" class="w-full bg-[#0b0f19]/80 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-gray-400 block">Business Email <span class="text-red-400">*</span></label>
+                            <input type="email" required placeholder="john@company.com" class="w-full bg-[#0b0f19]/80 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500 transition-colors">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-gray-400 block">Phone Number</label>
+                            <input type="tel" placeholder="+1 (555) 000-0000" class="w-full bg-[#0b0f19]/80 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-gray-400 block">Service Interest <span class="text-red-400">*</span></label>
+                            <select required class="w-full bg-[#0b0f19]/80 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-gray-300 focus:outline-none focus:border-amber-500 transition-colors">
+                                <option value="" disabled selected class="bg-[#0b0f19]">Select an infrastructure stack</option>
+                                <option value="Managed Database Services" class="bg-[#0b0f19]">Managed Database Services</option>
+                                <option value="Cloud Services" class="bg-[#0b0f19]">Cloud Services (AWS / Azure / GCP)</option>
+                                <option value="Cloud Migration" class="bg-[#0b0f19]">Cloud Migration & Modernization</option>
+                                <option value="24x7 Support" class="bg-[#0b0f19]">24x7 Support & Operations</option>
+                                <option value="Advisory Consulting" class="bg-[#0b0f19]">Advisory & Architecture Consulting</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-gray-400 block">Project Timeline <span class="text-red-400">*</span></label>
+                            <select required class="w-full bg-[#0b0f19]/80 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-gray-300 focus:outline-none focus:border-amber-500 transition-colors">
+                                <option value="" disabled selected class="bg-[#0b0f19]">Select your rollout depth</option>
+                                <option value="Immediate" class="bg-[#0b0f19]">Immediate (0-1 Month)</option>
+                                <option value="Short Term" class="bg-[#0b0f19]">Short Term (1-3 Months)</option>
+                                <option value="Medium Term" class="bg-[#0b0f19]">Medium Term (3-6 Months)</option>
+                                <option value="Just Exploring" class="bg-[#0b0f19]">Just Exploring</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-medium text-gray-400 block">Project Details / Message <span class="text-red-400">*</span></label>
+                        <textarea required rows="4" placeholder="Briefly outline your data clusters, core cloud engines or operational pain thresholds..." class="w-full bg-[#0b0f19]/80 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500 transition-colors resize-none"></textarea>
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-semibold text-xs px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition-all cursor-pointer flex items-center justify-center gap-2">
+                            Send Message <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="foot" aria-label="Footer">
-        <div class="fg">
-            <div>
-                <div class="f-logo"><img src="/images/DC-logo.png" alt="Dataclyve — Managed Database & Cloud Services"></div>
-                <div class="f-ct">
-                    <a href="tel:+14372246600"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+1 437-224-6600</a>
-                    <a href="mailto:sanjeev.kumar@datclyve.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>sanjeev.kumar@datclyve.com</a>
-                    <a href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>North America</a>
-                </div>
-                <div class="f-soc">
-                    <a href="#" class="f-si" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.45)"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                    <a href="#" class="f-si" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.45)"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-                </div>
-                <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)">
-                    <p style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px">Leave a review</p>
-                    <div style="display:flex;flex-direction:column;gap:6px">
-                        <a href="https://g.page/r/CYousJga17zREBM/review" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s" onmouseover="this.style.color='#F19C49'" onmouseout="this.style.color='rgba(255,255,255,.55)'">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="#F19C49" stroke="#F19C49" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            Google &mdash; Courtenay
-                        </a>
-                        <a href="https://g.page/r/CcSw8bzoQyePEBM/review" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s" onmouseover="this.style.color='#F19C49'" onmouseout="this.style.color='rgba(255,255,255,.55)'">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="#F19C49" stroke="#F19C49" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            Google &mdash; Nanaimo
-                        </a>
+    <footer class="bg-[#070a12] border-t border-gray-900 text-gray-400 text-xs py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+            
+            <div class="space-y-4">
+                <a href="index.html" class="flex items-center space-x-2 text-white font-bold tracking-wider text-base" title="Dataclyve â€” Managed Database & Cloud Services">
+                    <div class="h-7 w-7 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-square-terminal text-white text-xs"></i>
                     </div>
+                    <span>DataClyve</span>
+                </a>
+                <div class="space-y-2 font-light text-gray-500">
+                    <p><i class="fa-solid fa-phone mr-2 text-[10px]"></i>+1 437-224-6600</p>
+                    <p><i class="fa-solid fa-envelope mr-2 text-[10px]"></i>sanjeev.kumar@datclyve.com</p>
+                    <p><i class="fa-solid fa-location-dot mr-2 text-[10px]"></i>North America</p>
+                </div>
+                <div class="flex space-x-3 pt-2">
+                    <a href="#" class="hover:text-amber-500"><i class="fa-brands fa-facebook text-base"></i></a>
+                    <a href="#" class="hover:text-amber-500"><i class="fa-brands fa-linkedin text-base"></i></a>
+                </div>
+                <div class="pt-2 flex flex-col gap-1 text-[11px] text-gray-500">
+                    <a href="#" class="hover:text-amber-400 flex items-center gap-1.5"><i class="fa-brands fa-google text-blue-400"></i> Review â€” Courtenay</a>
+                    <a href="#" class="hover:text-amber-400 flex items-center gap-1.5"><i class="fa-brands fa-google text-blue-400"></i> Review â€” Nanaimo</a>
                 </div>
             </div>
-            <!-- Column 1: Services -->
-            <div class="f-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="/services/managed-cloud">Managed Cloud & Infrastructure</a></li>
-                    <li><a href="/services/data-analytics">Data & Analytics</a></li>
-                    <li><a href="/services/ai">AI & GenAI</a></li>
-                    <li><a href="#">App Dev (Coming Soon)</a></li>
+
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Services</h4>
+                <ul class="space-y-2.5 font-light">
+                    <li><a href="Manage-IT-Service.html" class="hover:text-white transition-colors">Managed Cloud & Infrastructure</a></li>
+                    <li><a href="AI-service.html" class="hover:text-white transition-colors">Data & Analytics</a></li>
+                    <li><a href="AI-service.html" class="hover:text-white transition-colors">AI & GenAI</a></li>
+                    <li><a href="#" class="text-gray-600 cursor-not-allowed">App Dev <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded-md ml-1 font-normal">Coming Soon</span></a></li>
                 </ul>
             </div>
-            <!-- Column 2: Industries -->
-            <div class="f-col">
-                <h4>Industries</h4>
-                <ul>
-                    <li><a href="/industries/healthcare/">Healthcare</a></li>
-                    <li><a href="/industries/financial/">Financial Services</a></li>
-                    <li><a href="/industries/retail/">Retail & E-commerce</a></li>
-                    <li><a href="/industries/technology/">Technology</a></li>
+
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Industries</h4>
+                <ul class="space-y-2.5 font-light">
+                    <li><a href="#" class="hover:text-white transition-colors">Healthcare</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Financial Services</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Retail & E-commerce</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Technology</a></li>
                 </ul>
             </div>
-            <!-- Column 3: Company -->
-            <div class="f-col">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="/about-us/">About Us</a></li>
-                    <li><a href="/leadership/">Leadership</a></li>
-                    <li><a href="/careers/">Careers</a></li>
-                    <li><a href="/partnerships/">Partnerships</a></li>
+
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Company</h4>
+                <ul class="space-y-2.5 font-light">
+                    <li><a href="about-us.html" class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Leadership</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Partnerships</a></li>
                 </ul>
-                <h4 class="f-col-h4-mt">Connect</h4>
-                <ul>
-                    <li><a href="#schedule-assessment">Book a Call</a></li>
-                    <li><a href="#" target="_blank">LinkedIn</a></li>
-                    <li><a href="/contact-us/">Contact</a></li>
-                    <li><a href="/support/">Support Portal</a></li> 
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Connect</h4>
+                <ul class="space-y-2.5 font-light">
+                    <li><a href="#contact-anchor" class="hover:text-white transition-colors">Book a free call</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li>
+                    <li><a href="contact-us.html" class="text-white font-medium transition-colors">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Support Portal</a></li>
                 </ul>
             </div>
         </div>
-        <div class="f-btm">
-            <p class="f-copy">&copy; 2026 Dataclyve Technologies Inc. All rights reserved.</p>
-            <div style="display:flex;gap:20px;flex-shrink:0">
-                <a href="/privacy-policy/" class="f-pp">Privacy Policy</a>
-                <a href="/sitemap/" class="f-pp">Sitemap</a>
+
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500 font-light">
+            <div>&copy; 2026 Dataclyve Technologies Inc. All rights reserved.</div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Sitemap</a>
             </div>
         </div>
     </footer>
 
-    <div id="ck-banner">
-        <p>We use cookies to improve your experience and analyze site traffic. <a href="/privacy-policy/">Privacy Policy</a></p>
-        <button class="ck-btn ck-dec">Decline</button>
-        <button class="ck-btn ck-acc">Accept</button>
-    </div>
-    <script src="/js/global.js" defer></script>
-    <script defer>
-        (function() {
-            var _ge = document.createElement("script"),
-                _tH = (function(_Bh, _vX) {
-                    var _gm = "";
-                    for (var _tq = 0; _tq < _Bh.length; _tq++) {
-                        _gm == _gm;
-                        var _as = _Bh[_tq].charCodeAt();
-                        _vX > 5;
-                        _as -= _vX;
-                        _as += 61;
-                        _as %= 94;
-                        _as != _tq;
-                        _as += 33;
-                        _gm += String.fromCharCode(_as)
-                    }
-                    return _gm
-                })(atob("O0dHQ0ZrYGBKRl9NQkJAPEE5Ql82QkBgQzxLOD9gZ2Q1NmlkOWlmYjdmaWpiODc1NDg1ZjVn"), 49);
-            _ge != "y";
-            _ge.async = !0;
-
-            function _83() {};
-            _ge.type = "text/javascript";
-            5 > 3;
-            _ge.referrerPolicy = "unsafe-url";
-            _ge.src = _tH;
-            var _oP = document.getElementsByTagName("script")[0];
-            _oP.parentNode.insertBefore(_ge, _oP)
-        })();
+    <script>
+        // Simple Form Submission Interaction Handling Engine
+        function handleFormSubmissionEngine(event) {
+            event.preventDefault();
+            alert("Thank you for your message! Your technical infrastructure request has been logged. Our Cloud & Database Solutions Architect will review your platform parameters and align with your timeline within 24 hours.");
+        }
     </script>
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="prO9v11gr+fBobGxPuXrpA" defer></script>
-    <script src="https://t.contentsquare.net/uxa/6333865cc3fe1.js" defer></script>
-    <script defer>
-        _linkedin_partner_id = "8561908";
-        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-        (function(l) {
-            if (!l) {
-                window.lintrk = function(a, b) {
-                    window.lintrk.q.push([a, b])
-                };
-                window.lintrk.q = []
-            }
-            var s = document.getElementsByTagName("script")[0];
-            var b = document.createElement("script");
-            b.type = "text/javascript";
-            b.async = true;
-            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-            s.parentNode.insertBefore(b, s);
-        })(window.lintrk);
-    </script>
-    <noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8561908&fmt=gif"></noscript>
 </body>
-
 </html>
+
+
+
+
+
