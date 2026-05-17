@@ -1,758 +1,163 @@
-﻿/* Consolidated CSS for all site pages */
-
+﻿/* Shared global styles */
 body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Telemetry Webkit Optimized Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
-        }
-        /* Performance Hardware Accelerated Reveal Engine */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform, opacity;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Micro-Interaction Neon Glass Overlay Cards */
-        .glow-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(245,158,11,0.4), rgba(236,72,153,0.4));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.5;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #f59e0b, #ec4899);
-            opacity: 1;
-        }
-        .glow-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px -10px rgba(245,158,11,0.3);
-        }
-        /* Engineering Grid Dot Blueprint Matrix */
-        .bg-grid {
-            background-image: radial-gradient(rgba(245,158,11,0.08) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        /* Navigation Nested Menu Toggle Dynamics */
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+    font-family: 'Inter', sans-serif;
+    background-color: #0b0f19;
+    color: #f3f4f6;
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.glow-card {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(to bottom right, rgba(245,158,11,0.4), rgba(236,72,153,0.4));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.5;
+    transition: opacity 0.4s;
+}
+.glow-card:hover::before {
+    background: linear-gradient(to bottom right, #f59e0b, #ec4899);
+    opacity: 1;
+}
+.glow-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(245,158,11,0.3);
+}
+.bg-grid {
+    background-image: radial-gradient(rgba(245,158,11,0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.approach-step,
+.maturity-step {
+    transition: all 0.3s ease;
+}
+.approach-step:hover,
+.maturity-step:hover {
+    transform: translateY(-4px);
+}
+.tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+.tab-btn.active {
+    background: #3b82f6 !important;
+    color: white !important;
+}
+.glass-panel {
+    background: rgba(17, 22, 37, 0.75);
+    backdrop-filter: blur(2px);
+}
+.hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px -12px rgba(0,0,0,0.5);
+}
 
-body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Custom Telemetry Webkit Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
-        }
-        /* Engineering Grid Dot Blueprint Matrix Backdrop */
-        .bg-grid {
-            background-image: radial-gradient(rgba(245,158,11,0.08) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        /* Navigation Nested Menu Toggle Dynamic Triggers */
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        /* Micro-Interaction Interactive Neon Glass Borders */
-        .glow-card {
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(245,158,11,0.4), rgba(236,72,153,0.4));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.5;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #f59e0b, #ec4899);
-            opacity: 1;
-        }
-        .glow-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px -10px rgba(245,158,11,0.3);
-        }
+/* Page-specific theme overrides */
+body.page-about .glow-card:hover,
+body.page-contact .glow-card:hover {
+    transform: translateY(-4px);
+}
 
-body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform, opacity;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .glow-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(245,158,11,0.4), rgba(236,72,153,0.4));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.5;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #f59e0b, #ec4899);
-            opacity: 1;
-        }
-        .glow-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(245,158,11,0.3);
-        }
-        .bg-grid {
-            background-image: radial-gradient(rgba(245,158,11,0.08) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+body.page-ai .bg-grid,
+body.page-cloud .bg-grid {
+    background-image: radial-gradient(rgba(59,130,246,0.05) 1px, transparent 0);
+}
 
-body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .glow-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(245,158,11,0.4), rgba(236,72,153,0.4));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.5;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #f59e0b, #ec4899);
-            opacity: 1;
-        }
-        .glow-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(245,158,11,0.3);
-        }
-        .bg-grid {
-            background-image: radial-gradient(rgba(245,158,11,0.08) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+body.page-manage-it .bg-grid {
+    background-image: radial-gradient(rgba(59,130,246,0.1) 1px, transparent 0);
+}
 
-body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .glow-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(245,158,11,0.4), rgba(236,72,153,0.4));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.5;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #f59e0b, #ec4899);
-            opacity: 1;
-        }
-        .glow-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(245,158,11,0.3);
-        }
-        .bg-grid {
-            background-image: radial-gradient(rgba(245,158,11,0.08) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        .approach-step {
-            transition: all 0.3s ease;
-        }
-        .approach-step:hover {
-            transform: translateY(-4px);
-        }
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+body.page-manage-db .bg-grid {
+    background-image: radial-gradient(rgba(16,185,129,0.08) 1px, transparent 0);
+}
 
-body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3b82f6;
-        }
-        /* Engineering Grid Dot Blueprint Matrix Backdrop */
-        .bg-grid {
-            background-image: radial-gradient(rgba(59,130,246,0.05) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        /* Navigation Nested Menu Toggle Dynamic Triggers */
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        /* Micro-Interaction Interactive Neon Glass Borders */
-        .glow-card {
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(59,130,246,0.2), rgba(168,85,247,0.2));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.6;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #3b82f6, #a855f7);
-            opacity: 1;
-        }
-        /* Scroll-Reveal Micro Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Dynamic Tab Toggle Utilities */
-        .tab-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .tab-content.active {
-            display: block;
-            opacity: 1;
-        }
-        .tab-btn.active {
-            background: #3b82f6 !important;
-            color: white !important;
-        }
+body.page-ai .glow-card::before,
+body.page-cloud .glow-card::before {
+    background: linear-gradient(to bottom right, rgba(59,130,246,0.2), rgba(168,85,247,0.2));
+}
 
-body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3b82f6;
-        }
-        .bg-grid {
-            background-image: radial-gradient(rgba(59,130,246,0.05) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .glow-card {
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(59,130,246,0.2), rgba(168,85,247,0.2));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.6;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #3b82f6, #a855f7);
-            opacity: 1;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .tab-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .tab-content.active {
-            display: block;
-            opacity: 1;
-        }
-        .tab-btn.active {
-            background: #3b82f6 !important;
-            color: white !important;
-        }
+body.page-ai .glow-card:hover::before,
+body.page-cloud .glow-card:hover::before {
+    background: linear-gradient(to bottom right, #3b82f6, #a855f7);
+}
 
-body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .glow-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(245,158,11,0.4), rgba(236,72,153,0.4));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.5;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #f59e0b, #ec4899);
-            opacity: 1;
-        }
-        .glow-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(245,158,11,0.3);
-        }
-        .bg-grid {
-            background-image: radial-gradient(rgba(245,158,11,0.08) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        .tab-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .tab-content.active {
-            display: block;
-            opacity: 1;
-        }
-        .tab-btn.active {
-            background: linear-gradient(135deg, #f59e0b20, #ec489920);
-            border-color: #f59e0b;
-            color: #fbbf24;
-        }
-        .maturity-step {
-            transition: all 0.3s ease;
-        }
-        .maturity-step:hover {
-            transform: translateX(8px);
-        }
+body.page-manage-it .glow-card::before {
+    background: linear-gradient(to bottom right, rgba(59,130,246,0.4), transparent);
+}
 
-body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+body.page-manage-it .glow-card:hover::before {
+    background: linear-gradient(to bottom right, #3b82f6, #10b981);
+}
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3b82f6;
-        }
+body.page-manage-it .glow-card:hover {
+    box-shadow: 0 10px 30px -10px rgba(59,130,246,0.3);
+}
 
-        /* Reveal on Scroll Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+body.page-manage-db .glow-card::before {
+    background: linear-gradient(to bottom right, rgba(16,185,129,0.4), rgba(59,130,246,0.4));
+}
 
-        /* Micro-interactions & Glow Effects */
-        .glow-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(59,130,246,0.4), transparent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.5;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #3b82f6, #10b981);
-            opacity: 1;
-        }
-        .glow-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
-        }
+body.page-manage-db .glow-card:hover::before {
+    background: linear-gradient(to bottom right, #10b981, #3b82f6);
+}
 
-        /* Animated Glowing Background Dots */
-        .bg-grid {
-            background-image: radial-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
+body.page-manage-db .glow-card:hover {
+    box-shadow: 0 10px 30px -10px rgba(59,130,246,0.35);
+}
 
-        /* Tab Active State Transition */
-        .tab-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .tab-content.active {
-            display: block;
-            opacity: 1;
-        }
+body.page-ai ::-webkit-scrollbar-thumb:hover,
+body.page-cloud ::-webkit-scrollbar-thumb:hover,
+body.page-manage-it ::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
 
-/* Re-using proven styling patterns from cloud-service / AI-service design system */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2b6e9f;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Edge glow cards identical to cloud-service sophistication */
-        .glow-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(16, 185, 129, 0.4), rgba(59,130,246,0.4));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.5;
-            transition: opacity 0.4s;
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(to bottom right, #10b981, #3b82f6);
-            opacity: 1;
-        }
-        .glow-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(59,130,246,0.35);
-        }
-        .bg-grid {
-            background-image: radial-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        /* Tab transitions */
-        .tab-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .tab-content.active {
-            display: block;
-            opacity: 1;
-        }
-        /* active tab styling */
-        .tab-btn.active {
-            background-color: #0f3b2c;
-            color: #2dd4bf;
-            border-color: #2dd4bf;
-        }
-        /* custom glassmorphic enhancements */
-        .glass-panel {
-            background: rgba(17, 22, 37, 0.75);
-            backdrop-filter: blur(2px);
-        }
-        .hover-lift {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px -12px rgba(0,0,0,0.5);
-        }
+body.page-manage-db ::-webkit-scrollbar-thumb:hover {
+    background: #2b6e9f;
+}

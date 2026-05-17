@@ -11,62 +11,59 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    
-    <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="bg-grid">
+<body class="bg-grid page-ai">
 
     <!-- ============================================= -->
     <!-- REUSABLE NAVBAR (identical to contact-us.html) -->
     <!-- ============================================= -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f19]/80 border-b border-gray-800/80 transition-all">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2.5 group" title="Dataclyve â€” Managed IT Services Vancouver Island">
-                <div class="h-9 w-9 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-md shadow-blue-500/10 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-square-terminal text-white font-bold text-lg"></i>
-                </div>
-                <span class="text-xl font-bold tracking-wider text-white">DataClyve</span>
+            
+            <a href="/index.html" class="flex items-center space-x-2.5 group" title="Dataclyve â€” Managed IT Services Vancouver Island">
+                <img src="/images/DC-logo.png" alt="DataClyve logo" class="h-9 object-contain">
             </a>
 
             <nav class="hidden lg:flex space-x-8 text-sm font-medium text-gray-400">
-                <div class="relative nav-dropdown py-2">
-                    <button class="hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer">
+                <div  class="relative nav-dropdown py-2">
+                    <a href="/services.html" class="hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer">
                         Services <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
-                    </button>
+                    </a>
                     <div class="dropdown-menu absolute left-0 mt-3 w-64 rounded-2xl bg-[#0f1524] border border-gray-800 p-3 shadow-xl transition-all opacity-0 invisible translate-y-2 duration-200">
-                        <a href="Manage-IT-Service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
-                            <i class="fa-solid fa-desktop text-blue-400 w-5"></i>
+                        <a href="/services/Manage-IT-Service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-desktop text-amber-400 w-5"></i>
                             <div><div class="font-semibold text-xs">Managed IT Services</div></div>
                         </a>
-                        <a href="cloud-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
-                            <i class="fa-solid fa-cloud text-cyan-400 w-5"></i>
+                        <a href="/services/cloud-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-cloud text-pink-400 w-5"></i>
                             <div><div class="font-semibold text-xs">Managed Cloud Services</div></div>
                         </a>
-                        <a href="mange-database-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
-                            <i class="fa-solid fa-database text-emerald-400 w-5"></i>
+                        <a href="/services/manage-database-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-database text-orange-400 w-5"></i>
                             <div><div class="font-semibold text-xs">Database Managed Services</div></div>
                         </a>
-                        <a href="AI-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                        <a href="/services/AI-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
                             <i class="fa-solid fa-brain text-purple-400 w-5"></i>
                             <div><div class="font-semibold text-xs">AI & Data Services</div></div>
                         </a>
-                        <a href="devOps-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
-                            <i class="fa-solid fa-code-merge text-amber-400 w-5"></i>
+                        <a href="/services/devOps-service.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-800/60 hover:text-white transition-all">
+                            <i class="fa-solid fa-code-merge text-amber-500 w-5"></i>
                             <div><div class="font-semibold text-xs">DevOps Services</div></div>
                         </a>
                     </div>
                 </div>
 
-                <a href="solutions.html" class="hover:text-blue-400 py-2 transition-colors">Solutions</a>
-                <a href="about-us.html" class="hover:text-blue-400 py-2 transition-colors">About Us</a>
-                <a href="contact-us.html" class="text-blue-400 py-2 transition-colors">Contact Us</a>
+                <a href="/solutions.html" class="hover:text-amber-400 py-2 transition-colors">Solutions</a>
+                <a href="/about-us.html" class="hover:text-amber-400 py-2 transition-colors">About Us</a>
+                <a href="/contact-us.html" class="hover:text-amber-400 py-2 transition-colors">Contact Us</a>
             </nav>
 
             <div>
-                <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full transition-all shadow-lg shadow-blue-600/20">Book a free call</a>
+                <a href="/contact-us.html" class="bg-blue-600 hover:bg-blue-500 text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full transition-all shadow-lg shadow-blue-600/20">Book a free call</a>
             </div>
         </div>
-    </header>
+    </header> 
 
     <!-- HERO SECTION (Enhanced with Dataclyve style) -->
     <section class="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
@@ -87,11 +84,8 @@
                 Modernize your data platforms, deploy intelligent AI solutions, and unlock business value through advanced analytics and automation â€” backed by enterprise-grade governance and 24/7 operational support.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-                <a href="#contact" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-medium px-8 py-3.5 rounded-xl transition-all transform hover:-translate-y-0.5 shadow-lg shadow-blue-500/20">
+                <a href="/contact-us.html" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-medium px-8 py-3.5 rounded-xl transition-all transform hover:-translate-y-0.5 shadow-lg shadow-blue-500/20">
                     Get a Free Data & AI Assessment
-                </a>
-                <a href="#capabilities" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-800 font-medium px-8 py-3.5 rounded-xl transition-all">
-                    Explore AI Capabilities
                 </a>
             </div>
             
@@ -199,21 +193,82 @@
         </div>
 
         <div id="ingest-tab" class="tab-content active max-w-4xl mx-auto">
-            <div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden shadow-xl p-6 space-y-6">
+            <div class="glow-card group bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden shadow-xl p-6 space-y-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/20">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-3"><h4 class="text-sm font-semibold uppercase text-blue-400 tracking-wider"><i class="fa-solid fa-gears mr-2"></i> Core Pipeline Engineering</h4><div class="grid grid-cols-1 gap-2 text-xs text-gray-300"><span><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Batch & real-time data ingestion paths</span><span><i class="fa-solid fa-check text-cyan-400 mr-2"></i> ETL/ELT transformation pipeline layouts</span><span><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Data lake and multi-tier warehouse configurations</span><span><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Change Data Capture (CDC) engine pipelines</span><span><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Stream analytics (Kafka, Kinesis, Pub/Sub platforms)</span></div></div>
                     <div><table class="w-full text-left text-xs text-gray-300"><thead><tr class="border-b border-gray-800 text-gray-500 font-semibold"><th class="pb-2">Source Class</th><th class="pb-2">Supported Integration Stack Examples</th></tr></thead><tbody class="divide-y divide-gray-800/40"><tr><td class="py-2.5 font-medium text-white">Databases</td><td class="py-2.5">SQL Server, Oracle, PostgreSQL, MySQL, MongoDB</td></tr><tr><td class="py-2.5 font-medium text-white">SaaS Applications</td><td class="py-2.5">Salesforce, Marketo, Zendesk, ServiceNow instances</td></tr><tr><td class="py-2.5 font-medium text-white">Cloud Repositories</td><td class="py-2.5">AWS S3 buckets, Azure Blob endpoints, GCS blocks</td></tr></tbody></table></div>
                 </div>
             </div>
         </div>
-        <div id="bi-tab" class="tab-content max-w-4xl mx-auto"><div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden shadow-xl p-6"><div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center"><div class="space-y-3 text-xs text-gray-300"><h4 class="text-sm font-semibold uppercase text-blue-400 tracking-wider"><i class="fa-solid fa-chart-line mr-2"></i> Analytics Enablement</h4><span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[6px]"></i> Dashboard layout logic and semantic view definitions</span><span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[6px]"></i> Managed self-service reporting data views</span><span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[6px]"></i> High-level corporate KPI performance metrics tracking</span><span><i class="fa-solid fa-circle text-blue-500 mr-1.5 text-[6px]"></i> App-embedded visualization modules integration</span></div><div class="space-y-2"><div class="bg-gray-950 p-3 rounded-xl border border-gray-900 text-xs flex justify-between"><span class="font-semibold text-white">Power BI</span><span class="text-gray-400">Premium capacity management, complex DAX formulas</span></div><div class="bg-gray-950 p-3 rounded-xl border border-gray-900 text-xs flex justify-between"><span class="font-semibold text-white">Tableau</span><span class="text-gray-400">Server scaling & advanced worksheets orchestration</span></div><div class="bg-gray-950 p-3 rounded-xl border border-gray-900 text-xs flex justify-between"><span class="font-semibold text-white">Looker</span><span class="text-gray-400">Multi-tier LookML structure semantic models mapping</span></div></div></div></div></div>
-        <div id="gov-tab" class="tab-content max-w-4xl mx-auto"><div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden shadow-xl"><table class="w-full text-left text-xs text-gray-300 border-collapse"><thead><tr class="bg-gray-950 text-gray-400 font-semibold border-b border-gray-800"><th class="p-4">Security Vector</th><th class="p-4">Enterprise Implementation Blueprint</th></tr></thead><tbody class="divide-y divide-gray-800/40"><tr><td class="p-4 font-semibold text-white">Data Lineage & Catalogs</td><td class="p-4 text-gray-400">Complete end-to-end trace mapping from original source, business glossaries, dependency graphing</td></tr><tr><td class="p-4 font-semibold text-white">Granular Access Architecture</td><td class="p-4 text-gray-400">Explicit column/row isolation rules, rule-based field visibility constraints, full RBAC/MFA configurations</td></tr><tr><td class="p-4 font-semibold text-white">Data Cryptography Layer</td><td class="p-4 text-gray-400">Rigid AES-256 state encryption blocks for storage devices, TLS 1.2+ streaming pipeline encryption keys</td></tr><tr><td class="p-4 font-semibold text-white">PII Data Scrubbing Control</td><td class="p-4 text-gray-400">Automated payload hashing patterns, column masking profiles, localized data structural anonymization</td></tr></tbody></table></div></div>
+        <div id="bi-tab" class="tab-content max-w-4xl mx-auto">
+            <div class="bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden shadow-xl p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div class="space-y-4 text-sm text-gray-300">
+                        <h4 class="text-base font-semibold uppercase text-blue-400 tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-chart-line"></i>
+                            Analytics Enablement
+                        </h4>
+                        <p class="leading-relaxed">We help teams turn analytics into operational decision-making through dashboard design, reporting workflows, and embedded visualization modules.</p>
+                        <ul class="space-y-3 list-none">
+                            <li class="flex items-start gap-3"><span class="mt-1 text-[10px] text-blue-500">â€¢</span>Dashboard layout logic and semantic view definitions</li>
+                            <li class="flex items-start gap-3"><span class="mt-1 text-[10px] text-blue-500">â€¢</span>Managed self-service reporting data views</li>
+                            <li class="flex items-start gap-3"><span class="mt-1 text-[10px] text-blue-500">â€¢</span>High-level corporate KPI performance metrics tracking</li>
+                            <li class="flex items-start gap-3"><span class="mt-1 text-[10px] text-blue-500">â€¢</span>App-embedded visualization modules integration</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="glow-card group bg-gray-950 p-4 rounded-xl border border-gray-900 text-sm text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10">
+                            <div class="font-semibold text-white mb-2">Power BI</div>
+                            <div class="text-gray-400 leading-relaxed">Premium capacity management, complex DAX formulas</div>
+                        </div>
+                        <div class="glow-card group bg-gray-950 p-4 rounded-xl border border-gray-900 text-sm text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10">
+                            <div class="font-semibold text-white mb-2">Tableau</div>
+                            <div class="text-gray-400 leading-relaxed">Server scaling & advanced worksheets orchestration</div>
+                        </div>
+                        <div class="glow-card group bg-gray-950 p-4 rounded-xl border border-gray-900 text-sm text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10">
+                            <div class="font-semibold text-white mb-2">Looker</div>
+                            <div class="text-gray-400 leading-relaxed">Multi-tier LookML structure semantic models mapping</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gov-tab" class="tab-content max-w-4xl mx-auto">
+            <div class="glow-card group bg-[#111625] rounded-2xl border border-gray-800 overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/20">
+                <table class="w-full text-left text-xs text-gray-300 border-collapse">
+                    <thead>
+                        <tr class="bg-gray-950 text-gray-400 font-semibold border-b border-gray-800">
+                            <th class="p-4">Security Vector</th>
+                            <th class="p-4">Enterprise Implementation Blueprint</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800/40">
+                        <tr>
+                            <td class="p-4 font-semibold text-white">Data Lineage & Catalogs</td>
+                            <td class="p-4 text-gray-400">Complete end-to-end trace mapping from original source, business glossaries, dependency graphing</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold text-white">Granular Access Architecture</td>
+                            <td class="p-4 text-gray-400">Explicit column/row isolation rules, rule-based field visibility constraints, full RBAC/MFA configurations</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold text-white">Data Cryptography Layer</td>
+                            <td class="p-4 text-gray-400">Rigid AES-256 state encryption blocks for storage devices, TLS 1.2+ streaming pipeline encryption keys</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold text-white">PII Data Scrubbing Control</td>
+                            <td class="p-4 text-gray-400">Automated payload hashing patterns, column masking profiles, localized data structural anonymization</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </section>
 
     <!-- DELIVERY APPROACH -->
     <section id="approach" class="py-24 bg-[#090d16] border-y border-gray-900 reveal">
         <div class="max-w-7xl mx-auto px-6"><div class="text-center max-w-3xl mx-auto mb-16 space-y-4"><h2 class="text-3xl font-bold tracking-tight text-white">Delivery Approach Roadmap</h2><div class="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div><p class="text-gray-400 font-light text-sm">Five distinct continuous optimization cycles designed to move raw assets seamlessly into persistent pipelines.</p></div>
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-6xl mx-auto"><div class="bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">01</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Discover</h4><p class="text-xs text-gray-400 font-light">Document core requirements, examine database siloes, organize use cases.</p></div><div class="bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">02</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Design</h4><p class="text-xs text-gray-400 font-light">Outline multi-cloud configurations, align compliance boundaries, set tracking matrices.</p></div><div class="bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">03</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Build</h4><p class="text-xs text-gray-400 font-light">Code production extraction configs, refine ML algorithms, engineer visualization panels.</p></div><div class="bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">04</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Deploy</h4><p class="text-xs text-gray-400 font-light">Launch target configurations to live clusters, initiate internal staff training.</p></div><div class="bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">05</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Operate</h4><p class="text-xs text-gray-400 font-light">Continuous pipeline health checks, track runtime drift metrics, iterate.</p></div></div></div>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-6xl mx-auto"><div class="glow-card group bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">01</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Discover</h4><p class="text-xs text-gray-400 font-light">Document core requirements, examine database siloes, organize use cases.</p></div><div class="glow-card group bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">02</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Design</h4><p class="text-xs text-gray-400 font-light">Outline multi-cloud configurations, align compliance boundaries, set tracking matrices.</p></div><div class="glow-card group bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">03</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Build</h4><p class="text-xs text-gray-400 font-light">Code production extraction configs, refine ML algorithms, engineer visualization panels.</p></div><div class="glow-card group bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">04</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Deploy</h4><p class="text-xs text-gray-400 font-light">Launch target configurations to live clusters, initiate internal staff training.</p></div><div class="glow-card group bg-[#111625]/60 border border-gray-800 p-5 rounded-2xl relative transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10"><div class="text-3xl font-extrabold text-blue-900/40 absolute top-2 right-4">05</div><h4 class="text-md font-semibold text-white mt-4 mb-2">Operate</h4><p class="text-xs text-gray-400 font-light">Continuous pipeline health checks, track runtime drift metrics, iterate.</p></div></div></div>
     </section>
 
     <!-- CONTACT FORM SECTION (Call to Action) -->
@@ -222,7 +277,7 @@
         <div class="relative z-10 max-w-4xl mx-auto bg-gradient-to-b from-[#121829] to-[#0e1322] border border-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl text-center space-y-8">
             <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Turn Your Data Into a Competitive Advantage</h2>
             <p class="text-sm text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">Request a complimentary data & AI assessment to identify high-value use cases, assess platform readiness, and build your comprehensive technology deployment roadmap.</p>
-            <div class="max-w-md mx-auto pt-4"><form onsubmit="handleFormSubmit(event)" class="space-y-3"><input type="email" placeholder="Enter corporate email address" required class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"><button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-3 px-6 rounded-xl transition-colors shadow-lg shadow-blue-600/10">Get Your Free Data & AI Assessment</button></form></div>
+            <div class="pt-4"><a href="/contact-us.html" class="inline-flex bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-semibold px-8 py-3.5 rounded-xl transition shadow-lg shadow-amber-500/20 text-sm">Schedule a Free IT Strategy Session â†’</a></div>
         </div>
     </section>
 
@@ -232,33 +287,30 @@
     <footer class="bg-[#070a12] border-t border-gray-900 text-gray-400 text-xs py-16 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
             <div class="space-y-4">
-                <a href="index.html" class="flex items-center space-x-2 text-white font-bold tracking-wider text-base" title="Dataclyve â€” Managed Database & Cloud Services">
-                    <div class="h-7 w-7 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                        <i class="fa-solid fa-square-terminal text-white text-xs"></i>
-                    </div>
-                    <span>DataClyve</span>
-                </a>
+            <a href="/index.html" class="flex items-center space-x-2.5 group" title="Dataclyve â€” Managed IT Services Vancouver Island">
+                <img src="/images/DC-logo.png" alt="DataClyve logo" class="h-9 object-contain">
+            </a>
                 <div class="space-y-2 font-light text-gray-500">
                     <p><i class="fa-solid fa-phone mr-2 text-[10px]"></i>+1 437-224-6600</p>
                     <p><i class="fa-solid fa-envelope mr-2 text-[10px]"></i>sanjeev.kumar@datclyve.com</p>
                     <p><i class="fa-solid fa-location-dot mr-2 text-[10px]"></i>North America</p>
                 </div>
                 <div class="flex space-x-3 pt-2">
-                    <a href="#" class="hover:text-blue-500"><i class="fa-brands fa-facebook text-base"></i></a>
-                    <a href="#" class="hover:text-blue-500"><i class="fa-brands fa-linkedin text-base"></i></a>
+                    <a href="#" class="hover:text-amber-500"><i class="fa-brands fa-facebook text-base"></i></a>
+                    <a href="#" class="hover:text-amber-500"><i class="fa-brands fa-linkedin text-base"></i></a>
                 </div>
                 <div class="pt-2 flex flex-col gap-1 text-[11px] text-gray-500">
-                    <a href="#" class="hover:text-blue-400 flex items-center gap-1.5"><i class="fa-brands fa-google text-blue-400"></i> Review â€” Courtenay</a>
-                    <a href="#" class="hover:text-blue-400 flex items-center gap-1.5"><i class="fa-brands fa-google text-blue-400"></i> Review â€” Nanaimo</a>
+                    <a href="#" class="hover:text-amber-400 flex items-center gap-1.5"><i class="fa-brands fa-google text-blue-400"></i> Review â€” Courtenay</a>
+                    <a href="#" class="hover:text-amber-400 flex items-center gap-1.5"><i class="fa-brands fa-google text-blue-400"></i> Review â€” Nanaimo</a>
                 </div>
             </div>
-            <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Services</h4><ul class="space-y-2.5 font-light"><li><a href="Manage-IT-Service.html" class="hover:text-white transition-colors">Managed Cloud & Infrastructure</a></li><li><a href="AI-service.html" class="hover:text-white transition-colors">Data & Analytics</a></li><li><a href="AI-service.html" class="hover:text-white transition-colors">AI & GenAI</a></li><li><a href="#" class="text-gray-600 cursor-not-allowed">App Dev <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded-md ml-1 font-normal">Coming Soon</span></a></li></ul></div>
+            <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Services</h4><ul class="space-y-2.5 font-light"><li><a href="services/cloud-service.html" class="hover:text-white transition-colors">Managed Cloud & Infrastructure</a></li><li><a href="services/manage-database-service.html" class="hover:text-white transition-colors">Data & Analytics</a></li><li><a href="services/AI-service.html" class="hover:text-white transition-colors">AI & GenAI</a></li><li><a href="#" class="text-gray-600 cursor-not-allowed">App Dev <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded-md ml-1 font-normal">Coming Soon</span></a></li></ul></div>
             <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Industries</h4><ul class="space-y-2.5 font-light"><li><a href="#" class="hover:text-white transition-colors">Healthcare</a></li><li><a href="#" class="hover:text-white transition-colors">Financial Services</a></li><li><a href="#" class="hover:text-white transition-colors">Retail & E-commerce</a></li><li><a href="#" class="hover:text-white transition-colors">Technology</a></li></ul></div>
             <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Company</h4><ul class="space-y-2.5 font-light"><li><a href="about-us.html" class="hover:text-white transition-colors">About Us</a></li><li><a href="#" class="hover:text-white transition-colors">Leadership</a></li><li><a href="#" class="hover:text-white transition-colors">Careers</a></li><li><a href="#" class="hover:text-white transition-colors">Partnerships</a></li></ul></div>
-            <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Connect</h4><ul class="space-y-2.5 font-light"><li><a href="#contact" class="hover:text-white transition-colors">Book a free call</a></li><li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li><li><a href="contact-us.html" class="text-white font-medium transition-colors">Contact</a></li><li><a href="#" class="hover:text-white transition-colors">Support Portal</a></li></ul></div>
+            <div><h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Connect</h4><ul class="space-y-2.5 font-light"><li><a href="contact-us.html" class="hover:text-white transition-colors">Book a free call</a></li><li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li><li><a href="contact.html" class="text-white font-medium transition-colors">Contact</a></li><li><a href="#" class="hover:text-white transition-colors">Support Portal</a></li></ul></div>
         </div>
         <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500 font-light">
-            <div>Â© 2026 Dataclyve Technologies Inc. All rights reserved.</div>
+            <div>&copy; 2026 Dataclyve Technologies Inc. All rights reserved.</div>
             <div class="flex space-x-6"><a href="#" class="hover:text-white transition-colors">Privacy Policy</a><a href="#" class="hover:text-white transition-colors">Sitemap</a></div>
         </div>
     </footer>
@@ -284,8 +336,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
